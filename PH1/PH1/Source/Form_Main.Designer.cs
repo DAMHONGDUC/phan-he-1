@@ -264,9 +264,10 @@
             // panelChildForm_KH
             // 
             this.panelChildForm_KH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm_KH.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panelChildForm_KH.Location = new System.Drawing.Point(159, 0);
             this.panelChildForm_KH.Name = "panelChildForm_KH";
-            this.panelChildForm_KH.Size = new System.Drawing.Size(970, 853);
+            this.panelChildForm_KH.Size = new System.Drawing.Size(923, 853);
             this.panelChildForm_KH.TabIndex = 1;
             // 
             // Form_Main
@@ -274,7 +275,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1129, 853);
+            this.ClientSize = new System.Drawing.Size(1082, 853);
             this.Controls.Add(this.panelChildForm_KH);
             this.Controls.Add(this.panelMenu);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

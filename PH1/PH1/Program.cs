@@ -13,7 +13,7 @@ namespace PH1
             ApplicationConfiguration.Initialize();
 
             Application.Run(new Form_Login());
-            //Application.Run(new Form_Main());
+            Application.Run(new Form_Main());
         }
     }
 }
