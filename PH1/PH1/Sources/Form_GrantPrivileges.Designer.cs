@@ -28,27 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dgv_privileges = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_privileges)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // dgv_privileges
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(955, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.dgv_privileges.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_privileges.Location = new System.Drawing.Point(41, 146);
+            this.dgv_privileges.Name = "dgv_privileges";
+            this.dgv_privileges.RowHeadersWidth = 51;
+            this.dgv_privileges.RowTemplate.Height = 24;
+            this.dgv_privileges.Size = new System.Drawing.Size(917, 272);
+            this.dgv_privileges.TabIndex = 0;
             // 
-            // label2
+            // panel1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(0, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(997, 95);
+            this.panel1.TabIndex = 1;
             // 
             // Form_GrantPrivileges
             // 
@@ -56,18 +57,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(997, 853);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dgv_privileges);
             this.Name = "Form_GrantPrivileges";
             this.Text = "Form_GrantPrivileges";
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_privileges)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgv_privileges;
+        private System.Windows.Forms.Panel panel1;
     }
 }
