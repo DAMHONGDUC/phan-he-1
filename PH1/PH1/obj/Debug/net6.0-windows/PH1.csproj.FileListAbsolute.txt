@@ -34,3 +34,4 @@ D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\refint\PH1.dll
 D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.pdb
 D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.genruntimeconfig.cache
 D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\ref\PH1.dll
+D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.Form_GrantPrivileges.resources

@@ -31,7 +31,7 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btn_grantPrivileges = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -40,7 +40,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel_username = new System.Windows.Forms.Panel();
-            this.btn_login = new System.Windows.Forms.Button();
+            this.btn_logout = new System.Windows.Forms.Button();
             this.label_username = new System.Windows.Forms.Label();
             this.label_welcome = new System.Windows.Forms.Label();
             this.panelChildForm_KH = new System.Windows.Forms.Panel();
@@ -53,7 +53,7 @@
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.panelMenu.Controls.Add(this.button10);
             this.panelMenu.Controls.Add(this.button9);
-            this.panelMenu.Controls.Add(this.button8);
+            this.panelMenu.Controls.Add(this.btn_grantPrivileges);
             this.panelMenu.Controls.Add(this.button7);
             this.panelMenu.Controls.Add(this.button6);
             this.panelMenu.Controls.Add(this.button5);
@@ -98,20 +98,21 @@
             this.button9.Text = "Grant Role To User";
             this.button9.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // btn_grantPrivileges
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(0, 579);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(159, 75);
-            this.button8.TabIndex = 31;
-            this.button8.Text = "Grant Privileges To User/Role";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btn_grantPrivileges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btn_grantPrivileges.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_grantPrivileges.FlatAppearance.BorderSize = 0;
+            this.btn_grantPrivileges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_grantPrivileges.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_grantPrivileges.ForeColor = System.Drawing.Color.White;
+            this.btn_grantPrivileges.Location = new System.Drawing.Point(0, 579);
+            this.btn_grantPrivileges.Name = "btn_grantPrivileges";
+            this.btn_grantPrivileges.Size = new System.Drawing.Size(159, 75);
+            this.btn_grantPrivileges.TabIndex = 31;
+            this.btn_grantPrivileges.Text = "Grant Privileges To User/Role";
+            this.btn_grantPrivileges.UseVisualStyleBackColor = false;
+            this.btn_grantPrivileges.Click += new System.EventHandler(this.btn_grantPrivileges_Click);
             // 
             // button7
             // 
@@ -221,7 +222,7 @@
             // panel_username
             // 
             this.panel_username.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel_username.Controls.Add(this.btn_login);
+            this.panel_username.Controls.Add(this.btn_logout);
             this.panel_username.Controls.Add(this.label_username);
             this.panel_username.Controls.Add(this.label_welcome);
             this.panel_username.Dock = System.Windows.Forms.DockStyle.Top;
@@ -230,16 +231,17 @@
             this.panel_username.Size = new System.Drawing.Size(159, 166);
             this.panel_username.TabIndex = 2;
             // 
-            // btn_login
+            // btn_logout
             // 
-            this.btn_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(187)))), ((int)(((byte)(241)))));
-            this.btn_login.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_login.Location = new System.Drawing.Point(21, 115);
-            this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(118, 37);
-            this.btn_login.TabIndex = 9;
-            this.btn_login.Text = "Logout";
-            this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(187)))), ((int)(((byte)(241)))));
+            this.btn_logout.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_logout.Location = new System.Drawing.Point(21, 115);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(118, 37);
+            this.btn_logout.TabIndex = 9;
+            this.btn_logout.Text = "Logout";
+            this.btn_logout.UseVisualStyleBackColor = false;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // label_username
             // 
@@ -303,8 +305,8 @@
         private Button button1;
         private Button button10;
         private Button button9;
-        private Button button8;
+        private Button btn_grantPrivileges;
         private Panel panelChildForm_KH;
-        private Button btn_login;
+        private Button btn_logout;
     }
 }

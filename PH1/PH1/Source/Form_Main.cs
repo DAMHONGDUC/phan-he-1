@@ -5,13 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace PH1
 {
     public partial class Form_Main : Form
     {
+        Thread t;
         public Form_Main()
         {
             InitializeComponent();
@@ -61,6 +62,12 @@ namespace PH1
             }
         }
 
+        // xử lí đăng xuất + đăng nhập lại
+        public void open_FormLogin(object obj)
+        {
+            Application.Run(new Form_Login());
+        }
+
         private void Set_Center_Username()
         {
             int y = (panel_username.Height / 2) - (label_username.Height / 2);
@@ -72,6 +79,20 @@ namespace PH1
         private void Form_Main_Load(object sender, EventArgs e)
         {
             Set_Center_Username();
+        }
+
+        private void btn_grantPrivileges_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_GrantPrivileges());
+            ActivateButton(sender);
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            t = new Thread(open_FormLogin);
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
         }
     }
 }
