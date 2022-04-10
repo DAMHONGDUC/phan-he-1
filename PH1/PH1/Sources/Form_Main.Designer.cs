@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.btn_grantPrivileges = new System.Windows.Forms.Button();
+            this.btn_grant_role_to_user = new System.Windows.Forms.Button();
+            this.btn_revoke_role = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -51,10 +51,10 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panelMenu.Controls.Add(this.button10);
-            this.panelMenu.Controls.Add(this.button9);
-            this.panelMenu.Controls.Add(this.button8);
             this.panelMenu.Controls.Add(this.btn_grantPrivileges);
+            this.panelMenu.Controls.Add(this.btn_grant_role_to_user);
+            this.panelMenu.Controls.Add(this.btn_revoke_role);
+            this.panelMenu.Controls.Add(this.button7);
             this.panelMenu.Controls.Add(this.button6);
             this.panelMenu.Controls.Add(this.button5);
             this.panelMenu.Controls.Add(this.button4);
@@ -68,62 +68,61 @@
             this.panelMenu.Size = new System.Drawing.Size(185, 853);
             this.panelMenu.TabIndex = 0;
             // 
-            // button10
-            // 
-            this.button10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(0, 732);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(185, 70);
-            this.button10.TabIndex = 11;
-            this.button10.Text = "Modify Privileges User/Role";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(0, 662);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(185, 70);
-            this.button9.TabIndex = 10;
-            this.button9.Text = "Revoke PrivilegesRole Of User";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(0, 592);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(185, 70);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "Grant Role To User";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
             // btn_grantPrivileges
             // 
-            this.btn_grantPrivileges.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_grantPrivileges.FlatAppearance.BorderSize = 0;
             this.btn_grantPrivileges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_grantPrivileges.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             this.btn_grantPrivileges.ForeColor = System.Drawing.Color.White;
-            this.btn_grantPrivileges.Location = new System.Drawing.Point(0, 522);
+            this.btn_grantPrivileges.Location = new System.Drawing.Point(0, 576);
             this.btn_grantPrivileges.Name = "btn_grantPrivileges";
             this.btn_grantPrivileges.Size = new System.Drawing.Size(185, 70);
-            this.btn_grantPrivileges.TabIndex = 8;
+            this.btn_grantPrivileges.TabIndex = 14;
             this.btn_grantPrivileges.Text = "Grant Privileges To User/Role";
             this.btn_grantPrivileges.UseVisualStyleBackColor = true;
             this.btn_grantPrivileges.Click += new System.EventHandler(this.btn_grantPrivileges_Click);
+            // 
+            // btn_grant_role_to_user
+            // 
+            this.btn_grant_role_to_user.FlatAppearance.BorderSize = 0;
+            this.btn_grant_role_to_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_grant_role_to_user.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            this.btn_grant_role_to_user.ForeColor = System.Drawing.Color.White;
+            this.btn_grant_role_to_user.Location = new System.Drawing.Point(0, 652);
+            this.btn_grant_role_to_user.Name = "btn_grant_role_to_user";
+            this.btn_grant_role_to_user.Size = new System.Drawing.Size(185, 70);
+            this.btn_grant_role_to_user.TabIndex = 13;
+            this.btn_grant_role_to_user.Text = "Grant Role To User";
+            this.btn_grant_role_to_user.UseVisualStyleBackColor = true;
+            this.btn_grant_role_to_user.Click += new System.EventHandler(this.btn_grant_role_to_user_Click);
+            // 
+            // btn_revoke_role
+            // 
+            this.btn_revoke_role.FlatAppearance.BorderSize = 0;
+            this.btn_revoke_role.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_revoke_role.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            this.btn_revoke_role.ForeColor = System.Drawing.Color.White;
+            this.btn_revoke_role.Location = new System.Drawing.Point(0, 728);
+            this.btn_revoke_role.Name = "btn_revoke_role";
+            this.btn_revoke_role.Size = new System.Drawing.Size(185, 70);
+            this.btn_revoke_role.TabIndex = 12;
+            this.btn_revoke_role.Text = "Revoke PrivilegesRole Of User";
+            this.btn_revoke_role.UseVisualStyleBackColor = true;
+            this.btn_revoke_role.Click += new System.EventHandler(this.btn_revoke_role_Click);
+            // 
+            // button7
+            // 
+            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(0, 522);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(185, 60);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "Delete Role";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
@@ -136,7 +135,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(185, 60);
             this.button6.TabIndex = 7;
-            this.button6.Text = "Delete Role";
+            this.button6.Text = "Add Role";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // button5
@@ -290,17 +289,17 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel_username;
         private System.Windows.Forms.Label label_welcome;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button btn_grantPrivileges;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label_username;
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Panel panelChildForm_KH;
+        private System.Windows.Forms.Button btn_grantPrivileges;
+        private System.Windows.Forms.Button btn_grant_role_to_user;
+        private System.Windows.Forms.Button btn_revoke_role;
+        private System.Windows.Forms.Button button7;
     }
 }
