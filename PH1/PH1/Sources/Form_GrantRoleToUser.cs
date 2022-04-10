@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PH1
 {
-    public partial class Form_GrantPrivileges : Form
+    public partial class Form_GrantRoleToUser : Form
     {
-        public Form_GrantPrivileges()
+        public Form_GrantRoleToUser()
         {
             InitializeComponent();
         }

@@ -80,8 +80,14 @@ namespace PH1
         {
             Set_Center_Username();
         }
-
-
+   
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            t = new Thread(open_FormLogin);
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+        }
 
         private void btn_grantPrivileges_Click(object sender, EventArgs e)
         {
@@ -89,12 +95,16 @@ namespace PH1
             ActivateButton(sender);
         }
 
-        private void btn_logout_Click(object sender, EventArgs e)
+        private void btn_grant_role_to_user_Click(object sender, EventArgs e)
         {
-            this.Close();
-            t = new Thread(open_FormLogin);
-            t.SetApartmentState(ApartmentState.STA);
-            t.Start();
+            openChildForm(new Form_GrantRoleToUser());
+            ActivateButton(sender);
+        }
+
+        private void btn_revoke_role_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form1_RevokeRolecs());
+            ActivateButton(sender);
         }
     }
 }

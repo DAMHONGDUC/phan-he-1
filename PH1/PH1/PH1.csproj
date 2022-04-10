@@ -46,10 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form_GrantPrivileges.cs">
+    <Compile Include="Sources\Form1_RevokeRolecs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_GrantPrivileges.Designer.cs">
+    <Compile Include="Sources\Form1_RevokeRolecs.Designer.cs">
+      <DependentUpon>Form1_RevokeRolecs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\Form_GrantRoleToUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Form_GrantRoleToUser.Designer.cs">
+      <DependentUpon>Form_GrantRoleToUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\Form_GrantPrivileges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Form_GrantPrivileges.Designer.cs">
       <DependentUpon>Form_GrantPrivileges.cs</DependentUpon>
     </Compile>
     <Compile Include="Sources\Form_Main.cs">
@@ -66,7 +78,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form_GrantPrivileges.resx">
+    <EmbeddedResource Include="Sources\Form1_RevokeRolecs.resx">
+      <DependentUpon>Form1_RevokeRolecs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Form_GrantPrivileges.resx">
       <DependentUpon>Form_GrantPrivileges.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -78,6 +93,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Sources\Form_GrantRoleToUser.resx">
+      <DependentUpon>Form_GrantRoleToUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sources\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
