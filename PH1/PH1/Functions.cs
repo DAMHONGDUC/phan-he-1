@@ -4,44 +4,103 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
+using System.Data;
 
 namespace PH1
 {
     public class Functions
     {
-        protected static OracleConnection _conn = null;
+        public static OracleConnection Con;
+        private static string host_name = @"DESKTOP-JBH7I57";
 
-        //Data Source = IP:Port/Database name (SID)
-        //UserID = username
-        //Password = password
         public static void InitConnection(String username, String password, String dbName)
-        {
-            String connectionString = $"Data Source=localhost:1521/{dbName};Persist Security Info=True;User ID = {username}; Password={password}";
+        {           
+            String connectionString = @"Data Source=" + host_name + ";User ID=U_JohnSena;Password=1";
 
-            OracleConnection connection = null;
+            Con = new OracleConnection();
+            Con.ConnectionString = connectionString;         
+
             try
             {
-                connection = new OracleConnection(connectionString);
-                _conn = connection;
-                _conn.Open();
-                _conn.Close();
-                dbaUsername = username;
+                //Mở kết nối
+                Con.Open();
+
+                ////Kiểm tra kết nối
+                //if (Con.State == ConnectionState.Open)
+                //{
+                //    MessageBox.Show("Kết nối DB thành công");
+                //}
+
             }
             catch (OracleException ex)
             {
-                _conn = null;
+                Con = null;
                 throw new Exception(ex.Message);
-            }
-
+                MessageBox.Show("Không thể kết nối với DB");
+            }         
         }
 
-
-        protected static String dbaUsername;
-
-        public String DBAUsername
+        public static void Disconnect()
         {
-            get { return dbaUsername.ToUpper(); }
-            set { dbaUsername = value; }
+            if (Con.State == ConnectionState.Open)
+            {
+                //Đóng kết nối
+                Con.Close();
+
+                //Giải phóng tài nguyên
+                Con.Dispose();
+                Con = null;
+
+                //MessageBox.Show("Đóng kết nối với DB");
+            }
+        }
+
+        public static void RunSQL(string sql) // chạy câu lệnh sql
+        {
+            OracleCommand cmd = new OracleCommand();
+
+            //Gán kết nối
+            cmd.Connection = Con;
+
+            //Gán lệnh SQL
+            cmd.CommandText = sql;
+
+            //Thực hiện câu lệnh SQL
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            //Giải phóng bộ nhớ
+            cmd.Dispose();
+            cmd = null;
+        }
+
+        public static DataTable GetDataToTable(string sql) //Lấy dữ liệu đổ vào bảng
+        {
+            //OracleDataAdapter dap = new OracleDataAdapter();
+            //dap.SelectCommand = new OracleCommand();
+
+            ////Kết nối cơ sở dữ liệu
+            //dap.SelectCommand.Connection = Functions.Con;
+            //dap.SelectCommand.CommandText = sql;
+
+            //DataTable table = new DataTable();
+            //dap.Fill(table);
+            //return table;
+            OracleCommand command = new OracleCommand();
+            command.CommandText = sql;
+            command.Connection = Con;
+
+            OracleDataAdapter adapter = new OracleDataAdapter(command);
+            DataTable dataTable = new DataTable(); //create a new table
+            adapter.Fill(dataTable);
+
+            return dataTable;
         }
     }
 }
