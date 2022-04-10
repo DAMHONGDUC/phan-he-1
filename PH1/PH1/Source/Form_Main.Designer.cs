@@ -65,7 +65,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(159, 853);
+            this.panelMenu.Size = new System.Drawing.Size(181, 853);
             this.panelMenu.TabIndex = 0;
             // 
             // button10
@@ -78,7 +78,7 @@
             this.button10.ForeColor = System.Drawing.Color.White;
             this.button10.Location = new System.Drawing.Point(0, 729);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(159, 75);
+            this.button10.Size = new System.Drawing.Size(181, 75);
             this.button10.TabIndex = 33;
             this.button10.Text = "Revoke PrivilegesRole Of User";
             this.button10.UseVisualStyleBackColor = false;
@@ -93,7 +93,7 @@
             this.button9.ForeColor = System.Drawing.Color.White;
             this.button9.Location = new System.Drawing.Point(0, 654);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(159, 75);
+            this.button9.Size = new System.Drawing.Size(181, 75);
             this.button9.TabIndex = 32;
             this.button9.Text = "Grant Role To User";
             this.button9.UseVisualStyleBackColor = false;
@@ -108,7 +108,7 @@
             this.btn_grantPrivileges.ForeColor = System.Drawing.Color.White;
             this.btn_grantPrivileges.Location = new System.Drawing.Point(0, 579);
             this.btn_grantPrivileges.Name = "btn_grantPrivileges";
-            this.btn_grantPrivileges.Size = new System.Drawing.Size(159, 75);
+            this.btn_grantPrivileges.Size = new System.Drawing.Size(181, 75);
             this.btn_grantPrivileges.TabIndex = 31;
             this.btn_grantPrivileges.Text = "Grant Privileges To User/Role";
             this.btn_grantPrivileges.UseVisualStyleBackColor = false;
@@ -124,7 +124,7 @@
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.Location = new System.Drawing.Point(0, 520);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(159, 59);
+            this.button7.Size = new System.Drawing.Size(181, 59);
             this.button7.TabIndex = 30;
             this.button7.Text = "Delete Role";
             this.button7.UseVisualStyleBackColor = false;
@@ -139,7 +139,7 @@
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.Location = new System.Drawing.Point(0, 461);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(159, 59);
+            this.button6.Size = new System.Drawing.Size(181, 59);
             this.button6.TabIndex = 29;
             this.button6.Text = "Add Role";
             this.button6.UseVisualStyleBackColor = false;
@@ -154,7 +154,7 @@
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Location = new System.Drawing.Point(0, 402);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(159, 59);
+            this.button5.Size = new System.Drawing.Size(181, 59);
             this.button5.TabIndex = 28;
             this.button5.Text = "Update User";
             this.button5.UseVisualStyleBackColor = false;
@@ -169,7 +169,7 @@
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(0, 343);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(159, 59);
+            this.button4.Size = new System.Drawing.Size(181, 59);
             this.button4.TabIndex = 27;
             this.button4.Text = "Delete User";
             this.button4.UseVisualStyleBackColor = false;
@@ -184,7 +184,7 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(0, 284);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(159, 59);
+            this.button3.Size = new System.Drawing.Size(181, 59);
             this.button3.TabIndex = 26;
             this.button3.Text = "Add User";
             this.button3.UseVisualStyleBackColor = false;
@@ -199,7 +199,7 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(0, 225);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 59);
+            this.button2.Size = new System.Drawing.Size(181, 59);
             this.button2.TabIndex = 25;
             this.button2.Text = "Check Privileges ";
             this.button2.UseVisualStyleBackColor = false;
@@ -214,7 +214,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(0, 166);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 59);
+            this.button1.Size = new System.Drawing.Size(181, 59);
             this.button1.TabIndex = 24;
             this.button1.Text = "Users List";
             this.button1.UseVisualStyleBackColor = false;
@@ -228,14 +228,14 @@
             this.panel_username.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_username.Location = new System.Drawing.Point(0, 0);
             this.panel_username.Name = "panel_username";
-            this.panel_username.Size = new System.Drawing.Size(159, 166);
+            this.panel_username.Size = new System.Drawing.Size(181, 166);
             this.panel_username.TabIndex = 2;
             // 
             // btn_logout
             // 
             this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(187)))), ((int)(((byte)(241)))));
             this.btn_logout.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_logout.Location = new System.Drawing.Point(21, 115);
+            this.btn_logout.Location = new System.Drawing.Point(31, 115);
             this.btn_logout.Name = "btn_logout";
             this.btn_logout.Size = new System.Drawing.Size(118, 37);
             this.btn_logout.TabIndex = 9;
@@ -265,9 +265,9 @@
             // 
             this.panelChildForm_KH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm_KH.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panelChildForm_KH.Location = new System.Drawing.Point(159, 0);
+            this.panelChildForm_KH.Location = new System.Drawing.Point(181, 0);
             this.panelChildForm_KH.Name = "panelChildForm_KH";
-            this.panelChildForm_KH.Size = new System.Drawing.Size(923, 853);
+            this.panelChildForm_KH.Size = new System.Drawing.Size(901, 853);
             this.panelChildForm_KH.TabIndex = 1;
             // 
             // Form_Main

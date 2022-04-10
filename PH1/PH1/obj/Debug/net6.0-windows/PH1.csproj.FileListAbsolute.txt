@@ -35,3 +35,9 @@ D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.pdb
 D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.genruntimeconfig.cache
 D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\ref\PH1.dll
 D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.Form_GrantPrivileges.resources
+D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\bin\Debug\net6.0-windows\Oracle.ManagedDataAccess.dll
+D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\bin\Debug\net6.0-windows\System.DirectoryServices.Protocols.dll
+D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\bin\Debug\net6.0-windows\runtimes\linux\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
+D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\bin\Debug\net6.0-windows\runtimes\osx\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
+D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
+D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.csproj.CopyComplete
