@@ -13,9 +13,10 @@ namespace PH1
     public partial class Form_Login : Form
     {
         Thread t;
+        String username = "", password = "", dbname = "";
         public Form_Login()
         {
-            InitializeComponent();
+            InitializeComponent();          
         }
 
         // xử lí mở form main
@@ -26,20 +27,30 @@ namespace PH1
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+            // xử lí login
+            username = txtbox_usename.Text.Trim();
+            password = txtbox_password.Text.Trim();
+            dbname = txtbox_dbname.Text.Trim();
+
+            Login(username, password, dbname);
+
+            // xử lí mở main
             this.Close();
             t = new Thread(open_FormMain);
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void Login(String username, String password, String dbName)
         {
-
-        }
-
-        private void Form_Login_Load(object sender, EventArgs e)
-        {
-
+            try
+            {            
+                Functions.InitConnection(username, password, dbName);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

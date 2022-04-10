@@ -30,9 +30,9 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtbox_usename = new System.Windows.Forms.TextBox();
+            this.txtbox_password = new System.Windows.Forms.TextBox();
+            this.txtbox_dbname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,30 +60,29 @@
             this.dataGridView1.Size = new System.Drawing.Size(448, 2);
             this.dataGridView1.TabIndex = 1;
             // 
-            // textBox1
+            // txtbox_usename
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(66, 148);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(324, 37);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtbox_usename.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtbox_usename.Location = new System.Drawing.Point(66, 148);
+            this.txtbox_usename.Name = "txtbox_usename";
+            this.txtbox_usename.Size = new System.Drawing.Size(324, 37);
+            this.txtbox_usename.TabIndex = 2;
             // 
-            // textBox2
+            // txtbox_password
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(66, 228);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(324, 37);
-            this.textBox2.TabIndex = 3;
+            this.txtbox_password.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtbox_password.Location = new System.Drawing.Point(66, 228);
+            this.txtbox_password.Name = "txtbox_password";
+            this.txtbox_password.Size = new System.Drawing.Size(324, 37);
+            this.txtbox_password.TabIndex = 3;
             // 
-            // textBox3
+            // txtbox_dbname
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(66, 322);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(324, 37);
-            this.textBox3.TabIndex = 4;
+            this.txtbox_dbname.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtbox_dbname.Location = new System.Drawing.Point(66, 322);
+            this.txtbox_dbname.Name = "txtbox_dbname";
+            this.txtbox_dbname.Size = new System.Drawing.Size(324, 37);
+            this.txtbox_dbname.TabIndex = 4;
             // 
             // label2
             // 
@@ -137,14 +136,13 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtbox_dbname);
+            this.Controls.Add(this.txtbox_password);
+            this.Controls.Add(this.txtbox_usename);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "Form_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.Form_Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -155,9 +153,9 @@
 
         private Label label1;
         private DataGridView dataGridView1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtbox_usename;
+        private TextBox txtbox_password;
+        private TextBox txtbox_dbname;
         private Label label2;
         private Label label3;
         private Label label4;
