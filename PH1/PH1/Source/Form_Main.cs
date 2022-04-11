@@ -13,9 +13,15 @@ namespace PH1
     public partial class Form_Main : Form
     {
         Thread t;
-        public Form_Main()
+        String username = "", password = "";
+        public Form_Main(String un, String pw)
         {
+            this.username = un;
+            this.password = pw;
+
             InitializeComponent();
+
+            label_username.Text = username;
         }
 
         // mở 1 form con
@@ -72,8 +78,8 @@ namespace PH1
         {
             int y = (panel_username.Height / 2) - (label_username.Height / 2);
             int x = (panel_username.Width / 2) - (label_username.Width / 2);
-            label_username.Location = new Point(x, y+5);
-            label_welcome.Location = new Point(x,y-40);
+            label_username.Location = new Point(x, y-15);
+           // label_welcome.Location = new Point(x,y-40);
         }
 
         private void Form_Main_Load(object sender, EventArgs e)
@@ -98,6 +104,18 @@ namespace PH1
         private void Form_Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             Functions.Disconnect();
+        }
+
+        private void btn_revokePrivileges_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_RevokeRolecs());
+            ActivateButton(sender);
+        }
+
+        private void btn_grantRole_toUser_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_GrantRoleToUser());
+            ActivateButton(sender);
         }
     }
 }

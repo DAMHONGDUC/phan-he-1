@@ -41,3 +41,5 @@ D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\bin\Debug\net6.0-windows\runtimes\linux\lib\
 D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\bin\Debug\net6.0-windows\runtimes\osx\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
 D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
 D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.csproj.CopyComplete
+D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.Form_RevokeRolecs.resources
+D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.Form_GrantRoleToUser.resources

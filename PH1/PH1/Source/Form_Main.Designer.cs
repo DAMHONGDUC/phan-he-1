@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btn_revokePrivileges = new System.Windows.Forms.Button();
+            this.btn_grantRole_toUser = new System.Windows.Forms.Button();
             this.btn_grantPrivileges = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -42,7 +42,6 @@
             this.panel_username = new System.Windows.Forms.Panel();
             this.btn_logout = new System.Windows.Forms.Button();
             this.label_username = new System.Windows.Forms.Label();
-            this.label_welcome = new System.Windows.Forms.Label();
             this.panelChildForm_KH = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panel_username.SuspendLayout();
@@ -51,8 +50,8 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panelMenu.Controls.Add(this.button10);
-            this.panelMenu.Controls.Add(this.button9);
+            this.panelMenu.Controls.Add(this.btn_revokePrivileges);
+            this.panelMenu.Controls.Add(this.btn_grantRole_toUser);
             this.panelMenu.Controls.Add(this.btn_grantPrivileges);
             this.panelMenu.Controls.Add(this.button7);
             this.panelMenu.Controls.Add(this.button6);
@@ -68,35 +67,37 @@
             this.panelMenu.Size = new System.Drawing.Size(181, 853);
             this.panelMenu.TabIndex = 0;
             // 
-            // button10
+            // btn_revokePrivileges
             // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.button10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(0, 729);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(181, 75);
-            this.button10.TabIndex = 33;
-            this.button10.Text = "Revoke PrivilegesRole Of User";
-            this.button10.UseVisualStyleBackColor = false;
+            this.btn_revokePrivileges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btn_revokePrivileges.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_revokePrivileges.FlatAppearance.BorderSize = 0;
+            this.btn_revokePrivileges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_revokePrivileges.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_revokePrivileges.ForeColor = System.Drawing.Color.White;
+            this.btn_revokePrivileges.Location = new System.Drawing.Point(0, 729);
+            this.btn_revokePrivileges.Name = "btn_revokePrivileges";
+            this.btn_revokePrivileges.Size = new System.Drawing.Size(181, 99);
+            this.btn_revokePrivileges.TabIndex = 33;
+            this.btn_revokePrivileges.Text = "Revoke PrivilegesRole From User/Role";
+            this.btn_revokePrivileges.UseVisualStyleBackColor = false;
+            this.btn_revokePrivileges.Click += new System.EventHandler(this.btn_revokePrivileges_Click);
             // 
-            // button9
+            // btn_grantRole_toUser
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(0, 654);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(181, 75);
-            this.button9.TabIndex = 32;
-            this.button9.Text = "Grant Role To User";
-            this.button9.UseVisualStyleBackColor = false;
+            this.btn_grantRole_toUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btn_grantRole_toUser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_grantRole_toUser.FlatAppearance.BorderSize = 0;
+            this.btn_grantRole_toUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_grantRole_toUser.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_grantRole_toUser.ForeColor = System.Drawing.Color.White;
+            this.btn_grantRole_toUser.Location = new System.Drawing.Point(0, 654);
+            this.btn_grantRole_toUser.Name = "btn_grantRole_toUser";
+            this.btn_grantRole_toUser.Size = new System.Drawing.Size(181, 75);
+            this.btn_grantRole_toUser.TabIndex = 32;
+            this.btn_grantRole_toUser.Text = "Grant Role To User";
+            this.btn_grantRole_toUser.UseVisualStyleBackColor = false;
+            this.btn_grantRole_toUser.Click += new System.EventHandler(this.btn_grantRole_toUser_Click);
             // 
             // btn_grantPrivileges
             // 
@@ -224,7 +225,6 @@
             this.panel_username.BackColor = System.Drawing.Color.Gainsboro;
             this.panel_username.Controls.Add(this.btn_logout);
             this.panel_username.Controls.Add(this.label_username);
-            this.panel_username.Controls.Add(this.label_welcome);
             this.panel_username.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_username.Location = new System.Drawing.Point(0, 0);
             this.panel_username.Name = "panel_username";
@@ -245,21 +245,13 @@
             // 
             // label_username
             // 
-            this.label_username.Location = new System.Drawing.Point(31, 76);
+            this.label_username.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label_username.Location = new System.Drawing.Point(12, 76);
             this.label_username.Name = "label_username";
-            this.label_username.Size = new System.Drawing.Size(92, 28);
+            this.label_username.Size = new System.Drawing.Size(163, 28);
             this.label_username.TabIndex = 1;
-            this.label_username.Text = "Duc Dam";
+            this.label_username.Text = "No User";
             this.label_username.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_welcome
-            // 
-            this.label_welcome.AutoSize = true;
-            this.label_welcome.Location = new System.Drawing.Point(30, 30);
-            this.label_welcome.Name = "label_welcome";
-            this.label_welcome.Size = new System.Drawing.Size(93, 28);
-            this.label_welcome.TabIndex = 1;
-            this.label_welcome.Text = "Welcome";
             // 
             // panelChildForm_KH
             // 
@@ -287,7 +279,6 @@
             this.Load += new System.EventHandler(this.Form_Main_Load);
             this.panelMenu.ResumeLayout(false);
             this.panel_username.ResumeLayout(false);
-            this.panel_username.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -297,7 +288,6 @@
         private Panel panelMenu;
         private Panel panel_username;
         private Label label_username;
-        private Label label_welcome;
         private Button button7;
         private Button button6;
         private Button button5;
@@ -305,8 +295,8 @@
         private Button button3;
         private Button button2;
         private Button button1;
-        private Button button10;
-        private Button button9;
+        private Button btn_revokePrivileges;
+        private Button btn_grantRole_toUser;
         private Button btn_grantPrivileges;
         private Panel panelChildForm_KH;
         private Button btn_logout;

@@ -12,18 +12,48 @@ namespace PH1
 {
     public partial class Form_GrantPrivileges : Form
     {
-        DataTable dtb;
+        DataTable dtTableName = new DataTable();
+        // add column to datatable  
+
         public Form_GrantPrivileges()
         {
             InitializeComponent();
-            loadData();
+            create_datagridview();
         }
 
-        private void loadData()
+        private void create_datagridview()
         {
-            String sql = "SELECT * FROM U_AD.DOCGIA";
-            dtb = Functions.GetDataToTable(sql);
-            dataGridView1.DataSource = dtb;
+            // set font 
+            dgv_privileges.Font = new Font("Segoe UI", 12);
+
+            // lấy tên bảng         
+            dtTableName.Columns.Add("TableName", typeof(string));
+
+            dtTableName.Rows.Add("Bang 1");
+            dtTableName.Rows.Add("Bang 2");
+            dtTableName.Rows.Add("Bang 3");
+            dtTableName.Rows.Add("Bang 4");
+
+            dgv_privileges.DataSource = dtTableName;
+
+            // tạo các cột
+            string[] columnName = new string[] { "Select", "Select (WITH GRANT OPTION)",
+                "Insert", "Insert (WITH GRANT OPTION)"
+            ,"Update", "Update (WITH GRANT OPTION)"
+            ,"Delete", "Delete (WITH GRANT OPTION)" };
+
+            for (int i = 0; i < columnName.Length; i++)
+            {
+                DataGridViewCheckBoxColumn dgvCmb = new DataGridViewCheckBoxColumn();
+                dgvCmb.ValueType = typeof(bool);
+                dgvCmb.Name = "Chk";
+                dgvCmb.HeaderText = columnName[i];
+
+                dgv_privileges.Columns.Add(dgvCmb);
+            }
+
+            //Không cho người dùng thêm dữ liệu trực tiếp
+            dgv_privileges.AllowUserToAddRows = false;
         }
     }
 }

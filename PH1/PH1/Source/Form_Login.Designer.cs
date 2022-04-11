@@ -32,10 +32,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtbox_usename = new System.Windows.Forms.TextBox();
             this.txtbox_password = new System.Windows.Forms.TextBox();
-            this.txtbox_dbname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.btn_login = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +61,7 @@
             // txtbox_usename
             // 
             this.txtbox_usename.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtbox_usename.Location = new System.Drawing.Point(66, 148);
+            this.txtbox_usename.Location = new System.Drawing.Point(66, 163);
             this.txtbox_usename.Name = "txtbox_usename";
             this.txtbox_usename.Size = new System.Drawing.Size(324, 37);
             this.txtbox_usename.TabIndex = 2;
@@ -71,24 +69,17 @@
             // txtbox_password
             // 
             this.txtbox_password.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtbox_password.Location = new System.Drawing.Point(66, 228);
+            this.txtbox_password.Location = new System.Drawing.Point(66, 276);
             this.txtbox_password.Name = "txtbox_password";
             this.txtbox_password.Size = new System.Drawing.Size(324, 37);
             this.txtbox_password.TabIndex = 3;
-            // 
-            // txtbox_dbname
-            // 
-            this.txtbox_dbname.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtbox_dbname.Location = new System.Drawing.Point(66, 322);
-            this.txtbox_dbname.Name = "txtbox_dbname";
-            this.txtbox_dbname.Size = new System.Drawing.Size(324, 37);
-            this.txtbox_dbname.TabIndex = 4;
+            this.txtbox_password.UseSystemPasswordChar = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(60, 117);
+            this.label2.Location = new System.Drawing.Point(60, 132);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 28);
             this.label2.TabIndex = 5;
@@ -98,28 +89,18 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(60, 197);
+            this.label3.Location = new System.Drawing.Point(60, 245);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 28);
             this.label3.TabIndex = 6;
             this.label3.Text = "Password";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(60, 291);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 28);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Database Name";
             // 
             // btn_login
             // 
             this.btn_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(187)))), ((int)(((byte)(241)))));
             this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_login.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_login.Location = new System.Drawing.Point(143, 403);
+            this.btn_login.Location = new System.Drawing.Point(146, 368);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(151, 55);
             this.btn_login.TabIndex = 8;
@@ -133,10 +114,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(438, 498);
             this.Controls.Add(this.btn_login);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtbox_dbname);
             this.Controls.Add(this.txtbox_password);
             this.Controls.Add(this.txtbox_usename);
             this.Controls.Add(this.dataGridView1);
@@ -155,10 +134,8 @@
         private DataGridView dataGridView1;
         private TextBox txtbox_usename;
         private TextBox txtbox_password;
-        private TextBox txtbox_dbname;
         private Label label2;
         private Label label3;
-        private Label label4;
         private Button btn_login;
     }
 }

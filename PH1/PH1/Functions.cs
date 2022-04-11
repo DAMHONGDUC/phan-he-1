@@ -13,9 +13,9 @@ namespace PH1
         public static OracleConnection Con;
         private static string host_name = @"DESKTOP-JBH7I57";
 
-        public static void InitConnection(String username, String password, String dbName)
+        public static void InitConnection(String username, String password)
         {           
-            String connectionString = @"Data Source=" + host_name + ";User ID=U_JohnSena;Password=1";
+            String connectionString = @"Data Source=" + host_name + ";User ID=" + username + ";Password=" + password + "";
 
             Con = new OracleConnection();
             Con.ConnectionString = connectionString;         
@@ -81,17 +81,7 @@ namespace PH1
         }
 
         public static DataTable GetDataToTable(string sql) //Lấy dữ liệu đổ vào bảng
-        {
-            //OracleDataAdapter dap = new OracleDataAdapter();
-            //dap.SelectCommand = new OracleCommand();
-
-            ////Kết nối cơ sở dữ liệu
-            //dap.SelectCommand.Connection = Functions.Con;
-            //dap.SelectCommand.CommandText = sql;
-
-            //DataTable table = new DataTable();
-            //dap.Fill(table);
-            //return table;
+        {          
             OracleCommand command = new OracleCommand();
             command.CommandText = sql;
             command.Connection = Con;
