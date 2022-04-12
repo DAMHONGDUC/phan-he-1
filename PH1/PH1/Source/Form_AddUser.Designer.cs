@@ -32,11 +32,15 @@
             this.btn_login = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btn_login);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textBox1);
@@ -52,12 +56,12 @@
             this.btn_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(187)))), ((int)(((byte)(241)))));
             this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_login.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_login.Location = new System.Drawing.Point(475, 196);
+            this.btn_login.Location = new System.Drawing.Point(277, 331);
             this.btn_login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(108, 28);
             this.btn_login.TabIndex = 9;
-            this.btn_login.Text = "Thêm";
+            this.btn_login.Text = "Thêm mới";
             this.btn_login.UseVisualStyleBackColor = false;
             // 
             // label1
@@ -80,6 +84,26 @@
             this.textBox1.Size = new System.Drawing.Size(228, 31);
             this.textBox1.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(232, 240);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(118, 21);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Nhập Password";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox2.Location = new System.Drawing.Point(232, 273);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(228, 31);
+            this.textBox2.TabIndex = 11;
+            // 
             // Form_AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -100,5 +124,7 @@
         private Button btn_login;
         private Label label1;
         private TextBox textBox1;
+        private TextBox textBox2;
+        private Label label2;
     }
 }
