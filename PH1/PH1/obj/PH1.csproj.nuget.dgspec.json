@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\HK2 nam 3\\ATBM\\phan-he-1\\PH1\\PH1\\PH1.csproj": {}
+    "F:\\code\\phan-he-1\\PH1\\PH1\\PH1.csproj": {}
   },
   "projects": {
-    "D:\\HK2 nam 3\\ATBM\\phan-he-1\\PH1\\PH1\\PH1.csproj": {
+    "F:\\code\\phan-he-1\\PH1\\PH1\\PH1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\HK2 nam 3\\ATBM\\phan-he-1\\PH1\\PH1\\PH1.csproj",
+        "projectUniqueName": "F:\\code\\phan-he-1\\PH1\\PH1\\PH1.csproj",
         "projectName": "PH1",
-        "projectPath": "D:\\HK2 nam 3\\ATBM\\phan-he-1\\PH1\\PH1\\PH1.csproj",
-        "packagesPath": "C:\\Users\\hongd\\.nuget\\packages\\",
-        "outputPath": "D:\\HK2 nam 3\\ATBM\\phan-he-1\\PH1\\PH1\\obj\\",
+        "projectPath": "F:\\code\\phan-he-1\\PH1\\PH1\\PH1.csproj",
+        "packagesPath": "C:\\Users\\letha\\.nuget\\packages\\",
+        "outputPath": "F:\\code\\phan-he-1\\PH1\\PH1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\hongd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\letha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
