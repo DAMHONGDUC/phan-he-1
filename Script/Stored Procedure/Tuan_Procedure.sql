@@ -4,7 +4,7 @@
 -- Procedure gan quyen tren bang bat ky
 -- drop procedure sp_grantPrivilegeOnTable;
 create or replace procedure sp_grantPrivilegeOnTable
-(table_name in varchar2, userOrRole_name in varchar2, priv varchar2, grant_option in char)
+(table_name in varchar2, userOrRole_name in varchar2, priv in varchar2, grant_option in varchar2)
 as
     grant_statement varchar2(255);
     grant_statement_opt varchar2(255);
@@ -23,7 +23,7 @@ end;
 -- Procedure thu hoi quyen tren bang bat ky
 -- drop procedure sp_revokePrivilegeOnTable;
 create or replace procedure sp_revokePrivilegeOnTable
-(table_name in varchar2, userOrRole_name in varchar2, priv varchar2)
+(table_name in varchar2, userOrRole_name in varchar2, priv in varchar2)
 as
     revoke_statement varchar2(255);
 begin
@@ -64,7 +64,7 @@ end;
 -- drop procedure sp_checkIfPrivilegeBelongToUser;
 -- LUU Y: Ten userTable_name, user_priv phai IN HOA !!!!
 create or replace procedure sp_checkIfPrivilegeBelongToUser
-(user_name in varchar2, userTable_name in varchar2, user_priv in varchar2, checkResult out boolean)
+(user_name in varchar2, userTable_name in varchar2, user_priv in varchar2, checkResult out varchar2)
 as
     row_count number;
 begin
@@ -72,10 +72,10 @@ begin
     and table_name = userTable_name and privilege = user_priv;
     if row_count <> 0
     then
-        checkResult := True;
+        checkResult := 'Yes';
         return;
     else
-        checkResult := False;
+        checkResult := 'No';
     end if;
 end;
 /
@@ -85,7 +85,7 @@ end;
 -- drop procedure sp_checkIfPrivilegeBelongToRole;
 -- LUU Y: Ten roleTable_name, role_priv phai IN HOA !!!!
 create or replace procedure sp_checkIfPrivilegeBelongToRole
-(role_name in varchar2, roleTable_name in varchar2, role_priv in varchar2, checkResult out boolean)
+(role_name in varchar2, roleTable_name in varchar2, role_priv in varchar2, checkResult out varchar2)
 as
     row_count number;
 begin
@@ -93,10 +93,10 @@ begin
     and table_name = roleTable_name and privilege = role_priv;
     if row_count <> 0
     then
-        checkResult := True;
+        checkResult := 'Yes';
         return;
     else
-        checkResult := False;
+        checkResult := 'No';
     end if;
 end;
 /

@@ -30,3 +30,37 @@ D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\refint\PH1.dll
 D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.pdb
 D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.genruntimeconfig.cache
 D:\HK2 nam 3\ATBM\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\ref\PH1.dll
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\bin\Debug\net6.0-windows\PH1.exe
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\bin\Debug\net6.0-windows\PH1.deps.json
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\bin\Debug\net6.0-windows\PH1.runtimeconfig.json
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\bin\Debug\net6.0-windows\PH1.dll
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\bin\Debug\net6.0-windows\PH1.pdb
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\bin\Debug\net6.0-windows\Oracle.ManagedDataAccess.dll
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\bin\Debug\net6.0-windows\System.DirectoryServices.Protocols.dll
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\bin\Debug\net6.0-windows\runtimes\linux\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\bin\Debug\net6.0-windows\runtimes\osx\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.csproj.AssemblyReference.cache
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.Form_AddRole.resources
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.Form_AddUser.resources
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.Source.Form_CheckPrivilege.resources
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.Form_DeleteRole.resources
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.Form_DeleteUser.resources
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.Form_EditUser.resources
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.Form_GrantPrivileges.resources
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.Form_GrantRoleToUser.resources
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.Form_Login.resources
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.Form_Main.resources
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.Form_RevokeRolecs.resources
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.Source.Form_ShowUsers.resources
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.csproj.GenerateResource.cache
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.GeneratedMSBuildEditorConfig.editorconfig
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.AssemblyInfoInputs.cache
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.AssemblyInfo.cs
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.csproj.CoreCompileInputs.cache
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.csproj.CopyComplete
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.dll
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\refint\PH1.dll
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.pdb
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.genruntimeconfig.cache
+D:\NAT project\WEB projects\Test Github\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\ref\PH1.dll
