@@ -11,8 +11,12 @@ namespace PH1
     public class Functions
     {
         public static OracleConnection Con;
+
         private static string host_name = @"DESKTOP-JBH7I57";
         //private static string host_name = @"DESKTOP-254FJBP";
+
+        //private static string host_name = @"DESKTOP-2J1CNMG";
+
 
         public static void InitConnection(String username, String password)
         {           

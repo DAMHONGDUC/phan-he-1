@@ -209,6 +209,7 @@
             this.button2.TabIndex = 25;
             this.button2.Text = "Check Privileges ";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button_To_FormCheckPrivileges);
             // 
             // button1
             // 
@@ -224,6 +225,7 @@
             this.button1.TabIndex = 24;
             this.button1.Text = "Users List";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button_Form_ShowUsers);
             // 
             // panel_username
             // 
@@ -269,7 +271,7 @@
             // 
             // Form_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1082, 853);
