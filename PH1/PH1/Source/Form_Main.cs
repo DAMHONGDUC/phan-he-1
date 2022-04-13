@@ -112,6 +112,36 @@ namespace PH1
             ActivateButton(sender);
         }
 
+        private void btn_adduser_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_AddUser());
+            ActivateButton(sender);
+        }
+
+        private void btn_deleteUser_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_DeleteUser());
+            ActivateButton(sender);
+        }
+        
+        private void btn_addrole_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_AddRole());
+            ActivateButton(sender);
+        }
+
+        private void btn_deleteRole_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_DeleteRole());
+            ActivateButton(sender);
+        }
+
+        private void btn_EditUser_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_EditUser());
+            ActivateButton(sender);
+        }
+
         private void btn_grantRole_toUser_Click(object sender, EventArgs e)
         {
             openChildForm(new Form_GrantRoleToUser());
