@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PH1.Source;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -112,10 +113,30 @@ namespace PH1
             ActivateButton(sender);
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_GrantRoleToUser());
+            ActivateButton(sender);
+        }
+
+        private void button_Form_ShowUsers(object sender, EventArgs e)
+        {
+            openChildForm(new Form_ShowUsers());
+            ActivateButton(sender);
+        }
+
+        private void button_To_FormCheckPrivileges(object sender, EventArgs e)
+        {
+            openChildForm(new Form_CheckPrivilege());
+            ActivateButton(sender);
+        }
+
         private void btn_grantRole_toUser_Click(object sender, EventArgs e)
         {
             openChildForm(new Form_GrantRoleToUser());
             ActivateButton(sender);
         }
+
+       
     }
 }

@@ -71,3 +71,4 @@ C:\Users\nphuy\Documents\GitHub\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.p
 C:\Users\nphuy\Documents\GitHub\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.genruntimeconfig.cache
 C:\Users\nphuy\Documents\GitHub\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\ref\PH1.dll
 C:\Users\nphuy\Documents\GitHub\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.Source.Form_ShowUsers.resources
+C:\Users\nphuy\Documents\GitHub\phan-he-1\PH1\PH1\obj\Debug\net6.0-windows\PH1.Source.Form_CheckPrivilege.resources
