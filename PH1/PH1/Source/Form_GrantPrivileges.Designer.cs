@@ -45,7 +45,7 @@
             this.dgv_privileges.Name = "dgv_privileges";
             this.dgv_privileges.RowHeadersWidth = 51;
             this.dgv_privileges.RowTemplate.Height = 29;
-            this.dgv_privileges.Size = new System.Drawing.Size(997, 329);
+            this.dgv_privileges.Size = new System.Drawing.Size(997, 422);
             this.dgv_privileges.TabIndex = 0;
             // 
             // panel1
@@ -95,7 +95,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(187)))), ((int)(((byte)(241)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(404, 607);
+            this.button1.Location = new System.Drawing.Point(399, 659);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 55);
             this.button1.TabIndex = 9;
@@ -113,6 +113,7 @@
             this.Controls.Add(this.dgv_privileges);
             this.Name = "Form_GrantPrivileges";
             this.Text = "Form_GrantPrivileges";
+            this.Load += new System.EventHandler(this.Form_GrantPrivileges_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_privileges)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -13,11 +13,12 @@ namespace PH1
     public partial class Form_Main : Form
     {
         Thread t;
-        String username = "", password = "";
-        public Form_Main(String un, String pw)
+        String username = "", password = "", dbname = "";
+        public Form_Main(String un, String pw, String dn)
         {
             this.username = un;
             this.password = pw;
+            this.dbname = dn;
 
             InitializeComponent();
 
@@ -89,7 +90,7 @@ namespace PH1
 
         private void btn_grantPrivileges_Click(object sender, EventArgs e)
         {
-            openChildForm(new Form_GrantPrivileges());
+            openChildForm(new Form_GrantPrivileges(username, dbname));
             ActivateButton(sender);
         }
 

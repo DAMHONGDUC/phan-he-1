@@ -93,5 +93,32 @@ namespace PH1
 
             return dataTable;
         }
+
+        public static DataTable GetAll_TableName(String dbname) // lấy tất cả tên bảng mà thằng AD này sở hữu
+        {
+            OracleCommand command = new OracleCommand();
+            command.CommandText = $"SELECT table_name FROM dba_tables where owner = '{dbname}'";
+            command.Connection = Con;
+
+            OracleDataAdapter adapter = new OracleDataAdapter(command);
+            DataTable dataTable = new DataTable(); //create a new table
+            adapter.Fill(dataTable);
+
+            return dataTable;
+        }
+
+        public static DataTable GetPrivilegeOnTable(String username) // lất tất cả các quyền trên bảng của 1 user
+        {
+            username = username.ToUpper();
+            OracleCommand command = new OracleCommand();
+            command.CommandText = $"SELECT * FROM DBA_TAB_PRIVS WHERE GRANTEE = '{username}' AND TYPE = 'TABLE' ORDER BY TABLE_NAME";
+            command.Connection = Con;
+
+            OracleDataAdapter adapter = new OracleDataAdapter(command);
+            DataTable dataTable = new DataTable(); //create a new table
+            adapter.Fill(dataTable);
+
+            return dataTable;
+        }
     }
 }
