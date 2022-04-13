@@ -21,7 +21,7 @@ namespace PH1
             this.dbname = dn;
             InitializeComponent();        
         }
-
+      
         private void init_Data()
         {
             // set font 
@@ -54,27 +54,7 @@ namespace PH1
                 bool select = false, select_withGrantOption = false,
                     insert = false, insert_withGrantOption = false,
                     update = false, update_withGrantOption = false,
-                    delete = false, delete_withGrantOption = false;
-
-                //for (int j = 0; j < all_privilegesOnTable.Rows.Count; j++)
-                //{
-                //    String table_name = all_privilegesOnTable.Rows[j].Field<string>(2);
-                //    String privilege = all_privilegesOnTable.Rows[j].Field<string>(4);
-                //    if (table_name.Equals(all_TableName.Rows[i].Field<string>(0)))
-                //    {
-                //        if (privilege == "SELECT")
-                //            select = true;
-                //        if (privilege == "INSERT")
-                //            insert = true;
-                //        if (privilege == "UPDATE")
-                //            update = true;
-                //        if (privilege == "DELETE")
-                //            delete = true;
-                //    }
-                //}
-
-
-                //MessageBox.Show(all_privilegesOnTable.Rows.Count.ToString());
+                    delete = false, delete_withGrantOption = false;               
 
                 foreach (DataRow row in all_privilegesOnTable.Rows)
                 {
@@ -103,32 +83,7 @@ namespace PH1
             dgv_privileges.Columns[0].Width = 200;
 
             //Không cho người dùng thêm dữ liệu trực tiếp
-            dgv_privileges.AllowUserToAddRows = false;
-
-            ////// lấy tên tất cả bảng
-            //DataTable all_TableName = Functions.GetAll_TableName(dbname);
-
-            //dgv_privileges.DataSource = all_TableName;
-
-            //// tạo các cột
-            //string[] columnName = new string[] { "Select", "Select (WITH GRANT OPTION)",
-            //    "Insert", "Insert (WITH GRANT OPTION)"
-            //,"Update", "Update (WITH GRANT OPTION)"
-            //,"Delete", "Delete (WITH GRANT OPTION)" };
-
-            //for (int i = 0; i < columnName.Length; i++)
-            //{
-            //    DataGridViewCheckBoxColumn dgvCmb = new DataGridViewCheckBoxColumn();
-            //    dgvCmb.ValueType = typeof(bool);
-
-            //    dgvCmb.Name = "Chk";
-            //    dgvCmb.HeaderText = columnName[i];
-
-            //    dgv_privileges.Columns.Add(dgvCmb);
-            //}
-
-            ////Không cho người dùng thêm dữ liệu trực tiếp
-            //dgv_privileges.AllowUserToAddRows = false;
+            dgv_privileges.AllowUserToAddRows = false;           
         }
 
         private void Form_GrantPrivileges_Load(object sender, EventArgs e)

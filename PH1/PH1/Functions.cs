@@ -124,5 +124,42 @@ namespace PH1
 
             return dataTable;
         }
+
+        public static DataTable GetAllRoles()
+        {
+            OracleCommand command = new OracleCommand();
+            command.CommandText = $"Select Role, Role_ID " +
+                                  $"From user_ROLE_PRIVS US join DBA_ROLES DR ON DR.ROLE = US.GRANTED_ROLE " +
+                                  $"WHERE DR.ROLE <> 'CONNECT' AND DR.ROLE <> 'RESOURCE' AND DR.ROLE <> 'DBA'";
+            command.Connection = Con;
+
+            OracleDataAdapter adapter = new OracleDataAdapter(command);
+            DataTable dataTable = new DataTable(); //create a new table
+            adapter.Fill(dataTable);
+
+            return dataTable;
+        }
+
+        public DataTable GetAllUsers()
+        {
+            OracleCommand command = new OracleCommand();
+            command.CommandText = $"SELECT * FROM dba_users WHERE ACCOUNT_STATUS = 'OPEN' ORDER BY CREATED DESC";
+            command.Connection = Con;
+
+            OracleDataAdapter adapter;
+            DataTable dataTable;
+            try
+            {
+                adapter = new OracleDataAdapter(command);
+                dataTable = new DataTable(); //create a new table
+                adapter.Fill(dataTable);
+            }
+            catch (OracleException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return dataTable;
+        }
     }
 }
