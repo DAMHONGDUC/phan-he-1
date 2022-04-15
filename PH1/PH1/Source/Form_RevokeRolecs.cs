@@ -20,7 +20,19 @@ namespace PH1
 
         private void Fill_comboBox()
         {
+            // lấy tất cả role của username này
+            DataTable all_role = Functions.GetAllRoles();
+            foreach (DataRow row in all_role.Rows)
+            {
+                cbBox_role.Items.Add(row["ROLE"].ToString());
+            }
 
+            //// lấy tất cả user của username này
+            //DataTable all_user = Functions.GetAllUsers();
+            //foreach (DataRow row in all_user.Rows)
+            //{
+            //    cbBox_userOrrole.Items.Add(row["USERNAME"].ToString());
+            //}
         }
 
         private void Run_SP_Revoke_Privileges()

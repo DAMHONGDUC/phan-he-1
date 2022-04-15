@@ -12,7 +12,7 @@ namespace PH1
     {
         public static OracleConnection Con;
 
-        //private static string host_name = @"DESKTOP-JBH7I57";
+        private static string host_name = @"DESKTOP-JBH7I57";
         //private static string host_name = @"DESKTOP-254FJBP";
 
         //private static string host_name = @"DESKTOP-2J1CNMG";
@@ -128,9 +128,9 @@ namespace PH1
         public static DataTable GetAllRoles()
         {
             OracleCommand command = new OracleCommand();
-            command.CommandText = $"Select Role, Role_ID " +
-                                  $"From user_ROLE_PRIVS US join DBA_ROLES DR ON DR.ROLE = US.GRANTED_ROLE " +
-                                  $"WHERE DR.ROLE <> 'CONNECT' AND DR.ROLE <> 'RESOURCE' AND DR.ROLE <> 'DBA'";
+            command.CommandText = "SELECT ROLE, ROLE_ID " +
+                "FROM USER_ROLE_PRIVS US JOIN DBA_ROLES DR ON DR.ROLE = US.GRANTED_ROLE " +
+                "WHERE DR.ROLE <> 'CONNECT' AND DR.ROLE <> 'RESOURCE' AND DR.ROLE <> 'DBA'";
             command.Connection = Con;
 
             OracleDataAdapter adapter = new OracleDataAdapter(command);

@@ -98,7 +98,7 @@
             // 
             this.cbBox_userOrrole.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbBox_userOrrole.FormattingEnabled = true;
-            this.cbBox_userOrrole.Location = new System.Drawing.Point(570, 381);
+            this.cbBox_userOrrole.Location = new System.Drawing.Point(569, 381);
             this.cbBox_userOrrole.Name = "cbBox_userOrrole";
             this.cbBox_userOrrole.Size = new System.Drawing.Size(160, 36);
             this.cbBox_userOrrole.TabIndex = 25;
