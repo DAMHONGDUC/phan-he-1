@@ -239,6 +239,10 @@ namespace PH1
                 string table_name = (string)dgv_privileges.Rows[i].Cells[0].Value;
                 for (int j = 1; j < columnName.Length; j++)
                 {
+                    //Neu la quyen WITH GRANT OPTION va dang xet la Role thi bo qua
+                    if (j % 2 == 0 && checkUserOrRole == "Role")
+                        continue;
+
                     string priv = privName[j];
 
                     bool isChecked = (bool)dgv_privileges.Rows[i].Cells[j].Value;
@@ -246,7 +250,9 @@ namespace PH1
                     //Ktra xem quyen nay co thuoc ve user/role dang xet hay khong
                     string privIsExist;
                     string grant_opt;
-                    if (j % 2 == 0)
+                    if (checkUserOrRole == "Role")
+                        grant_opt = "NO";
+                    else if (j % 2 == 0)
                         grant_opt = "YES";
                     else
                         grant_opt = "NO";
@@ -270,8 +276,11 @@ namespace PH1
                     //Ktra neu nguoi dung tick quyen nay va quyen nay chua dc grant cho user/role thi tien hanh grant quyen vao
                     if (isChecked == true && privIsExist == "No")
                     {
-
-                        if (j % 2 == 0)
+                        if (checkUserOrRole == "Role")
+                        {
+                            Functions.GrantPrivilegeOnTable(table_name, userOrRole_name, priv, "");
+                        }
+                        else if (j % 2 == 0)
                         {
                             Functions.GrantPrivilegeOnTable(table_name, userOrRole_name, priv, "WITH GRANT OPTION");
                         }
