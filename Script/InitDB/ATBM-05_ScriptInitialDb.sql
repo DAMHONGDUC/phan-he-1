@@ -251,33 +251,3 @@ INSERT INTO QUANLY VALUES('DG6','U_Harper','R_Readers');
 INSERT INTO QUANLY VALUES('DG7','U_Gianna','R_Readers');
 INSERT INTO QUANLY VALUES('DG8','U_Evelyn','R_Readers');
 INSERT INTO QUANLY VALUES('DG9','U_Aria','R_Readers');
-
-
-
-
--- Phan quyen
---DROP USERS
-alter session set "_ORACLE_SCRIPT"=true;
-DROP USER U_JohnSena;
-
---DROP CAC ROLE
-DROP ROLE R_Readers;
-DROP ROLE R_Librarians;
-DROP ROLE R_Managers;
-
---TAO CAC USERS
-CREATE USER U_JohnSena IDENTIFIED BY 1;
-
---CAP QUYEN CONNECT
-GRANT CONNECT, RESOURCE TO U_JohnSena;
-
---TAO CAC ROLE
-CREATE ROLE R_Readers;
-CREATE ROLE R_Librarians;
-CREATE ROLE R_Managers;
-
---CAP QUYEN
-GRANT R_Readers TO U_JohnSena;
-
-GRANT SELECT ON U_AD.DOCGIA TO R_Readers;
-GRANT SELECT ON U_AD.QUANLY TO R_Readers;

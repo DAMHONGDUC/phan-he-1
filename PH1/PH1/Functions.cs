@@ -140,7 +140,7 @@ namespace PH1
             return dataTable;
         }
 
-        public DataTable GetAllUsers()
+        public static DataTable GetAllUsers_wasCreateByUser()
         {
             OracleCommand command = new OracleCommand();
             command.CommandText = $"SELECT * FROM dba_users WHERE ACCOUNT_STATUS = 'OPEN' ORDER BY CREATED DESC";

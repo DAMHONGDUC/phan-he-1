@@ -27,12 +27,12 @@ namespace PH1
                 cbBox_role.Items.Add(row["ROLE"].ToString());
             }
 
-            //// lấy tất cả user của username này
-            //DataTable all_user = Functions.GetAllUsers();
-            //foreach (DataRow row in all_user.Rows)
-            //{
-            //    cbBox_userOrrole.Items.Add(row["USERNAME"].ToString());
-            //}
+            // lấy tất cả user của username này
+            DataTable all_user = Functions.GetAllUsers_wasCreateByUser();
+            foreach (DataRow row in all_user.Rows)
+            {
+                cbBox_userOrrole.Items.Add(row["USERNAME"].ToString());
+            }
         }
 
         private void Run_SP_Revoke_Privileges()
