@@ -162,6 +162,33 @@ namespace PH1
             return dataTable;
         }
 
+        public static void RevokeRoleFromUser_OR_Role(String role, String user_OR_role) // thu hồi quyền
+        {
+            OracleCommand command = new OracleCommand("sp_RevokeRoleFromUser_OR_Role", Con);
+            command.CommandType = CommandType.StoredProcedure;
+
+            OracleParameter param1 = new OracleParameter("role_name", OracleDbType.Varchar2);
+            param1.Value = role;
+            OracleParameter param2 = new OracleParameter("userORrole_name", OracleDbType.Varchar2);
+            param2.Value = user_OR_role;
+
+            command.Parameters.Add(param1);
+            command.Parameters.Add(param2);
+
+            try
+            {
+                
+                command.ExecuteNonQuery();
+               
+                MessageBox.Show("Thu hoi quyen thanh cong", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);             
+            }
+            catch (OracleException ex)
+            {
+                
+                throw ex;
+            }
+        }
+
         // SP cua Tuan
         //SP kiem tra xem role co ton tai trong he thong hay khong
         public static String CheckIfUserOrRoleExist(String userOrRole_name)

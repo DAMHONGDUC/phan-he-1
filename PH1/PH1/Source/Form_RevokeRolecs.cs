@@ -35,9 +35,15 @@ namespace PH1
             }
         }
 
-        private void Run_SP_Revoke_Privileges()
+        private void Run_SP_RevokeRoleFromUser_OR_Role()
         {
+            String role = cbBox_role.Text.Trim();
+            String user_OR_role = cbBox_userOrrole.Text.Trim();
 
+            if (!role.Equals(user_OR_role))
+            {
+                Functions.RevokeRoleFromUser_OR_Role(role, user_OR_role);               
+            }
         }
 
         private void btn_xacnhan_Click(object sender, EventArgs e)
@@ -47,7 +53,7 @@ namespace PH1
                 MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);           
                 return;
             }
-            Run_SP_Revoke_Privileges();
+            Run_SP_RevokeRoleFromUser_OR_Role();
         }
     }
 }
