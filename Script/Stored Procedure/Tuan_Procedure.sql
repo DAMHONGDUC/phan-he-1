@@ -105,11 +105,11 @@ end;
 -- Procedure gan role cho user bat ky
 -- drop procedure sp_grantRoleToUser;
 create or replace procedure sp_grantRoleToUser
-(role_name in varchar2, user_name in varchar2)
+(role_name in varchar2, userOrRole_name in varchar2)
 as
     grant_statement varchar2(255);
 begin
-    grant_statement := 'grant ' || role_name || ' to ' || user_name;
+    grant_statement := 'grant ' || role_name || ' to ' || userOrRole_name;
     execute immediate grant_statement; 
 end;
 /

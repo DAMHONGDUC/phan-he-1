@@ -12,7 +12,7 @@ namespace PH1
     {
         public static OracleConnection Con;
 
-        private static string host_name = @"DESKTOP-JBH7I57";
+        //private static string host_name = @"DESKTOP-JBH7I57";
         //private static string host_name = @"DESKTOP-254FJBP";
 
         //private static string host_name = @"DESKTOP-2J1CNMG";
@@ -361,6 +361,34 @@ namespace PH1
 
             command.ExecuteNonQuery();
             */
+        }
+
+        //SP gan role cho user/role
+        public static void grantRoleToUser_OR_Role(String role, String user_OR_role)
+        {
+            OracleCommand command = new OracleCommand("sp_grantRoleToUser", Con);
+            command.CommandType = CommandType.StoredProcedure;
+
+            OracleParameter param1 = new OracleParameter("role_name", OracleDbType.Varchar2);
+            param1.Value = role;
+            OracleParameter param2 = new OracleParameter("userOrRole_name", OracleDbType.Varchar2);
+            param2.Value = user_OR_role;
+
+            command.Parameters.Add(param1);
+            command.Parameters.Add(param2);
+
+            try
+            {
+
+                command.ExecuteNonQuery();
+
+                MessageBox.Show("Cap quyen thanh cong", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (OracleException ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }
