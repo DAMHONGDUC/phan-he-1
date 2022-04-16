@@ -59,7 +59,7 @@ namespace PH1.Source
 
         private void LoadData_CheckPrivilegeOnView()
         {
-            name = NameUserOrRole.Text.Trim().ToString();
+            name = NameUserOrRole.Text.Trim().ToString().ToUpper();
             string sql = "SELECT * FROM DBA_TAB_PRIVS WHERE GRANTEE =" + "'" + name + "'" + " AND TYPE = 'VIEW' ORDER BY TABLE_NAME";
             dtTableName = Functions.GetDataToTable(sql);
             dataGridView_CheckPrivilege.DataSource = dtTableName;

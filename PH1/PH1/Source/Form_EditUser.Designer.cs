@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btn_Finish = new System.Windows.Forms.Button();
+            this.chk_Unlock = new System.Windows.Forms.CheckBox();
+            this.chk_Lock = new System.Windows.Forms.CheckBox();
+            this.txt_Password = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_login = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_UserName = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.checkBox2);
-            this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.btn_Finish);
+            this.panel1.Controls.Add(this.chk_Unlock);
+            this.panel1.Controls.Add(this.chk_Lock);
+            this.panel1.Controls.Add(this.txt_Password);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btn_login);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txt_UserName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -57,47 +57,50 @@
             this.panel1.Size = new System.Drawing.Size(800, 456);
             this.panel1.TabIndex = 3;
             // 
-            // button1
+            // btn_Finish
             // 
-            this.button1.BackColor = System.Drawing.Color.LightCyan;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(290, 379);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 28);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Hoàn tất";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_Finish.BackColor = System.Drawing.Color.LightCyan;
+            this.btn_Finish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Finish.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Finish.Location = new System.Drawing.Point(290, 379);
+            this.btn_Finish.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Finish.Name = "btn_Finish";
+            this.btn_Finish.Size = new System.Drawing.Size(108, 28);
+            this.btn_Finish.TabIndex = 14;
+            this.btn_Finish.Text = "Hoàn tất";
+            this.btn_Finish.UseVisualStyleBackColor = false;
+            this.btn_Finish.Click += new System.EventHandler(this.btn_Finish_Click);
             // 
-            // checkBox2
+            // chk_Unlock
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(377, 334);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(63, 19);
-            this.checkBox2.TabIndex = 13;
-            this.checkBox2.Text = "Unlock";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chk_Unlock.AutoSize = true;
+            this.chk_Unlock.Location = new System.Drawing.Point(377, 334);
+            this.chk_Unlock.Name = "chk_Unlock";
+            this.chk_Unlock.Size = new System.Drawing.Size(63, 19);
+            this.chk_Unlock.TabIndex = 13;
+            this.chk_Unlock.Text = "Unlock";
+            this.chk_Unlock.UseVisualStyleBackColor = true;
+            this.chk_Unlock.CheckedChanged += new System.EventHandler(this.chk_Unlock_CheckedChanged);
             // 
-            // checkBox1
+            // chk_Lock
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(232, 334);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(51, 19);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "Lock";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chk_Lock.AutoSize = true;
+            this.chk_Lock.Location = new System.Drawing.Point(232, 334);
+            this.chk_Lock.Name = "chk_Lock";
+            this.chk_Lock.Size = new System.Drawing.Size(51, 19);
+            this.chk_Lock.TabIndex = 12;
+            this.chk_Lock.Text = "Lock";
+            this.chk_Lock.UseVisualStyleBackColor = true;
+            this.chk_Lock.CheckedChanged += new System.EventHandler(this.chk_Lock_CheckedChanged);
             // 
-            // textBox2
+            // txt_Password
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(232, 275);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(228, 31);
-            this.textBox2.TabIndex = 11;
+            this.txt_Password.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_Password.Location = new System.Drawing.Point(232, 275);
+            this.txt_Password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.Size = new System.Drawing.Size(228, 31);
+            this.txt_Password.TabIndex = 11;
             // 
             // label2
             // 
@@ -122,6 +125,7 @@
             this.btn_login.TabIndex = 9;
             this.btn_login.Text = "Kiểm tra";
             this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // label1
             // 
@@ -134,14 +138,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Nhập tên User cần sửa";
             // 
-            // textBox1
+            // txt_UserName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(232, 194);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 31);
-            this.textBox1.TabIndex = 0;
+            this.txt_UserName.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_UserName.Location = new System.Drawing.Point(232, 194);
+            this.txt_UserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_UserName.Name = "txt_UserName";
+            this.txt_UserName.Size = new System.Drawing.Size(228, 31);
+            this.txt_UserName.TabIndex = 0;
             // 
             // Form_EditUser
             // 
@@ -160,13 +164,13 @@
         #endregion
 
         private Panel panel1;
-        private Button button1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
-        private TextBox textBox2;
+        private Button btn_Finish;
+        private CheckBox chk_Unlock;
+        private CheckBox chk_Lock;
+        private TextBox txt_Password;
         private Label label2;
         private Button btn_login;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txt_UserName;
     }
 }

@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_login = new System.Windows.Forms.Button();
+            this.btn_AddRole = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_AddRoleName = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn_login);
+            this.panel1.Controls.Add(this.btn_AddRole);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txt_AddRoleName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -47,18 +47,19 @@
             this.panel1.Size = new System.Drawing.Size(800, 456);
             this.panel1.TabIndex = 5;
             // 
-            // btn_login
+            // btn_AddRole
             // 
-            this.btn_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(187)))), ((int)(((byte)(241)))));
-            this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_login.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_login.Location = new System.Drawing.Point(475, 196);
-            this.btn_login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(108, 28);
-            this.btn_login.TabIndex = 9;
-            this.btn_login.Text = "Thêm";
-            this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_AddRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(187)))), ((int)(((byte)(241)))));
+            this.btn_AddRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AddRole.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_AddRole.Location = new System.Drawing.Point(475, 196);
+            this.btn_AddRole.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_AddRole.Name = "btn_AddRole";
+            this.btn_AddRole.Size = new System.Drawing.Size(108, 28);
+            this.btn_AddRole.TabIndex = 9;
+            this.btn_AddRole.Text = "Thêm";
+            this.btn_AddRole.UseVisualStyleBackColor = false;
+            this.btn_AddRole.Click += new System.EventHandler(this.btn_AddRole_Click);
             // 
             // label1
             // 
@@ -71,14 +72,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Nhập tên Role cần thêm";
             // 
-            // textBox1
+            // txt_AddRoleName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(232, 194);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 31);
-            this.textBox1.TabIndex = 0;
+            this.txt_AddRoleName.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_AddRoleName.Location = new System.Drawing.Point(232, 194);
+            this.txt_AddRoleName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_AddRoleName.Name = "txt_AddRoleName";
+            this.txt_AddRoleName.Size = new System.Drawing.Size(228, 31);
+            this.txt_AddRoleName.TabIndex = 0;
             // 
             // Form_AddRole
             // 
@@ -97,8 +98,8 @@
         #endregion
 
         private Panel panel1;
-        private Button btn_login;
+        private Button btn_AddRole;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txt_AddRoleName;
     }
 }
