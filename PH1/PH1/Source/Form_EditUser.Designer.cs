@@ -80,6 +80,7 @@
             this.chk_Unlock.TabIndex = 13;
             this.chk_Unlock.Text = "Unlock";
             this.chk_Unlock.UseVisualStyleBackColor = true;
+            this.chk_Unlock.CheckedChanged += new System.EventHandler(this.chk_Unlock_CheckedChanged);
             // 
             // chk_Lock
             // 
@@ -90,6 +91,7 @@
             this.chk_Lock.TabIndex = 12;
             this.chk_Lock.Text = "Lock";
             this.chk_Lock.UseVisualStyleBackColor = true;
+            this.chk_Lock.CheckedChanged += new System.EventHandler(this.chk_Lock_CheckedChanged);
             // 
             // txt_Password
             // 
@@ -135,7 +137,6 @@
             this.label1.Size = new System.Drawing.Size(166, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nhập tên User cần sửa";
-//            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txt_UserName
             // 
@@ -146,18 +147,6 @@
             this.txt_UserName.Size = new System.Drawing.Size(228, 31);
             this.txt_UserName.TabIndex = 0;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(232, 242);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 21);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Nhập Password mới";
-            // 
-           
             // Form_EditUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);

@@ -112,7 +112,7 @@ namespace PH1
             return 1;
         }
 
-        public static int isUserValid(string username) // chạy câu lệnh sql
+        public static int isUserValid(string username) // Hàm kiểm tra User có tồn tại hay không
         {
             OracleCommand cmd = new OracleCommand();
 
@@ -143,6 +143,36 @@ namespace PH1
             }
         }
 
+        public static int isRoleValid(string username)  // Hàm kiểm tra Role có tồn tại hay không
+        {
+            OracleCommand cmd = new OracleCommand();
+
+            //Gán kết nối
+            cmd.Connection = Con;
+
+            //Gán lệnh SQL
+            string sql = "SELECT * FROM DBA_ROLES WHERE ROLE = " + "'" + username.ToUpper() + "'";
+            cmd.CommandText = sql;
+
+            //Kiểm tra
+            OracleDataReader reader = cmd.ExecuteReader();
+            //bool exists = Convert.ToBoolean(cmd.ExecuteScalar());
+
+            if (reader.Read())
+            {
+                //Giải phóng bộ nhớ
+                cmd.Dispose();
+                cmd = null;
+                return 1;
+            }
+            else
+            {
+                //Giải phóng bộ nhớ
+                cmd.Dispose();
+                cmd = null;
+                return 0;
+            }
+        }
         public static DataTable GetDataToTable(string sql) //Lấy dữ liệu đổ vào bảng
         {          
             OracleCommand command = new OracleCommand();

@@ -14,13 +14,21 @@ namespace PH1
     {
         string name;
         string pass;
-        public Form_AddUser()
+        string dbName;
+        public Form_AddUser(string dbname)
         {
+            dbName = dbname;
             InitializeComponent();
         }
 
         private void btn_AddUser_Click(object sender, EventArgs e)
         {
+            name = txt_UserName.Text.Trim().ToString().ToUpper();
+            if (Functions.isUserValid(name) == 1)
+            {
+                MessageBox.Show("Ten user da duoc su dung!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             string sql = "alter session set  \"_ORACLE_SCRIPT\" = true";
             Functions.RunSQL(sql);
             name = txt_UserName.Text.Trim().ToString();
@@ -31,7 +39,7 @@ namespace PH1
             {
                 sql = "GRANT ALL PRIVILEGES TO " + name + " with ADMIN OPTION";
                 Functions.RunSQL(sql);
-                sql = "grant select on dba_users " + name + " with GRANT OPTION";
+                sql = "grant select on dba_users TO " + name + " with GRANT OPTION";
                 Functions.RunSQL(sql);
                 sql = "GRANT SELECT ON DBA_TAB_PRIVS TO " + name + " with GRANT OPTION";
                 Functions.RunSQL(sql);
@@ -41,17 +49,6 @@ namespace PH1
                 Functions.RunSQL(sql);
                 sql = "GRANT SELECT ON DBA_ROLES TO " + name + " with GRANT OPTION";
                 Functions.RunSQL(sql);
-                sql = "GRANT execute ON sp_checkIfUserOrRoleExist TO " + name + " with GRANT OPTION";
-                Functions.RunSQL(sql);
-                sql = "GRANT execute ON sp_checkIfPrivilegeBelongToRole TO " + name + " with GRANT OPTION";
-                Functions.RunSQL(sql);
-                sql = "GRANT execute ON sp_checkIfPrivilegeBelongToUser TO " + name + " with GRANT OPTION";
-                Functions.RunSQL(sql);
-                sql = "GRANT execute ON sp_grantRoleToUser TO " + name + " with GRANT OPTION";
-                Functions.RunSQL(sql);
-                sql = "GRANT execute ON sp_RevokeRoleFromUser_OR_Role TO " + name + " with GRANT OPTION";
-                Functions.RunSQL(sql);
-
 
                 MessageBox.Show("Them User thanh cong!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

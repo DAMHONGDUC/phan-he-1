@@ -116,7 +116,7 @@ namespace PH1
 
         private void btn_adduser_Click(object sender, EventArgs e)
         {
-            openChildForm(new Form_AddUser());
+            openChildForm(new Form_AddUser(dbname));
             ActivateButton(sender);
         }
 
