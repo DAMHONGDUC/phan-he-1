@@ -12,7 +12,10 @@ namespace PH1
     {
         public static OracleConnection Con;
         //private static string host_name = @"DESKTOP-JBH7I57";
-        private static string host_name = @"DESKTOP-254FJBP";
+        private static string host_name = @"DESKTOP-254FJBP"; // Minh Host
+
+        //private static string host_name = @"DESKTOP-2J1CNMG";
+        //private static string host_name = @"DESKTOP-30F3CUE"; //Tuan host
 
         public static void InitConnection(String username, String password)
         {           
@@ -79,6 +82,64 @@ namespace PH1
             //Giải phóng bộ nhớ
             cmd.Dispose();
             cmd = null;
+        }
+
+        public static int RunSQLwithResult(string sql) // chạy câu lệnh sql
+        {
+            OracleCommand cmd = new OracleCommand();
+
+            //Gán kết nối
+            cmd.Connection = Con;
+
+            //Gán lệnh SQL
+            cmd.CommandText = sql;
+
+            //Thực hiện câu lệnh SQL
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return 0;
+            }
+
+            //Giải phóng bộ nhớ
+            cmd.Dispose();
+            cmd = null;
+            return 1;
+        }
+
+        public static int isUserValid(string username) // chạy câu lệnh sql
+        {
+            OracleCommand cmd = new OracleCommand();
+
+            //Gán kết nối
+            cmd.Connection = Con;
+
+            //Gán lệnh SQL
+            string sql = "SELECT * FROM all_users WHERE USERNAME = " + "'" + username + "'";
+            cmd.CommandText = sql;
+
+            //Kiểm tra
+            OracleDataReader reader = cmd.ExecuteReader();
+            //bool exists = Convert.ToBoolean(cmd.ExecuteScalar());
+
+            if (reader.Read())
+            {
+                //Giải phóng bộ nhớ
+                cmd.Dispose();
+                cmd = null;
+                return 1;
+            }
+            else
+            {
+                //Giải phóng bộ nhớ
+                cmd.Dispose();
+                cmd = null;
+                return 0;
+            }
         }
 
         public static DataTable GetDataToTable(string sql) //Lấy dữ liệu đổ vào bảng

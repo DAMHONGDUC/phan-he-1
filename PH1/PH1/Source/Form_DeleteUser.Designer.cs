@@ -32,7 +32,7 @@
             this.chk_CASCADE = new System.Windows.Forms.CheckBox();
             this.btn_XoaUser = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_UserName = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +41,7 @@
             this.panel1.Controls.Add(this.chk_CASCADE);
             this.panel1.Controls.Add(this.btn_XoaUser);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txt_UserName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -72,6 +72,7 @@
             this.btn_XoaUser.TabIndex = 9;
             this.btn_XoaUser.Text = "Xoá";
             this.btn_XoaUser.UseVisualStyleBackColor = false;
+            this.btn_XoaUser.Click += new System.EventHandler(this.btn_XoaUser_Click);
             // 
             // label1
             // 
@@ -84,14 +85,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Nhập tên User cần xoá";
             // 
-            // textBox1
+            // txt_UserName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(232, 194);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 31);
-            this.textBox1.TabIndex = 0;
+            this.txt_UserName.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_UserName.Location = new System.Drawing.Point(232, 194);
+            this.txt_UserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_UserName.Name = "txt_UserName";
+            this.txt_UserName.Size = new System.Drawing.Size(228, 31);
+            this.txt_UserName.TabIndex = 0;
             // 
             // Form_DeleteUser
             // 
@@ -113,6 +114,6 @@
         private CheckBox chk_CASCADE;
         private Button btn_XoaUser;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txt_UserName;
     }
 }
