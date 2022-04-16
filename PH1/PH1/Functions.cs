@@ -16,7 +16,7 @@ namespace PH1
         //private static string host_name = @"DESKTOP-254FJBP";
 
         //private static string host_name = @"DESKTOP-2J1CNMG";
-        //private static string host_name = @"DESKTOP-30F3CUE"; //Tuan host
+        //private static string host_name = @"DESKTOP-30F3CUE";
 
         public static void InitConnection(String username, String password)
         {           
@@ -190,14 +190,15 @@ namespace PH1
         }
 
         // SP cua Tuan
-        //SP kiem tra xem role co ton tai trong he thong hay khong
+        //Ham kiem tra xem role co ton tai trong he thong hay khong
         public static String CheckIfUserOrRoleExist(String userOrRole_name)
         {
             userOrRole_name = userOrRole_name.ToUpper();
             string result = "";
+
+            /*
             OracleCommand command = new OracleCommand("sp_checkIfUserOrRoleExist", Con);
             command.CommandType = CommandType.StoredProcedure;
-
             //Tham so dau vao
             OracleParameter param1 = new OracleParameter("userOrRole_name", OracleDbType.Varchar2);
             param1.Value = userOrRole_name;
@@ -210,10 +211,51 @@ namespace PH1
             command.ExecuteNonQuery();
 
             result = command.Parameters["result"].Value.ToString();
+            */
+
+            //Kiem tra xem user co ton tai hay khong
+            OracleCommand command1 = new OracleCommand();
+            command1.CommandText = $"SELECT USERNAME FROM DBA_USERS";
+            command1.Connection = Con;
+
+            OracleDataAdapter adapter1 = new OracleDataAdapter(command1);
+            DataTable dataTable1 = new DataTable(); //create a new table
+            adapter1.Fill(dataTable1);
+
+            for (int i = 0; i < dataTable1.Rows.Count; i++)
+            {
+                if (dataTable1.Rows[i].Field<string>(0) == userOrRole_name)
+                {
+                    result = "User";
+                    return result;
+                }
+
+            }
+
+            //Kiem tra xem role co ton tai hay khong
+            OracleCommand command2 = new OracleCommand();
+            command2.CommandText = $"SELECT ROLE FROM DBA_ROLES";
+            command2.Connection = Con;
+
+            OracleDataAdapter adapter2 = new OracleDataAdapter(command2);
+            DataTable dataTable2 = new DataTable(); //create a new table
+            adapter2.Fill(dataTable2);
+
+            for (int i = 0; i < dataTable2.Rows.Count; i++)
+            {
+                if (dataTable2.Rows[i].Field<string>(0) == userOrRole_name)
+                {
+                    result = "Role";
+                    return result;
+                }
+
+            }
+
+            result = "NoExist";
             return result;
         }
 
-        //SP Ktra xem quyen nay co thuoc ve user hay khong
+        //Ham Ktra xem quyen nay co thuoc ve user hay khong
         public static string CheckIfPrivilegeBelongToUser(String user_name, String table_name, String priv, String grant_opt)
         {
             user_name = user_name.ToUpper();
@@ -221,9 +263,10 @@ namespace PH1
             priv = priv.ToUpper();
             grant_opt = grant_opt.ToUpper();
             string result = "";
+
+            /*
             OracleCommand command = new OracleCommand("sp_checkIfPrivilegeBelongToUser", Con);
             command.CommandType = CommandType.StoredProcedure;
-
             //Tham so dau vao
             OracleParameter param1 = new OracleParameter("user_name", OracleDbType.Varchar2);
             param1.Value = user_name;
@@ -249,10 +292,29 @@ namespace PH1
             command.ExecuteNonQuery();
 
             result = command.Parameters["checkResult"].Value.ToString();
+            */
+
+            OracleCommand command1 = new OracleCommand();
+            command1.CommandText = $"SELECT GRANTEE FROM DBA_TAB_PRIVS WHERE GRANTEE = '{user_name}' AND TABLE_NAME = '{table_name}' AND PRIVILEGE = '{priv}' AND GRANTABLE = '{grant_opt}'";
+            command1.Connection = Con;
+
+            OracleDataAdapter adapter1 = new OracleDataAdapter(command1);
+            DataTable dataTable1 = new DataTable(); //create a new table
+            adapter1.Fill(dataTable1);
+
+            for (int i = 0; i < dataTable1.Rows.Count; i++)
+            {
+                if (dataTable1.Rows[i].Field<string>(0) == user_name)
+                {
+                    result = "Yes";
+                    return result;
+                }
+            }
+            result = "No";
             return result;
         }
 
-        // SP ktra xem quyen nay co thuoc ve role dang xet hay khong
+        //Ham ktra xem quyen nay co thuoc ve role dang xet hay khong
         public static string CheckIfPrivilegeBelongToRole(String role_name, String roleTable_name, String priv, String grant_opt)
         {
             role_name = role_name.ToUpper();
@@ -260,9 +322,10 @@ namespace PH1
             priv = priv.ToUpper();
             grant_opt = grant_opt.ToUpper();
             string result = "";
+
+            /*
             OracleCommand command = new OracleCommand("sp_checkIfPrivilegeBelongToRole", Con);
             command.CommandType = CommandType.StoredProcedure;
-
             //Tham so dau vao
             OracleParameter param1 = new OracleParameter("role_name", OracleDbType.Varchar2);
             param1.Value = role_name;
@@ -287,6 +350,26 @@ namespace PH1
             command.ExecuteNonQuery();
 
             result = command.Parameters["checkResult"].Value.ToString();
+            */
+            OracleCommand command1 = new OracleCommand();
+            command1.CommandText = $"SELECT ROLE FROM ROLE_TAB_PRIVS WHERE ROLE = '{role_name}' AND TABLE_NAME = '{roleTable_name}' AND PRIVILEGE = '{priv}' AND GRANTABLE = '{grant_opt}'";
+            command1.Connection = Con;
+            //command1.ExecuteNonQuery();
+
+            OracleDataAdapter adapter1 = new OracleDataAdapter(command1);
+            DataTable dataTable1 = new DataTable(); //create a new table
+            adapter1.Fill(dataTable1);
+
+            for (int i = 0; i < dataTable1.Rows.Count; i++)
+            {
+                if (dataTable1.Rows[i].Field<string>(0) == role_name)
+                {
+                    result = "Yes";
+                    return result;
+                }
+            }
+            result = "No";
+
             return result;
         }
 
