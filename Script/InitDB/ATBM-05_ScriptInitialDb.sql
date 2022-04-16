@@ -1,10 +1,3 @@
---Chay voi user SYSDBA
-alter session set "_ORACLE_SCRIPT"=true;
-DROP USER U_AD;
-
-CREATE USER U_AD IDENTIFIED BY 0;
-
-GRANT ALL PRIVILEGES TO U_AD;
 
 --Chay voi user U_AD
 --XOA CAC BANG
@@ -251,3 +244,130 @@ INSERT INTO QUANLY VALUES('DG6','U_Harper','R_Readers');
 INSERT INTO QUANLY VALUES('DG7','U_Gianna','R_Readers');
 INSERT INTO QUANLY VALUES('DG8','U_Evelyn','R_Readers');
 INSERT INTO QUANLY VALUES('DG9','U_Aria','R_Readers');
+
+
+-- Procedure thu hoi ROLE tu USER
+-- drop procedure sp_RevokeRoleFromUser_OR_Role;
+create or replace procedure sp_RevokeRoleFromUser_OR_Role
+(role_name in varchar2, userORrole_name in varchar2)
+as
+    revoke_statement varchar2(255);
+begin
+    revoke_statement := 'revoke ' || role_name || ' from ' || userORrole_name;
+    execute immediate revoke_statement;
+end;
+/
+
+-- CAC PROC PHAN QUYEN TREN BANG
+-- Procedure gan quyen tren bang bat ky
+-- drop procedure sp_grantPrivilegeOnTable;
+create or replace procedure sp_grantPrivilegeOnTable
+(table_name in varchar2, userOrRole_name in varchar2, priv in varchar2, grant_option in varchar2)
+as
+    grant_statement varchar2(255);
+    grant_statement_opt varchar2(255);
+begin
+    if(grant_option = 'N')
+    then
+        grant_statement := 'grant ' || priv || ' on '|| table_name || ' to ' || userOrRole_name;
+        execute immediate grant_statement;
+    else
+         grant_statement_opt := 'grant ' || priv || ' on '|| table_name || ' to ' || userOrRole_name || ' with grant option';
+        execute immediate grant_statement_opt;
+    end if;
+end;
+/
+
+-- Procedure thu hoi quyen tren bang bat ky
+-- drop procedure sp_revokePrivilegeOnTable;
+create or replace procedure sp_revokePrivilegeOnTable
+(table_name in varchar2, userOrRole_name in varchar2, priv in varchar2)
+as
+    revoke_statement varchar2(255);
+begin
+    revoke_statement := 'revoke ' || priv || ' on '|| table_name || ' from ' || userOrRole_name;
+    execute immediate revoke_statement;
+end;
+/
+
+
+-- Procedure kiem tra xem user/role co ton tai hay khong
+-- drop procedure sp_checkIfUserOrRoleExist;
+create or replace procedure sp_checkIfUserOrRoleExist
+(userOrRole_name in varchar2, result out varchar2)
+as
+    row_countUser number;
+    row_countRole number;
+begin
+    select count(*) into row_countUser from DBA_USERS where Username = userOrRole_name;
+    if row_countUser <> 0
+    then
+        result := 'User';
+        return;
+    end if;
+    
+    select count(*) into row_countRole from DBA_ROLES where Role = userOrRole_name;
+    if row_countRole <> 0
+    then
+        result := 'Role';
+        return;
+    end if;
+    
+    result := 'NoExist';
+end;
+/
+
+
+-- Procedure kiem tra xem user co privilege nay hay khong
+-- drop procedure sp_checkIfPrivilegeBelongToUser;
+-- LUU Y: Ten userTable_name, user_priv phai IN HOA !!!!
+create or replace procedure sp_checkIfPrivilegeBelongToUser
+(user_name in varchar2, userTable_name in varchar2, user_priv in varchar2, grant_opt in varchar2, checkResult out varchar2)
+as
+    row_count number;
+begin
+    select count(*) into row_count from DBA_TAB_PRIVS where grantee = user_name
+    and table_name = userTable_name and privilege = user_priv and grantable = grant_opt;
+    if row_count <> 0
+    then
+        checkResult := 'Yes';
+        return;
+    else
+        checkResult := 'No';
+    end if;
+end;
+/
+
+
+-- Procedure kiem tra xem role co privilege nay hay khong
+-- drop procedure sp_checkIfPrivilegeBelongToRole;
+-- LUU Y: Ten roleTable_name, role_priv phai IN HOA !!!!
+create or replace procedure sp_checkIfPrivilegeBelongToRole
+(role_name in varchar2, roleTable_name in varchar2, role_priv in varchar2, grant_opt in varchar2, checkResult out varchar2)
+as
+    row_count number;
+begin
+    select count(*) into row_count from ROLE_TAB_PRIVS where role = role_name
+    and table_name = roleTable_name and privilege = role_priv and grantable = grant_opt;
+    if row_count <> 0
+    then
+        checkResult := 'Yes';
+        return;
+    else
+        checkResult := 'No';
+    end if;
+end;
+/
+
+
+-- Procedure gan role cho user bat ky
+-- drop procedure sp_grantRoleToUser;
+create or replace procedure sp_grantRoleToUser
+(role_name in varchar2, userOrRole_name in varchar2)
+as
+    grant_statement varchar2(255);
+begin
+    grant_statement := 'grant ' || role_name || ' to ' || userOrRole_name;
+    execute immediate grant_statement; 
+end;
+/
