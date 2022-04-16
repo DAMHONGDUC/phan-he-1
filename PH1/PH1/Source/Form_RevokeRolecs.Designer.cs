@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_login = new System.Windows.Forms.Button();
+            this.btn_xacnhan = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbBox_userOrrole = new System.Windows.Forms.ComboBox();
+            this.cbBox_role = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // btn_login
+            // btn_xacnhan
             // 
-            this.btn_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(187)))), ((int)(((byte)(241)))));
-            this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_login.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_login.Location = new System.Drawing.Point(427, 479);
-            this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(151, 55);
-            this.btn_login.TabIndex = 30;
-            this.btn_login.Text = "Xác nhận";
-            this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_xacnhan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(187)))), ((int)(((byte)(241)))));
+            this.btn_xacnhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_xacnhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_xacnhan.Location = new System.Drawing.Point(427, 479);
+            this.btn_xacnhan.Name = "btn_xacnhan";
+            this.btn_xacnhan.Size = new System.Drawing.Size(151, 55);
+            this.btn_xacnhan.TabIndex = 30;
+            this.btn_xacnhan.Text = "Xác nhận";
+            this.btn_xacnhan.UseVisualStyleBackColor = false;
+            this.btn_xacnhan.Click += new System.EventHandler(this.btn_xacnhan_Click);
             // 
             // label4
             // 
@@ -93,23 +94,23 @@
             this.label1.TabIndex = 26;
             this.label1.Text = "Revoke";
             // 
-            // comboBox2
+            // cbBox_userOrrole
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(570, 381);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(160, 36);
-            this.comboBox2.TabIndex = 25;
+            this.cbBox_userOrrole.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbBox_userOrrole.FormattingEnabled = true;
+            this.cbBox_userOrrole.Location = new System.Drawing.Point(569, 381);
+            this.cbBox_userOrrole.Name = "cbBox_userOrrole";
+            this.cbBox_userOrrole.Size = new System.Drawing.Size(160, 36);
+            this.cbBox_userOrrole.TabIndex = 25;
             // 
-            // comboBox1
+            // cbBox_role
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(297, 381);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 36);
-            this.comboBox1.TabIndex = 24;
+            this.cbBox_role.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbBox_role.FormattingEnabled = true;
+            this.cbBox_role.Location = new System.Drawing.Point(297, 381);
+            this.cbBox_role.Name = "cbBox_role";
+            this.cbBox_role.Size = new System.Drawing.Size(160, 36);
+            this.cbBox_role.TabIndex = 24;
             // 
             // Form_RevokeRolecs
             // 
@@ -117,13 +118,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(997, 853);
-            this.Controls.Add(this.btn_login);
+            this.Controls.Add(this.btn_xacnhan);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbBox_userOrrole);
+            this.Controls.Add(this.cbBox_role);
             this.Name = "Form_RevokeRolecs";
             this.Text = "Form_RevokeRolecs";
             this.ResumeLayout(false);
@@ -133,12 +134,12 @@
 
         #endregion
 
-        private Button btn_login;
+        private Button btn_xacnhan;
         private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private ComboBox cbBox_userOrrole;
+        private ComboBox cbBox_role;
     }
 }

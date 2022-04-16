@@ -1,4 +1,4 @@
-﻿namespace PH1.Source
+﻿namespace PH1
 {
     partial class Form_DeleteUser
     {
@@ -47,7 +47,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 456);
-            this.panel1.TabIndex = 4;
+            this.panel1.TabIndex = 5;
             // 
             // chk_CASCADE
             // 

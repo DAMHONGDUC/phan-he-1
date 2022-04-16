@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Source\Form_AddRole.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Source\Form_AddUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Source\Form_DeleteRole.cs">
+    <Compile Update="Source\Form_EditUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Source\Form_DeleteUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Source\Form_EditUser.cs">
+    <Compile Update="Source\Form_DeleteRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Source\Form_AddRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Source\Form_AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Source\Form_GrantRoleToUser.cs">
@@ -29,6 +29,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Source\Form_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Source\Form_CheckPrivilege.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Source\Form_ShowUsers.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

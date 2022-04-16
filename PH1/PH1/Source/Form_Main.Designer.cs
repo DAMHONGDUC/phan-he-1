@@ -32,11 +32,11 @@
             this.btn_revokePrivileges = new System.Windows.Forms.Button();
             this.btn_grantRole_toUser = new System.Windows.Forms.Button();
             this.btn_grantPrivileges = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_deleteRole = new System.Windows.Forms.Button();
+            this.btn_addrole = new System.Windows.Forms.Button();
+            this.btn_EditUser = new System.Windows.Forms.Button();
+            this.btn_deleteUser = new System.Windows.Forms.Button();
+            this.btn_adduser = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel_username = new System.Windows.Forms.Panel();
@@ -53,11 +53,11 @@
             this.panelMenu.Controls.Add(this.btn_revokePrivileges);
             this.panelMenu.Controls.Add(this.btn_grantRole_toUser);
             this.panelMenu.Controls.Add(this.btn_grantPrivileges);
-            this.panelMenu.Controls.Add(this.button7);
-            this.panelMenu.Controls.Add(this.button6);
-            this.panelMenu.Controls.Add(this.button5);
-            this.panelMenu.Controls.Add(this.button4);
-            this.panelMenu.Controls.Add(this.button3);
+            this.panelMenu.Controls.Add(this.btn_deleteRole);
+            this.panelMenu.Controls.Add(this.btn_addrole);
+            this.panelMenu.Controls.Add(this.btn_EditUser);
+            this.panelMenu.Controls.Add(this.btn_deleteUser);
+            this.panelMenu.Controls.Add(this.btn_adduser);
             this.panelMenu.Controls.Add(this.button2);
             this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.panel_username);
@@ -115,80 +115,85 @@
             this.btn_grantPrivileges.UseVisualStyleBackColor = false;
             this.btn_grantPrivileges.Click += new System.EventHandler(this.btn_grantPrivileges_Click);
             // 
-            // button7
+            // btn_deleteRole
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(0, 520);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(181, 59);
-            this.button7.TabIndex = 30;
-            this.button7.Text = "Delete Role";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btn_deleteRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btn_deleteRole.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_deleteRole.FlatAppearance.BorderSize = 0;
+            this.btn_deleteRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_deleteRole.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_deleteRole.ForeColor = System.Drawing.Color.White;
+            this.btn_deleteRole.Location = new System.Drawing.Point(0, 520);
+            this.btn_deleteRole.Name = "btn_deleteRole";
+            this.btn_deleteRole.Size = new System.Drawing.Size(181, 59);
+            this.btn_deleteRole.TabIndex = 30;
+            this.btn_deleteRole.Text = "Delete Role";
+            this.btn_deleteRole.UseVisualStyleBackColor = false;
+            this.btn_deleteRole.Click += new System.EventHandler(this.btn_deleteRole_Click);
             // 
-            // button6
+            // btn_addrole
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(0, 461);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(181, 59);
-            this.button6.TabIndex = 29;
-            this.button6.Text = "Add Role";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btn_addrole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btn_addrole.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_addrole.FlatAppearance.BorderSize = 0;
+            this.btn_addrole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_addrole.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_addrole.ForeColor = System.Drawing.Color.White;
+            this.btn_addrole.Location = new System.Drawing.Point(0, 461);
+            this.btn_addrole.Name = "btn_addrole";
+            this.btn_addrole.Size = new System.Drawing.Size(181, 59);
+            this.btn_addrole.TabIndex = 29;
+            this.btn_addrole.Text = "Add Role";
+            this.btn_addrole.UseVisualStyleBackColor = false;
+            this.btn_addrole.Click += new System.EventHandler(this.btn_addrole_Click);
             // 
-            // button5
+            // btn_EditUser
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 402);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(181, 59);
-            this.button5.TabIndex = 28;
-            this.button5.Text = "Update User";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btn_EditUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btn_EditUser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_EditUser.FlatAppearance.BorderSize = 0;
+            this.btn_EditUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_EditUser.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_EditUser.ForeColor = System.Drawing.Color.White;
+            this.btn_EditUser.Location = new System.Drawing.Point(0, 402);
+            this.btn_EditUser.Name = "btn_EditUser";
+            this.btn_EditUser.Size = new System.Drawing.Size(181, 59);
+            this.btn_EditUser.TabIndex = 28;
+            this.btn_EditUser.Text = "Edit User";
+            this.btn_EditUser.UseVisualStyleBackColor = false;
+            this.btn_EditUser.Click += new System.EventHandler(this.btn_EditUser_Click);
             // 
-            // button4
+            // btn_deleteUser
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 343);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(181, 59);
-            this.button4.TabIndex = 27;
-            this.button4.Text = "Delete User";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btn_deleteUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btn_deleteUser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_deleteUser.FlatAppearance.BorderSize = 0;
+            this.btn_deleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_deleteUser.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_deleteUser.ForeColor = System.Drawing.Color.White;
+            this.btn_deleteUser.Location = new System.Drawing.Point(0, 343);
+            this.btn_deleteUser.Name = "btn_deleteUser";
+            this.btn_deleteUser.Size = new System.Drawing.Size(181, 59);
+            this.btn_deleteUser.TabIndex = 27;
+            this.btn_deleteUser.Text = "Delete User";
+            this.btn_deleteUser.UseVisualStyleBackColor = false;
+            this.btn_deleteUser.Click += new System.EventHandler(this.btn_deleteUser_Click);
             // 
-            // button3
+            // btn_adduser
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 284);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(181, 59);
-            this.button3.TabIndex = 26;
-            this.button3.Text = "Add User";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_adduser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btn_adduser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_adduser.FlatAppearance.BorderSize = 0;
+            this.btn_adduser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_adduser.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_adduser.ForeColor = System.Drawing.Color.White;
+            this.btn_adduser.Location = new System.Drawing.Point(0, 284);
+            this.btn_adduser.Name = "btn_adduser";
+            this.btn_adduser.Size = new System.Drawing.Size(181, 59);
+            this.btn_adduser.TabIndex = 26;
+            this.btn_adduser.Text = "Add User";
+            this.btn_adduser.UseVisualStyleBackColor = false;
+            this.btn_adduser.Click += new System.EventHandler(this.btn_adduser_Click);
             // 
             // button2
             // 
@@ -204,6 +209,7 @@
             this.button2.TabIndex = 25;
             this.button2.Text = "Check Privileges ";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button_To_FormCheckPrivileges);
             // 
             // button1
             // 
@@ -219,6 +225,7 @@
             this.button1.TabIndex = 24;
             this.button1.Text = "Users List";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button_Form_ShowUsers);
             // 
             // panel_username
             // 
@@ -264,7 +271,7 @@
             // 
             // Form_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1082, 853);
@@ -288,11 +295,11 @@
         private Panel panelMenu;
         private Panel panel_username;
         private Label label_username;
-        private Button button7;
-        private Button button6;
-        private Button button5;
-        private Button button4;
-        private Button button3;
+        private Button btn_deleteRole;
+        private Button btn_addrole;
+        private Button btn_EditUser;
+        private Button btn_deleteUser;
+        private Button btn_adduser;
         private Button button2;
         private Button button1;
         private Button btn_revokePrivileges;

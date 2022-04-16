@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PH1.Source
+namespace PH1
 {
     public partial class Form_DeleteUser : Form
     {

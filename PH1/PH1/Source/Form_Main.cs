@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PH1.Source;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +14,12 @@ namespace PH1
     public partial class Form_Main : Form
     {
         Thread t;
-        String username = "", password = "";
-        public Form_Main(String un, String pw)
+        String username = "", password = "", dbname = "";
+        public Form_Main(String un, String pw, String dn)
         {
             this.username = un;
             this.password = pw;
+            this.dbname = dn;
 
             InitializeComponent();
 
@@ -89,7 +91,7 @@ namespace PH1
 
         private void btn_grantPrivileges_Click(object sender, EventArgs e)
         {
-            openChildForm(new Form_GrantPrivileges());
+            openChildForm(new Form_GrantPrivileges(username, dbname));
             ActivateButton(sender);
         }
 
@@ -112,10 +114,58 @@ namespace PH1
             ActivateButton(sender);
         }
 
+        private void btn_adduser_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_AddUser());
+            ActivateButton(sender);
+        }
+
+        private void btn_deleteUser_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_DeleteUser());
+            ActivateButton(sender);
+        }
+        
+        private void btn_addrole_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_AddRole());
+            ActivateButton(sender);
+        }
+
+        private void btn_deleteRole_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_DeleteRole());
+            ActivateButton(sender);
+        }
+
+        private void btn_EditUser_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_EditUser());
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_GrantRoleToUser());
+            ActivateButton(sender);
+        }
+
+        private void button_Form_ShowUsers(object sender, EventArgs e)
+        {
+            openChildForm(new Form_ShowUsers());
+            ActivateButton(sender);
+        }
+
+        private void button_To_FormCheckPrivileges(object sender, EventArgs e)
+        {
+            openChildForm(new Form_CheckPrivilege());
+            ActivateButton(sender);
+        }
+
         private void btn_grantRole_toUser_Click(object sender, EventArgs e)
         {
             openChildForm(new Form_GrantRoleToUser());
             ActivateButton(sender);
         }
+
+       
     }
 }
