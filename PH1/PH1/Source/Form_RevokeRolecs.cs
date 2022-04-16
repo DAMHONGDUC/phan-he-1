@@ -37,12 +37,22 @@ namespace PH1
 
         private void Run_SP_RevokeRoleFromUser_OR_Role()
         {
-            String role = cbBox_role.Text.Trim();
-            String user_OR_role = cbBox_userOrrole.Text.Trim();
+            String role = cbBox_role.Text.Trim().ToUpper();
+            String user_OR_role = cbBox_userOrrole.Text.Trim().ToUpper();
 
             if (!role.Equals(user_OR_role))
             {
-                Functions.RevokeRoleFromUser_OR_Role(role, user_OR_role);               
+                //Functions.RevokeRoleFromUser_OR_Role(role, user_OR_role);
+                String sql = "revoke " + role + " from " + user_OR_role;
+                try
+                {
+                    Functions.RunSQL(sql);
+                    MessageBox.Show("Revoke thanh cong", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Revoke that bai", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);                             
+                }
             }
         }
 
