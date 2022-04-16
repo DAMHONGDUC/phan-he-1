@@ -13,7 +13,7 @@ namespace PH1
         public static OracleConnection Con;
 
         //private static string host_name = @"DESKTOP-JBH7I57";
-        private static string host_name = @"DESKTOP-254FJBP"; // Minh Host
+        //private static string host_name = @"DESKTOP-254FJBP"; // Minh Host
 
         //private static string host_name = @"DESKTOP-2J1CNMG";
         //private static string host_name = @"DESKTOP-30F3CUE";
@@ -252,29 +252,15 @@ namespace PH1
 
         public static void RevokeRoleFromUser_OR_Role(String role, String user_OR_role) // thu hồi quyền
         {
-            OracleCommand command = new OracleCommand("sp_RevokeRoleFromUser_OR_Role", Con);
-            command.CommandType = CommandType.StoredProcedure;
+            role = role.ToUpper();
+            user_OR_role = user_OR_role.ToUpper();
 
-            OracleParameter param1 = new OracleParameter("role_name", OracleDbType.Varchar2);
-            param1.Value = role;
-            OracleParameter param2 = new OracleParameter("userORrole_name", OracleDbType.Varchar2);
-            param2.Value = user_OR_role;
 
-            command.Parameters.Add(param1);
-            command.Parameters.Add(param2);
-
-            try
-            {
-                
-                command.ExecuteNonQuery();
-               
-                MessageBox.Show("Thu hoi quyen thanh cong", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);             
-            }
-            catch (OracleException ex)
-            {
-                
-                throw ex;
-            }
+            OracleCommand command = new OracleCommand();
+            command.CommandText = $"REVOKE {role} FROM {user_OR_role}";
+            command.Connection = Con;
+            command.ExecuteNonQuery();
+            MessageBox.Show("Thu hoi quyen thanh cong", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         // SP cua Tuan
@@ -537,29 +523,16 @@ namespace PH1
         //SP gan role cho user/role
         public static void grantRoleToUser_OR_Role(String role, String user_OR_role)
         {
-            OracleCommand command = new OracleCommand("sp_grantRoleToUser", Con);
-            command.CommandType = CommandType.StoredProcedure;
+            role = role.ToUpper();
+            user_OR_role = user_OR_role.ToUpper();
 
-            OracleParameter param1 = new OracleParameter("role_name", OracleDbType.Varchar2);
-            param1.Value = role;
-            OracleParameter param2 = new OracleParameter("userOrRole_name", OracleDbType.Varchar2);
-            param2.Value = user_OR_role;
 
-            command.Parameters.Add(param1);
-            command.Parameters.Add(param2);
+            OracleCommand command = new OracleCommand();
+            command.CommandText = $"GRANT {role} TO {user_OR_role}";
+            command.Connection = Con;
+            command.ExecuteNonQuery();
 
-            try
-            {
-
-                command.ExecuteNonQuery();
-
-                MessageBox.Show("Cap quyen thanh cong", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (OracleException ex)
-            {
-
-                throw ex;
-            }
+            MessageBox.Show("Cap quyen thanh cong", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
