@@ -44,9 +44,11 @@
             this.dTP_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_phai = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_hoten = new System.Windows.Forms.TextBox();
+            this.txt_username = new System.Windows.Forms.Label();
+            this.txt_un = new System.Windows.Forms.TextBox();
+            this.cbo_phai = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btn_them
@@ -216,14 +218,6 @@
             this.label2.TabIndex = 50;
             this.label2.Text = "Phái";
             // 
-            // txt_phai
-            // 
-            this.txt_phai.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_phai.Location = new System.Drawing.Point(54, 183);
-            this.txt_phai.Name = "txt_phai";
-            this.txt_phai.Size = new System.Drawing.Size(189, 37);
-            this.txt_phai.TabIndex = 49;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -243,12 +237,46 @@
             this.txt_hoten.Size = new System.Drawing.Size(189, 37);
             this.txt_hoten.TabIndex = 47;
             // 
+            // txt_username
+            // 
+            this.txt_username.AutoSize = true;
+            this.txt_username.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_username.ForeColor = System.Drawing.Color.Black;
+            this.txt_username.Location = new System.Drawing.Point(54, 378);
+            this.txt_username.Name = "txt_username";
+            this.txt_username.Size = new System.Drawing.Size(99, 28);
+            this.txt_username.TabIndex = 67;
+            this.txt_username.Text = "Username";
+            // 
+            // txt_un
+            // 
+            this.txt_un.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_un.Location = new System.Drawing.Point(54, 409);
+            this.txt_un.Name = "txt_un";
+            this.txt_un.Size = new System.Drawing.Size(189, 37);
+            this.txt_un.TabIndex = 66;
+            // 
+            // cbo_phai
+            // 
+            this.cbo_phai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbo_phai.FormattingEnabled = true;
+            this.cbo_phai.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cbo_phai.Location = new System.Drawing.Point(54, 184);
+            this.cbo_phai.Name = "cbo_phai";
+            this.cbo_phai.Size = new System.Drawing.Size(189, 36);
+            this.cbo_phai.TabIndex = 68;
+            // 
             // Form_them_NV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(782, 486);
+            this.Controls.Add(this.cbo_phai);
+            this.Controls.Add(this.txt_username);
+            this.Controls.Add(this.txt_un);
             this.Controls.Add(this.btn_them);
             this.Controls.Add(this.cbBox_vaitro);
             this.Controls.Add(this.label9);
@@ -265,12 +293,12 @@
             this.Controls.Add(this.dTP_ngaysinh);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txt_phai);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_hoten);
             this.Name = "Form_them_NV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_them_NV";
+            this.Load += new System.EventHandler(this.Form_them_NV_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,8 +322,10 @@
         private DateTimePicker dTP_ngaysinh;
         private Label label3;
         private Label label2;
-        private TextBox txt_phai;
         private Label label1;
         private TextBox txt_hoten;
+        private Label txt_username;
+        private TextBox txt_un;
+        private ComboBox cbo_phai;
     }
 }
