@@ -31,7 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_hoten = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_phai = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dTP_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@
             this.btn_chinhsua = new System.Windows.Forms.Button();
             this.txt_username = new System.Windows.Forms.Label();
             this.txt_un = new System.Windows.Forms.TextBox();
+            this.txt_phai = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -80,14 +80,6 @@
             this.label2.Size = new System.Drawing.Size(49, 28);
             this.label2.TabIndex = 14;
             this.label2.Text = "Phái";
-            // 
-            // txt_phai
-            // 
-            this.txt_phai.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_phai.Location = new System.Drawing.Point(47, 196);
-            this.txt_phai.Name = "txt_phai";
-            this.txt_phai.Size = new System.Drawing.Size(189, 37);
-            this.txt_phai.TabIndex = 13;
             // 
             // label3
             // 
@@ -264,12 +256,25 @@
             this.txt_un.Size = new System.Drawing.Size(189, 37);
             this.txt_un.TabIndex = 47;
             // 
+            // txt_phai
+            // 
+            this.txt_phai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_phai.FormattingEnabled = true;
+            this.txt_phai.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.txt_phai.Location = new System.Drawing.Point(47, 196);
+            this.txt_phai.Name = "txt_phai";
+            this.txt_phai.Size = new System.Drawing.Size(189, 36);
+            this.txt_phai.TabIndex = 69;
+            // 
             // Form1_capnhat_NhanViencs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(782, 507);
+            this.Controls.Add(this.txt_phai);
             this.Controls.Add(this.txt_username);
             this.Controls.Add(this.txt_un);
             this.Controls.Add(this.btn_chinhsua);
@@ -288,7 +293,6 @@
             this.Controls.Add(this.dTP_ngaysinh);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txt_phai);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_hoten);
             this.Name = "Form1_capnhat_NhanViencs";
@@ -305,7 +309,6 @@
         private Label label1;
         private TextBox txt_hoten;
         private Label label2;
-        private TextBox txt_phai;
         private Label label3;
         private DateTimePicker dTP_ngaysinh;
         private Label label4;
@@ -323,5 +326,6 @@
         private Button btn_chinhsua;
         private Label txt_username;
         private TextBox txt_un;
+        private ComboBox txt_phai;
     }
 }
