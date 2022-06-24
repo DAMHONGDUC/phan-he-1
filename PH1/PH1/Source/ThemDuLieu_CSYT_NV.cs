@@ -41,7 +41,7 @@ namespace PH1.Source
             dGV_NV.Columns[8].HeaderText = "VAITRO";
             dGV_NV.Columns[9].HeaderText = "CHUYENKHOA";
             dGV_NV.Columns[10].HeaderText = "USERNAME";
-            dGV_NV.Columns[11].HeaderText = "PASSWORD";
+           // dGV_NV.Columns[11].HeaderText = "PASSWORD";
            
             // set kích thước cột
             dGV_NV.Columns[0].Width = 200;
@@ -55,7 +55,7 @@ namespace PH1.Source
             dGV_NV.Columns[8].Width = 200;
             dGV_NV.Columns[9].Width = 200;
             dGV_NV.Columns[10].Width = 200;
-            dGV_NV.Columns[11].Width = 200;
+         //   dGV_NV.Columns[11].Width = 200;
 
 
             //Không cho người dùng thêm dữ liệu trực tiếp
@@ -116,10 +116,19 @@ namespace PH1.Source
                 dGV_NV.CurrentRow.Cells["CSYT"].Value.ToString(),
                 dGV_NV.CurrentRow.Cells["CHUYENKHOA"].Value.ToString(),
                 dGV_NV.CurrentRow.Cells["VAITRO"].Value.ToString(),
-                dGV_NV.CurrentRow.Cells["NGAYSINH"].Value.ToString()
+                dGV_NV.CurrentRow.Cells["NGAYSINH"].Value.ToString(),
+                dGV_NV.CurrentRow.Cells["MANV"].Value.ToString(),
+                dGV_NV.CurrentRow.Cells["USERNAME"].Value.ToString()
                 );
             
             capnhat_NhanVien.Show();
+
+            capnhat_NhanVien.FormClosed += new FormClosedEventHandler(Form1_FormClosed);
+
+            void Form1_FormClosed(object sender, FormClosedEventArgs e)
+            {
+                LoadData_NV();
+            }
         }
 
         private void dGV_NV_Click(object sender, EventArgs e)
@@ -132,6 +141,13 @@ namespace PH1.Source
             PH1.Source.Form_them_NV them_nv = new Form_them_NV();
 
             them_nv.Show();
+
+            them_nv.FormClosed += new FormClosedEventHandler(Form2_FormClosed);
+
+            void Form2_FormClosed(object sender, FormClosedEventArgs e)
+            {
+                LoadData_NV();
+            }
         }
 
         private void btn_them_CSYT_Click(object sender, EventArgs e)
@@ -139,6 +155,13 @@ namespace PH1.Source
             PH1.Source.Form_them_CSYT them_CSYT = new Form_them_CSYT();
 
             them_CSYT.Show();
+
+            them_CSYT.FormClosed += new FormClosedEventHandler(Form3_FormClosed);
+
+            void Form3_FormClosed(object sender, FormClosedEventArgs e)
+            {
+                LoadData_CSYT();
+            }
         }
 
         private void btn_sua_CSYT_Click(object sender, EventArgs e)
@@ -146,10 +169,18 @@ namespace PH1.Source
             PH1.Source.From_capnhat_CSYT capnhat_CSYT = new From_capnhat_CSYT(
                 dGV_CSYT.CurrentRow.Cells["TENCSYT"].Value.ToString(),
                 dGV_CSYT.CurrentRow.Cells["DCCSYT"].Value.ToString(),
-                dGV_CSYT.CurrentRow.Cells["SDTCSYT"].Value.ToString()
+                dGV_CSYT.CurrentRow.Cells["SDTCSYT"].Value.ToString(),
+                 dGV_CSYT.CurrentRow.Cells["MACSYT"].Value.ToString()
                 );
 
             capnhat_CSYT.Show();
+
+            capnhat_CSYT.FormClosed += new FormClosedEventHandler(Form4_FormClosed);
+
+            void Form4_FormClosed(object sender, FormClosedEventArgs e)
+            {
+                LoadData_CSYT();
+            }
         }
     }
 }

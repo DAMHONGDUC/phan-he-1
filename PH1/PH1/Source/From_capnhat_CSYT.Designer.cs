@@ -48,6 +48,7 @@
             this.btn_them.TabIndex = 75;
             this.btn_them.Text = "Xác nhận cập nhật";
             this.btn_them.UseVisualStyleBackColor = false;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // label4
             // 
