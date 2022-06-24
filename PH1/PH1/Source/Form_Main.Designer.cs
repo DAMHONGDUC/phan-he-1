@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btn_themdulieu_CSYT_NV = new System.Windows.Forms.Button();
             this.btn_revokePrivileges = new System.Windows.Forms.Button();
             this.btn_grantRole_toUser = new System.Windows.Forms.Button();
             this.btn_grantPrivileges = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.btn_logout = new System.Windows.Forms.Button();
             this.label_username = new System.Windows.Forms.Label();
             this.panelChildForm_KH = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panel_username.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panelMenu.Controls.Add(this.button3);
+            this.panelMenu.Controls.Add(this.btn_themdulieu_CSYT_NV);
             this.panelMenu.Controls.Add(this.btn_revokePrivileges);
             this.panelMenu.Controls.Add(this.btn_grantRole_toUser);
             this.panelMenu.Controls.Add(this.btn_grantPrivileges);
@@ -69,6 +69,22 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(181, 853);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btn_themdulieu_CSYT_NV
+            // 
+            this.btn_themdulieu_CSYT_NV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btn_themdulieu_CSYT_NV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_themdulieu_CSYT_NV.FlatAppearance.BorderSize = 0;
+            this.btn_themdulieu_CSYT_NV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_themdulieu_CSYT_NV.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_themdulieu_CSYT_NV.ForeColor = System.Drawing.Color.White;
+            this.btn_themdulieu_CSYT_NV.Location = new System.Drawing.Point(0, 772);
+            this.btn_themdulieu_CSYT_NV.Name = "btn_themdulieu_CSYT_NV";
+            this.btn_themdulieu_CSYT_NV.Size = new System.Drawing.Size(181, 59);
+            this.btn_themdulieu_CSYT_NV.TabIndex = 34;
+            this.btn_themdulieu_CSYT_NV.Text = "Thêm dữ liệu CSYT, NHANVIEN";
+            this.btn_themdulieu_CSYT_NV.UseVisualStyleBackColor = false;
+            this.btn_themdulieu_CSYT_NV.Click += new System.EventHandler(this.btn_themdulieu_CSYT_NV_Click);
             // 
             // btn_revokePrivileges
             // 
@@ -283,21 +299,6 @@
             this.panelChildForm_KH.Size = new System.Drawing.Size(901, 853);
             this.panelChildForm_KH.TabIndex = 1;
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 772);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(181, 59);
-            this.button3.TabIndex = 34;
-            this.button3.Text = "Thêm dữ liệu CSYT, NHANVIEN";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -337,6 +338,6 @@
         private Panel panelChildForm_KH;
         private Button btn_logout;
         private Label label1;
-        private Button button3;
+        private Button btn_themdulieu_CSYT_NV;
     }
 }

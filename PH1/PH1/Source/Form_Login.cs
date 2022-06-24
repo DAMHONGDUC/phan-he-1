@@ -46,7 +46,7 @@ namespace PH1
             password = txtbox_password.Text.Trim();
             
 
-            //Login(username, password);
+            Login(username, password);
 
             // U_AD thì xử lí mở main
             if (username.Contains("U_AD"))
