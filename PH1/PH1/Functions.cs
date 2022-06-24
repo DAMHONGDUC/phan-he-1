@@ -12,7 +12,7 @@ namespace PH1
     {
         public static OracleConnection Con;
 
-        private static string host_name = @"DESKTOP-JBH7I57";
+        private static string host_name = @"DESKTOP-PU7OUUT"; // Duc
         //private static string host_name = @"DESKTOP-254FJBP"; // Minh Host
 
         //private static string host_name = @"DESKTOP-2J1CNMG";
