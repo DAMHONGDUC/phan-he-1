@@ -46,7 +46,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txt_chuyenkhoa = new System.Windows.Forms.TextBox();
             this.cbBox_vaitro = new System.Windows.Forms.ComboBox();
-            this.btn_AddUser = new System.Windows.Forms.Button();
+            this.btn_chinhsua = new System.Windows.Forms.Button();
+            this.txt_username = new System.Windows.Forms.Label();
+            this.txt_un = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -92,7 +94,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(47, 288);
+            this.label3.Location = new System.Drawing.Point(47, 273);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 28);
             this.label3.TabIndex = 16;
@@ -104,7 +106,7 @@
             this.dTP_ngaysinh.CustomFormat = "dd/MM/yyyy";
             this.dTP_ngaysinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dTP_ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dTP_ngaysinh.Location = new System.Drawing.Point(47, 319);
+            this.dTP_ngaysinh.Location = new System.Drawing.Point(47, 304);
             this.dTP_ngaysinh.Name = "dTP_ngaysinh";
             this.dTP_ngaysinh.Size = new System.Drawing.Size(189, 34);
             this.dTP_ngaysinh.TabIndex = 32;
@@ -153,7 +155,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(289, 289);
+            this.label6.Location = new System.Drawing.Point(289, 274);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 28);
             this.label6.TabIndex = 38;
@@ -162,7 +164,7 @@
             // txt_sdt
             // 
             this.txt_sdt.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_sdt.Location = new System.Drawing.Point(289, 320);
+            this.txt_sdt.Location = new System.Drawing.Point(289, 305);
             this.txt_sdt.Name = "txt_sdt";
             this.txt_sdt.Size = new System.Drawing.Size(189, 37);
             this.txt_sdt.TabIndex = 37;
@@ -202,7 +204,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(532, 289);
+            this.label9.Location = new System.Drawing.Point(532, 274);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(127, 28);
             this.label9.TabIndex = 44;
@@ -211,7 +213,7 @@
             // txt_chuyenkhoa
             // 
             this.txt_chuyenkhoa.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_chuyenkhoa.Location = new System.Drawing.Point(532, 320);
+            this.txt_chuyenkhoa.Location = new System.Drawing.Point(532, 305);
             this.txt_chuyenkhoa.Name = "txt_chuyenkhoa";
             this.txt_chuyenkhoa.Size = new System.Drawing.Size(189, 37);
             this.txt_chuyenkhoa.TabIndex = 43;
@@ -230,25 +232,47 @@
             this.cbBox_vaitro.Size = new System.Drawing.Size(189, 36);
             this.cbBox_vaitro.TabIndex = 45;
             // 
-            // btn_AddUser
+            // btn_chinhsua
             // 
-            this.btn_AddUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(187)))), ((int)(((byte)(241)))));
-            this.btn_AddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_AddUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_AddUser.Location = new System.Drawing.Point(289, 403);
-            this.btn_AddUser.Name = "btn_AddUser";
-            this.btn_AddUser.Size = new System.Drawing.Size(199, 56);
-            this.btn_AddUser.TabIndex = 46;
-            this.btn_AddUser.Text = "Xác nhận chỉnh sửa";
-            this.btn_AddUser.UseVisualStyleBackColor = false;
+            this.btn_chinhsua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(187)))), ((int)(((byte)(241)))));
+            this.btn_chinhsua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_chinhsua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_chinhsua.Location = new System.Drawing.Point(289, 396);
+            this.btn_chinhsua.Name = "btn_chinhsua";
+            this.btn_chinhsua.Size = new System.Drawing.Size(199, 56);
+            this.btn_chinhsua.TabIndex = 46;
+            this.btn_chinhsua.Text = "Xác nhận chỉnh sửa";
+            this.btn_chinhsua.UseVisualStyleBackColor = false;
+            this.btn_chinhsua.Click += new System.EventHandler(this.btn_chinhsua_Click);
+            // 
+            // txt_username
+            // 
+            this.txt_username.AutoSize = true;
+            this.txt_username.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_username.ForeColor = System.Drawing.Color.Black;
+            this.txt_username.Location = new System.Drawing.Point(47, 375);
+            this.txt_username.Name = "txt_username";
+            this.txt_username.Size = new System.Drawing.Size(99, 28);
+            this.txt_username.TabIndex = 48;
+            this.txt_username.Text = "Username";
+            // 
+            // txt_un
+            // 
+            this.txt_un.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_un.Location = new System.Drawing.Point(47, 406);
+            this.txt_un.Name = "txt_un";
+            this.txt_un.Size = new System.Drawing.Size(189, 37);
+            this.txt_un.TabIndex = 47;
             // 
             // Form1_capnhat_NhanViencs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(782, 486);
-            this.Controls.Add(this.btn_AddUser);
+            this.ClientSize = new System.Drawing.Size(782, 507);
+            this.Controls.Add(this.txt_username);
+            this.Controls.Add(this.txt_un);
+            this.Controls.Add(this.btn_chinhsua);
             this.Controls.Add(this.cbBox_vaitro);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txt_chuyenkhoa);
@@ -296,6 +320,8 @@
         private Label label9;
         private TextBox txt_chuyenkhoa;
         private ComboBox cbBox_vaitro;
-        private Button btn_AddUser;
+        private Button btn_chinhsua;
+        private Label txt_username;
+        private TextBox txt_un;
     }
 }

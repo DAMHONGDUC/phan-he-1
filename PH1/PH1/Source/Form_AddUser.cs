@@ -23,6 +23,15 @@ namespace PH1
 
         private void btn_AddUser_Click(object sender, EventArgs e)
         {
+           if (txt_UserName.Text.Trim().Length == 0 ||
+                txt_Password.Text.Trim().Length == 0 ||
+                cbBox_vaitro.Text.Trim().Length == 0 )
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+
             name = txt_UserName.Text.Trim().ToString().ToUpper();
             if (Functions.isUserValid(name) == 1)
             {
@@ -33,6 +42,18 @@ namespace PH1
             Functions.RunSQL(sql);
             name = txt_UserName.Text.Trim().ToString();
             pass = txt_Password.Text.Trim().ToString();
+            String vaitro = (cbBox_vaitro.SelectedIndex + 1).ToString();
+
+            if (cbBox_vaitro.SelectedIndex == 4) // benh nhan
+                sql = "CALL createUser('"+ name + "','"+ pass + "',1,1)";
+            else sql = "CALL createUser('" + name + "','" + pass + "',0,"+ vaitro + ")";
+
+            Functions.RunSQL(sql);
+            MessageBox.Show("Them User thanh cong!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            txt_UserName.Text = "";
+            txt_Password.Text = "";
+            cbBox_vaitro.Text = "";
 
             //sql = "CREATE USER " + name + " IDENTIFIED BY " + pass;
 
@@ -55,5 +76,7 @@ namespace PH1
             //}
             //return;
         }
+
+       
     }
 }
