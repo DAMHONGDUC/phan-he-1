@@ -40,9 +40,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel_username = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_logout = new System.Windows.Forms.Button();
             this.label_username = new System.Windows.Forms.Label();
             this.panelChildForm_KH = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panel_username.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +52,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelMenu.Controls.Add(this.button3);
             this.panelMenu.Controls.Add(this.btn_revokePrivileges);
             this.panelMenu.Controls.Add(this.btn_grantRole_toUser);
             this.panelMenu.Controls.Add(this.btn_grantPrivileges);
@@ -75,11 +78,11 @@
             this.btn_revokePrivileges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_revokePrivileges.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_revokePrivileges.ForeColor = System.Drawing.Color.White;
-            this.btn_revokePrivileges.Location = new System.Drawing.Point(0, 729);
+            this.btn_revokePrivileges.Location = new System.Drawing.Point(0, 713);
             this.btn_revokePrivileges.Name = "btn_revokePrivileges";
-            this.btn_revokePrivileges.Size = new System.Drawing.Size(181, 99);
+            this.btn_revokePrivileges.Size = new System.Drawing.Size(181, 59);
             this.btn_revokePrivileges.TabIndex = 33;
-            this.btn_revokePrivileges.Text = "Revoke PrivilegesRole From User/Role";
+            this.btn_revokePrivileges.Text = "Revoke Privileges";
             this.btn_revokePrivileges.UseVisualStyleBackColor = false;
             this.btn_revokePrivileges.Click += new System.EventHandler(this.btn_revokePrivileges_Click);
             // 
@@ -93,7 +96,7 @@
             this.btn_grantRole_toUser.ForeColor = System.Drawing.Color.White;
             this.btn_grantRole_toUser.Location = new System.Drawing.Point(0, 654);
             this.btn_grantRole_toUser.Name = "btn_grantRole_toUser";
-            this.btn_grantRole_toUser.Size = new System.Drawing.Size(181, 75);
+            this.btn_grantRole_toUser.Size = new System.Drawing.Size(181, 59);
             this.btn_grantRole_toUser.TabIndex = 32;
             this.btn_grantRole_toUser.Text = "Grant Role To User";
             this.btn_grantRole_toUser.UseVisualStyleBackColor = false;
@@ -230,6 +233,7 @@
             // panel_username
             // 
             this.panel_username.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel_username.Controls.Add(this.label1);
             this.panel_username.Controls.Add(this.btn_logout);
             this.panel_username.Controls.Add(this.label_username);
             this.panel_username.Dock = System.Windows.Forms.DockStyle.Top;
@@ -237,6 +241,16 @@
             this.panel_username.Name = "panel_username";
             this.panel_username.Size = new System.Drawing.Size(181, 166);
             this.panel_username.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(163, 28);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "DBA";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_logout
             // 
@@ -269,9 +283,24 @@
             this.panelChildForm_KH.Size = new System.Drawing.Size(901, 853);
             this.panelChildForm_KH.TabIndex = 1;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(0, 772);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(181, 59);
+            this.button3.TabIndex = 34;
+            this.button3.Text = "Thêm dữ liệu CSYT, NHANVIEN";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
             // Form_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1082, 853);
@@ -307,5 +336,7 @@
         private Button btn_grantPrivileges;
         private Panel panelChildForm_KH;
         private Button btn_logout;
+        private Label label1;
+        private Button button3;
     }
 }
