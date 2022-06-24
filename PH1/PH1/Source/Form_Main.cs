@@ -154,6 +154,13 @@ namespace PH1
             ActivateButton(sender);
         }
 
+        private void btn_themdulieu_CSYT_NV_Click(object sender, EventArgs e)
+        {
+            
+            openChildForm(new PH1.Source.ThemDuLieu_CSYT_NV());
+            ActivateButton(sender);
+        }
+
         private void button_To_FormCheckPrivileges(object sender, EventArgs e)
         {
             openChildForm(new Form_CheckPrivilege());

@@ -43,5 +43,8 @@
     <Compile Update="Source\Form_ShowUsers.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Source\ThemDuLieu_CSYT_NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
