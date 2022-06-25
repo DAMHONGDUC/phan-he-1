@@ -1,4 +1,9 @@
---B1: Dang nhap bang SYS va chay cac policy sau
+--B1: Dang nhap bang SYS va chay cau lenh sau:
+GRANT SELECT ON dba_audit_trail TO U_AD;
+GRANT EXECUTE ON DBMS_FGA TO U_AD;
+GRANT SELECT ON SYS.FGA_LOG$ TO U_AD;
+
+--B2: dang nhap bang U_AD va chay cac cau lenh sau:
 
 --------------------AUDIT column KETLUAN trong bang HSBA--------------------
 -- xoa policy
@@ -67,10 +72,10 @@ END;
 /
 
 --------------------AUDIT TESTING--------------------
---B1: dang nhap bang U_AD(hoac user khac) va chay cau lenh sau:
+--B1: dang nhap bang user (khac U_AD) va chay cau lenh sau:
 SELECT CMND FROM U_AD.NHANVIEN;
 SELECT KETLUAN FROM U_AD.HSBA;
 SELECT KETQUA FROM U_AD.HSBA_DV;
 
--- B2: Dang nhap bang SYS va chay cau lenh sau:
+-- B2: Dang nhap bang U_AD va chay cau lenh sau:
 SELECT DBUID, LSQLTEXT, NTIMESTAMP# FROM SYS.FGA_LOG$;
