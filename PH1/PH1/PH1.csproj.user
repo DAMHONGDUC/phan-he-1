@@ -7,6 +7,9 @@
     <Compile Update="NhanVien\FormMain_NV.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="NhanVien\Form_xemTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Source\Form1_capnhat_NhanViencs.cs">
       <SubType>Form</SubType>
     </Compile>

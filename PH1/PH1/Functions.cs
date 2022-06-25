@@ -60,6 +60,18 @@ namespace PH1
             }
         }
 
+        public static string GetFieldValues(string sql) // lấy dữ liệu từ câu lệnh sql
+        {
+            string ma = "";
+            OracleCommand cmd = new OracleCommand(sql, Con);
+            OracleDataReader reader;
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+                ma = reader.GetValue(0).ToString();
+            reader.Close();
+            return ma;
+        }
+
         public static void RunSQL(string sql) // chạy câu lệnh sql
         {
             OracleCommand cmd = new OracleCommand();

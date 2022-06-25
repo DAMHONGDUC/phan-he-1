@@ -13,6 +13,58 @@ namespace PH1.NhanVien
     public partial class FormMain_NV : Form
     {
         String username = "", dbname = "";
+        String thanhtra = "THANHTRA_";
+        Thread t;
+
+        // mở 1 form con
+        private Form activeform = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeform != null)
+                activeform.Close();
+            activeform = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelChildForm_KH.Controls.Add(childForm);
+            panelChildForm_KH.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        // xử lí chuyển màu khi click vào button
+        private Button currentButton;
+        private void ActivateButton(object btnSender)
+        {
+            if (btnSender != null)
+            {
+                if (currentButton != (Button)btnSender)
+                {
+                    DisableButton();
+                    Color color = ColorTranslator.FromHtml("#4169E1");
+                    currentButton = (Button)btnSender;
+                    currentButton.BackColor = color;
+                    currentButton.ForeColor = Color.White;
+                }
+            }
+        }
+        private void DisableButton()
+        {
+            foreach (Control previousBtn in panelMenu.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(39, 39, 58);
+                    previousBtn.ForeColor = Color.Gainsboro;
+                }
+            }
+        }
+
+        // xử lí đăng xuất + đăng nhập lại
+        public void open_FormLogin(object obj)
+        {
+            Application.Run(new Form_Login());
+        }
 
         private void FormMain_NV_Load(object sender, EventArgs e)
         {
@@ -25,6 +77,29 @@ namespace PH1.NhanVien
             label_username.Location = new Point(x, y - 15);
             // label_welcome.Location = new Point(x,y-40);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (username.Contains(thanhtra))
+            {
+                openChildForm(new PH1.NhanVien.Form_xemTT());
+                ActivateButton(sender);
+            }
+            else
+            {
+                MessageBox.Show("Chỉ thanh tra mới được sử dụng chức năng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            t = new Thread(open_FormLogin);
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+        }
+
         public FormMain_NV(String un, String dn)
         {
             InitializeComponent();

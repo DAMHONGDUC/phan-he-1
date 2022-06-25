@@ -77,6 +77,7 @@
             this.button3.TabIndex = 26;
             this.button3.Text = "Xem thông tin";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -140,6 +141,7 @@
             this.btn_logout.TabIndex = 9;
             this.btn_logout.Text = "Logout";
             this.btn_logout.UseVisualStyleBackColor = false;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // label_username
             // 
