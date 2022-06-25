@@ -1,7 +1,8 @@
 -----------------------TC2------------------------
--- có 5 nhân viên thuộc sở y tế với vai trò "thanh tra"
--- các nhân viên giữ vai trò thanh tra có thể đ�?c dữ liệu trên tất cả các bảng
--- nhưng không có quy�?n thêm xoá sửa các bảng này
+
+-- co 5 nhan vien thuoc so y te voi vai tro "thanh tra"
+-- cac nhan vien giu vai tro thanh tra co the Ä‘oc du lieu tren tat ca cac bang
+-- nhung khong co quyen them xoa sua cac bang nay
 
 -- B1: drop user
 DROP USER THANHTRA_1 CASCADE ;
@@ -10,7 +11,7 @@ DROP USER THANHTRA_3 CASCADE ;
 DROP USER THANHTRA_4 CASCADE ;
 DROP USER THANHTRA_5 CASCADE ;
 
--- B2: tạo 5 user thanh tra
+-- B2: táº¡o 5 user thanh tra
 alter session set "_ORACLE_SCRIPT"=true; 
 CREATE USER THANHTRA_1 IDENTIFIED BY 1;
 CREATE USER THANHTRA_2 IDENTIFIED BY 2;
