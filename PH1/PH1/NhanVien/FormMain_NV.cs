@@ -25,6 +25,58 @@ namespace PH1.NhanVien
             label_username.Location = new Point(x, y - 15);
             // label_welcome.Location = new Point(x,y-40);
         }
+
+        // mở 1 form con
+        private Form activeform = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeform != null)
+                activeform.Close();
+            activeform = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelChildForm_KH.Controls.Add(childForm);
+            panelChildForm_KH.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        // xử lí chuyển màu khi click vào button
+        private Button currentButton;
+        private void ActivateButton(object btnSender)
+        {
+            if (btnSender != null)
+            {
+                if (currentButton != (Button)btnSender)
+                {
+                    DisableButton();
+                    Color color = ColorTranslator.FromHtml("#4169E1");
+                    currentButton = (Button)btnSender;
+                    currentButton.BackColor = color;
+                    currentButton.ForeColor = Color.White;
+                }
+            }
+        }
+        private void DisableButton()
+        {
+            foreach (Control previousBtn in panelMenu.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(39, 39, 58);
+                    previousBtn.ForeColor = Color.Gainsboro;
+                }
+            }
+        }
+
+
+        private void btn_hsba_Click(object sender, EventArgs e)
+        {
+            openChildForm(new PH1.NhanVien.HSBA(username, dbname));
+            ActivateButton(sender);
+        }
+
         public FormMain_NV(String un, String dn)
         {
             InitializeComponent();
