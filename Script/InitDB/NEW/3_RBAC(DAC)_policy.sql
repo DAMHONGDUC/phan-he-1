@@ -1,7 +1,7 @@
 -----------------------TC2------------------------
--- có 5 nhân viên thuộc sở y tế với vai trò "thanh tra"
--- các nhân viên giữ vai trò thanh tra có thể đọc dữ liệu trên tất cả các bảng
--- nhưng không có quyền thêm xoá sửa các bảng này
+-- co 5 nhan vien thuoc so y te voi vai tro "thanh tra"
+-- cac nhan vien giu vai tro thanh tra co the đoc du lieu tren tat ca cac bang
+-- nhung khong co quyen them xoa sua cac bang nay
 
 -- B1: drop user
 DROP USER THANHTRA_1 CASCADE ;
