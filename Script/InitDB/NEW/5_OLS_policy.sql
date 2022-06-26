@@ -1,4 +1,5 @@
--- ===== CHAY DUOI QUYEN SYSDBA ======
+-- TC 7
+--===== CHAY DUOI QUYEN SYSDBA ======
 SELECT STATUS FROM DBA_OLS_STATUS WHERE NAME = 'OLS_CONFIGURE_STATUS';
 
 EXEC LBACSYS.CONFIGURE_OLS;  -- This procedure registers Oracle Label Security.

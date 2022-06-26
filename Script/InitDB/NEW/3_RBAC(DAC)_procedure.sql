@@ -1,3 +1,4 @@
+--PH1
 -- Procedure thu hoi ROLE tu USER
 -- drop procedure sp_RevokeRoleFromUser_OR_Role;
 create or replace procedure sp_RevokeRoleFromUser_OR_Role
@@ -10,6 +11,7 @@ begin
 end;
 /
 
+--TC1
 -- Procedure tao user BENHNHAN hoac NHANVIEN (co them vai tro)
 create or replace procedure createUser
 (user_name in varchar2, pwd in varchar2, ty in int , vaitro in NVARCHAR2)
@@ -34,8 +36,8 @@ begin
         EXECUTE IMMEDIATE ( lv_stmt ); 
     END IF;
 end;
-
-
+/
+--TC3
 -- Procedure Xoa HSBA by MAHSBA
 drop PROCEDURE DELETE_HSBA;
 
@@ -68,6 +70,7 @@ BEGIN
 END;
 
 /
+--TC3
 -- Procuderu xoa HSBA_DV by MAHSBA, MADV, NGAY
 drop PROCEDURE DELETE_HSBA_DV;
 CREATE OR REPLACE PROCEDURE DELETE_HSBA_DV
@@ -101,6 +104,7 @@ BEGIN
 END;
 
 /
+--TC3
 -- Procedure insert HSBA
 drop PROCEDURE INSERT_HSBA;
 CREATE OR REPLACE PROCEDURE INSERT_HSBA
@@ -131,6 +135,7 @@ BEGIN
 END;
 
 /
+--TC3
 -- Procudure Insert HSBA_DV
 CREATE OR REPLACE PROCEDURE INSERT_HSBA_DV
 (

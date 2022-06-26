@@ -86,6 +86,11 @@ namespace PH1
 
         private void Form_Main_Load(object sender, EventArgs e)
         {
+            ScrollBar vScrollBar1 = new VScrollBar();
+            vScrollBar1.Dock = DockStyle.Right;
+            vScrollBar1.Scroll += (sender, e) =>
+            { panelMenu.VerticalScroll.Value = vScrollBar1.Value; };
+            panelMenu.Controls.Add(vScrollBar1);
             Set_Center_Username();
         }
 

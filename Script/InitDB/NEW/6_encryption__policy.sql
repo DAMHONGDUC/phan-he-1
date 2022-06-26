@@ -16,18 +16,18 @@ begin
     output_string := UTL_I18N.RAW_TO_CHAR (decrypted_raw, 'AL32UTF8');
     return output_string;  
 end; 
-
+/
 -- VIEW XEM CMND BENHNHAN
 create or replace view  view_decrypt_BENHNHAN_CMND as 
     select n.MABN, CAST (decrypt_CMND(n.CMND) AS varchar2 (255)) CMND
     from BENHNHAN n;
-
+/
 -- VIEW XEM CMND NHANVIEN
 create or replace view  view_decrypt_NHANVIEN_CMND as 
     select n.MANV, CAST (decrypt_CMND(n.CMND) AS varchar2 (255)) CMND
     from NHANVIEN n;
 
-
+/
 
 -- TAO FUNCTION GIAI MA KETQUA/KETLUAN
 create or replace function decrypt_KETQUA (p_data in nvarchar2)  
@@ -50,12 +50,12 @@ begin
 	output_string := TO_NCHAR(input_string);
     return output_string; 
 end; 
-
+/
 -- VIEW XEM KETLUAN HSBA
 create or replace view  view_decrypt_HSBA_KETLUAN as 
     select n.MAHSBA, CAST (decrypt_KETQUA(n.KETLUAN) AS nvarchar2 (255)) KETLUAN
     from HSBA n;
-
+/
 -- VIEW XEM CMND NHANVIEN
 create or replace view  view_decrypt_HSBADV_KETQUA as 
     select n.MA_HSBA, CAST (decrypt_KETQUA(n.KETQUA) AS nvarchar2 (255)) KETQUA

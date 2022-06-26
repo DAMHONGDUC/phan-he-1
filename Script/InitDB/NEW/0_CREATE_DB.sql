@@ -17,5 +17,8 @@ GRANT SELECT ON DBA_ROLES to U_AD WITH GRANT OPTION;
 grant execute on DBMS_RLS to U_AD;
 grant execute on DBMS_CRYPTO to U_AD;
 
-grant execute on DBMS_RLS to U_AD;
-grant execute on DBMS_CRYPTO to U_AD;
+GRANT SELECT ON dba_audit_trail TO U_AD;
+
+GRANT SELECT ON dba_audit_trail TO U_AD;
+GRANT EXECUTE ON DBMS_FGA TO U_AD;
+GRANT SELECT ON SYS.FGA_LOG$ TO U_AD;
