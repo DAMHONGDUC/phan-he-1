@@ -1,5 +1,3 @@
--- B1: Dang nhap bang SYS va chay cau lenh sau:
-GRANT SELECT ON dba_audit_trail TO U_AD;
 
 -- B2: Dang nhap bang U_AD va chay lan luot cac cau lenh sau
 alter system set audit_trail = DB,EXTENDED scope = spfile;

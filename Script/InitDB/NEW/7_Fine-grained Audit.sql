@@ -1,8 +1,3 @@
---B1: Dang nhap bang SYS va chay cau lenh sau:
-GRANT SELECT ON dba_audit_trail TO U_AD;
-GRANT EXECUTE ON DBMS_FGA TO U_AD;
-GRANT SELECT ON SYS.FGA_LOG$ TO U_AD;
-
 --B2: dang nhap bang U_AD va chay cac cau lenh sau:
 
 --------------------AUDIT column KETLUAN trong bang HSBA--------------------

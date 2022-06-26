@@ -18,6 +18,7 @@ namespace PH1
         String nhanvien = "NHANVIEN_";
         String thanhtra = "THANHTRA_";
         String benhnhan = "BENHNHAN_";
+        String bacsi = "BACSI_";
 
         public Form_Login()
         {
@@ -61,7 +62,7 @@ namespace PH1
             }
 
             // NV 
-            else if (username.Contains(nhanvien) || username.Contains(thanhtra))
+            else if (username.Contains(nhanvien) || username.Contains(thanhtra) || username.Contains(bacsi))
             {
                 this.Close();
                 t = new Thread(open_FormMainNV);

@@ -1,44 +1,4 @@
--- TC6
--- Tru DBA va role THANHTRA
--- Chi co the xem va sua thong tin cua chinh minh
---- Quyen SELECT
-
--- Xoa func 
-drop function YBacSi_Select_HSBA;
--- Xoa policy Update
-begin DBMS_RLS.drop_policy
-(object_schema => 'U_AD',
-object_name => 'HSBA',
-policy_name => 'HSBA_Control_Select'
-);
-end;
-
--- Tao function de ap dung 
-create or replace function YBacSi_Select_HSBA(
-p_schema in varchar2,
-p_object in varchar2)
-return varchar2
-as
-    login_user varchar2(255);
-    manv number;
-begin
-    login_user := SYS_CONTEXT('userenv', 'SESSION_USER');
-    SELECT MANV  INTO manv 
-    FROM NHANVIEN
-    WHERE USERNAME = login_user;
-    RETURN 'MABS   = '''||manv||'''';
-end;
-/
--- Dang ky function vao chinh sach bao mat
-begin DBMS_RLS.add_policy
-(object_schema => 'U_AD',
-object_name => 'HSBA',
-policy_name => 'HSBA_Control_Select',
-policy_function => 'YBacSi_Select_HSBA',
-statement_types => 'SELECT');
-end;
-
-
+--TC6
 -- DOI VOI NHAN VIEN
 -- select
 -- Xoa func 
@@ -50,7 +10,7 @@ object_name => 'NHANVIEN',
 policy_name => 'NHANVIEN_Control_Select'
 );
 end;
-
+/
 -- Tao function de ap dung 
 create or replace function Select_NhanVien(
 p_schema in varchar2,
@@ -64,8 +24,9 @@ begin
         return '1=1';
     elsif login_user like 'THANHTRA%' then
         return '1=1';
-    else
+    elsif login_user like 'NHANVIEN%' then
         return  'USERNAME   = '''||login_user||'''';
+    else return '1=2';
     end if;
 end;
 /
@@ -77,8 +38,8 @@ policy_name => 'NHANVIEN_Control_Select',
 policy_function => 'Select_NhanVien',
 statement_types => 'SELECT');
 end;
-
-
+/
+--tc6
 --- Quyen UPDATE doi voi nhan vien
 
 -- Xoa func 
@@ -90,7 +51,7 @@ object_name => 'NHANVIEN',
 policy_name => 'NhanVien_Control_Update'
 );
 end;
-
+/
 -- Tao function de ap dung 
 create or replace function Update_NhanVien(
 p_schema in varchar2,
@@ -102,10 +63,9 @@ begin
      login_user := SYS_CONTEXT('userenv', 'SESSION_USER');
     if login_user = 'U_AD'  then
         return '1=1';
-    elsif login_user like 'THANHTRA%' then
-        return '1=1';
-    else
+    elsif login_user like 'NHANVIEN%' then
         return  'USERNAME   = '''||login_user||'''';
+    else return '1=2';
     end if;
 end;
 /
@@ -118,10 +78,10 @@ policy_function => 'Update_NhanVien',
 statement_types => 'UPDATE',
 update_check => TRUE);
 end;
+/
 
 
-
--- DOI VOI BENH NHAN
+-- DOI VOI BENH NHAN TC6
 
 drop function Select_BenhNhan;
 -- Xoa policy Update
@@ -131,7 +91,7 @@ object_name => 'BENHNHAN',
 policy_name => 'BENHNHAN_Control_Select'
 );
 end;
-
+/
 -- Tao function de ap dung 
 create or replace function Select_BenhNhan(
 p_schema in varchar2,
@@ -141,7 +101,14 @@ as
     login_user varchar2(255);
 begin
     login_user := SYS_CONTEXT('userenv', 'SESSION_USER');
-    return  'USERNAME   = '''||login_user||'''';
+    if login_user = 'U_AD'  then
+        return '1=1';
+    elsif login_user like 'THANHTRA%' then
+        return '1=1';
+    elsif login_user like 'BENHNHAN%' then
+        return  'USERNAME   = '''||login_user||'''';
+    else return '1=2';
+    end if;
 end;
 /
 -- Dang ky function vao chinh sach bao mat
@@ -152,9 +119,9 @@ policy_name => 'BENHNHAN_Control_Select',
 policy_function => 'Select_BenhNhan',
 statement_types => 'SELECT');
 end;
+/
 
-
---- Quyen UPDATE doi voi nhan vien
+--- Quyen UPDATE doi voi benh nhan TC6
 
 -- Xoa func 
 drop function Update_BenhNhan;
@@ -165,7 +132,7 @@ object_name => 'BENHNHAN',
 policy_name => 'BenhNhan_Control_Update'
 );
 end;
-
+/
 -- Tao function de ap dung 
 create or replace function Update_BENHNHAN(
 p_schema in varchar2,
@@ -175,7 +142,12 @@ as
     login_user varchar2(255);
 begin
      login_user := SYS_CONTEXT('userenv', 'SESSION_USER');
-     return  'USERNAME   = '''||login_user||'''';
+     if login_user = 'U_AD'  then
+        return '1=1';
+    elsif login_user like 'BENHNHAN%' then
+        return  'USERNAME   = '''||login_user||'''';
+    else return '1=2';
+    end if;
 end;
 /
 -- Dang ky function vao chinh sach bao mat

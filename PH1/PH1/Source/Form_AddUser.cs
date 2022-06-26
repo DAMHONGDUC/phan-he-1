@@ -36,6 +36,10 @@ namespace PH1
                     sql2 = "GRANT ROLE_NHANVIEN TO " + usname;
                     Functions.RunSQL(sql2);
                     break;
+                case 2:
+                    sql2 = "GRANT ROLE_YBACSI TO " + usname;
+                    Functions.RunSQL(sql2);
+                    break;
             }
            
         }
