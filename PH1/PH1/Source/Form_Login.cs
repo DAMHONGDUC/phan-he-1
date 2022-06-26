@@ -14,7 +14,11 @@ namespace PH1
     {
         Thread t;
         String username = "", password = "";
-        
+        String owner = "U_AD";
+        String nhanvien = "NHANVIEN_";
+        String thanhtra = "THANHTRA_";
+        String benhnhan = "BENHNHAN_";
+
         public Form_Login()
         {
             InitializeComponent();          
@@ -23,20 +27,20 @@ namespace PH1
         // xử lí mở form main
         public void open_FormMain(object obj)
         {
-            String dbname = "U_AD";
-            Application.Run(new Form_Main(username, password, dbname));
+            
+            Application.Run(new Form_Main(username, password, owner));
         }
 
         public void open_FormMainNV(object obj)
         {
-            String dbname = "U_AD";
-            Application.Run(new PH1.NhanVien.FormMain_NV(username, dbname));
+            
+            Application.Run(new PH1.NhanVien.FormMain_NV(username, owner));
         }
 
         public void open_FormMainBN(object obj)
         {
-            String dbname = "U_AD";
-            Application.Run(new PH1.BenhNhan.FormMain_BN(username,dbname));
+            
+            Application.Run(new PH1.BenhNhan.FormMain_BN(username,owner));
         }
 
         private void btn_login_Click(object sender, EventArgs e)
@@ -44,12 +48,11 @@ namespace PH1
             // xử lí login
             username = txtbox_usename.Text.Trim();
             password = txtbox_password.Text.Trim();
-            
 
             Login(username, password);
-
+            
             // U_AD thì xử lí mở main
-            if (username.Contains("U_AD"))
+            if (username.Contains(owner))
             {
                 this.Close();
                 t = new Thread(open_FormMain);
@@ -58,7 +61,7 @@ namespace PH1
             }
 
             // NV 
-            else if (username.Contains("NV_"))
+            else if (username.Contains(nhanvien) || username.Contains(thanhtra))
             {
                 this.Close();
                 t = new Thread(open_FormMainNV);
@@ -67,7 +70,7 @@ namespace PH1
             }
 
             // BN
-            else if (username.Contains("BN_"))
+            else if (username.Contains(benhnhan))
             {
                 this.Close();
                 t = new Thread(open_FormMainBN);

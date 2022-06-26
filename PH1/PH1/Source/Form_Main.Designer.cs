@@ -45,6 +45,7 @@
             this.btn_logout = new System.Windows.Forms.Button();
             this.label_username = new System.Windows.Forms.Label();
             this.panelChildForm_KH = new System.Windows.Forms.Panel();
+            this.btn_xemaudit = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panel_username.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +53,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelMenu.Controls.Add(this.btn_xemaudit);
             this.panelMenu.Controls.Add(this.btn_themdulieu_CSYT_NV);
             this.panelMenu.Controls.Add(this.btn_revokePrivileges);
             this.panelMenu.Controls.Add(this.btn_grantRole_toUser);
@@ -67,7 +69,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(181, 853);
+            this.panelMenu.Size = new System.Drawing.Size(181, 900);
             this.panelMenu.TabIndex = 0;
             // 
             // btn_themdulieu_CSYT_NV
@@ -296,15 +298,31 @@
             this.panelChildForm_KH.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panelChildForm_KH.Location = new System.Drawing.Point(181, 0);
             this.panelChildForm_KH.Name = "panelChildForm_KH";
-            this.panelChildForm_KH.Size = new System.Drawing.Size(901, 853);
+            this.panelChildForm_KH.Size = new System.Drawing.Size(901, 900);
             this.panelChildForm_KH.TabIndex = 1;
+            // 
+            // btn_xemaudit
+            // 
+            this.btn_xemaudit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btn_xemaudit.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_xemaudit.FlatAppearance.BorderSize = 0;
+            this.btn_xemaudit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_xemaudit.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_xemaudit.ForeColor = System.Drawing.Color.White;
+            this.btn_xemaudit.Location = new System.Drawing.Point(0, 831);
+            this.btn_xemaudit.Name = "btn_xemaudit";
+            this.btn_xemaudit.Size = new System.Drawing.Size(181, 59);
+            this.btn_xemaudit.TabIndex = 35;
+            this.btn_xemaudit.Text = "Xem AUDIT";
+            this.btn_xemaudit.UseVisualStyleBackColor = false;
+            this.btn_xemaudit.Click += new System.EventHandler(this.btn_xemaudit_Click);
             // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1082, 853);
+            this.ClientSize = new System.Drawing.Size(1082, 900);
             this.Controls.Add(this.panelChildForm_KH);
             this.Controls.Add(this.panelMenu);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -339,5 +357,6 @@
         private Button btn_logout;
         private Label label1;
         private Button btn_themdulieu_CSYT_NV;
+        private Button btn_xemaudit;
     }
 }

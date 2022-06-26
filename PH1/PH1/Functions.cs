@@ -12,13 +12,11 @@ namespace PH1
     {
         public static OracleConnection Con;
 
-<<<<<<< Updated upstream
-        private static string host_name = @"DESKTOP-PU7OUUT"; // Duc
+
         //private static string host_name = @"DESKTOP-254FJBP"; // Minh Host
-=======
         //private static string host_name = @"DESKTOP-PU7OUUT"; // Duc
         //private static string host_name = @"DESKTOP-9C6VMF0"; // Minh Host
->>>>>>> Stashed changes
+        //private static string host_name = @"DESKTOP-9C6VMF0"; // Minh Host
 
         //private static string host_name = @"DESKTOP-2J1CNMG";
         //private static string host_name = @"DESKTOP-30F3CUE";
@@ -63,6 +61,18 @@ namespace PH1
 
                 //MessageBox.Show("Đóng kết nối với DB");
             }
+        }
+
+        public static string GetFieldValues(string sql) // lấy dữ liệu từ câu lệnh sql
+        {
+            string ma = "";
+            OracleCommand cmd = new OracleCommand(sql, Con);
+            OracleDataReader reader;
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+                ma = reader.GetValue(0).ToString();
+            reader.Close();
+            return ma;
         }
 
         public static void RunSQL(string sql) // chạy câu lệnh sql

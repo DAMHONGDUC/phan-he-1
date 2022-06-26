@@ -1,0 +1,4 @@
+grant execute ON U_AD.DELETE_HSBA TO CSYT1;
+grant execute ON U_AD.DELETE_HSBA_DV TO CSYT1;
+grant execute ON U_AD.INSERT_HSBA TO CSYT1;
+grant execute ON U_AD.INSERT_HSBA_DV TO CSYT1;

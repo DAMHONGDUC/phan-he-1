@@ -10,8 +10,11 @@
 
   <ItemGroup>
     <Compile Remove="Image\**" />
+    <Compile Remove="SYS\**" />
     <EmbeddedResource Remove="Image\**" />
+    <EmbeddedResource Remove="SYS\**" />
     <None Remove="Image\**" />
+    <None Remove="SYS\**" />
   </ItemGroup>
 
   <ItemGroup>
