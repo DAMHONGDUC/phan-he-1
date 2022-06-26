@@ -13,3 +13,9 @@ GRANT SELECT ON dba_users to U_AD WITH GRANT OPTION;
 
 GRANT SELECT ON USER_ROLE_PRIVS to U_AD WITH GRANT OPTION;
 GRANT SELECT ON DBA_ROLES to U_AD WITH GRANT OPTION;
+
+grant execute on DBMS_RLS to U_AD;
+grant execute on DBMS_CRYPTO to U_AD;
+
+grant execute on DBMS_RLS to U_AD;
+grant execute on DBMS_CRYPTO to U_AD;

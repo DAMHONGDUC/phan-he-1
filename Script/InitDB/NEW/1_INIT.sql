@@ -8,6 +8,10 @@ DROP TABLE NHANVIEN purge;
 DROP TABLE BENHNHAN purge;
 DROP TABLE KHOA purge;
 DROP TABLE CSYT purge;
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 --****************A. TAO CSDL****************--
 --TAO BANG CSYT
@@ -16,8 +20,7 @@ CREATE TABLE CSYT
     MACSYT NUMBER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT by 1) PRIMARY KEY,
     TENCSYT NVARCHAR2(50) NOT NULL,
     DCCSYT NVARCHAR2(255) NOT NULL,
-    SDTCSYT VARCHAR(15) NOT NULL,
-    USERNAME VARCHAR(50)
+    SDTCSYT VARCHAR(15) NOT NULL
 );
 
 --TAO BANG BENH NHAN
@@ -36,6 +39,7 @@ CREATE TABLE BENHNHAN
     TIENSUBENHGD NVARCHAR2(255),
     DIUNGTHUOC NVARCHAR2(255),
     USERNAME VARCHAR(50),
+    PASSWORD VARCHAR(50),
     
     FOREIGN KEY (MACSYT) REFERENCES CSYT(MACSYT)
 );
@@ -61,9 +65,23 @@ CREATE TABLE NHANVIEN
 --TAO BANG CHUYENKHOA
 CREATE TABLE KHOA
 (
-    MA_KHOA NUMBER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT by 1) PRIMARY KEY,
+    MAKHOA NUMBER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT by 1) PRIMARY KEY,
     TENKHOA NVARCHAR2(255)
 );
+
+--TAO BANG HSBA_DV
+CREATE TABLE HSBA_DV
+(
+   MAHSBA NUMBER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT by 1),
+   MADV NUMBER,
+   NGAY DATE,
+   MAKTV NUMBER NOT NULL,
+   KETQUA NVARCHAR2(255),
+   
+   PRIMARY KEY(MAHSBA,MADV,NGAY),
+   FOREIGN KEY (MAKTV) REFERENCES NHANVIEN(MANV)
+);
+
 --TAO BANG HSBA
 CREATE TABLE HSBA
 (
@@ -79,10 +97,14 @@ CREATE TABLE HSBA
     FOREIGN KEY (MABN) REFERENCES BENHNHAN(MABN),
     FOREIGN KEY (MABS) REFERENCES NHANVIEN(MANV),
     FOREIGN KEY (MACSYT) REFERENCES CSYT(MACSYT),
-    FOREIGN KEY (MAKHOA) REFERENCES KHOA(MA_KHOA)
+    FOREIGN KEY (MAKHOA) REFERENCES KHOA(MAKHOA)
 );
 
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 --TAO BANG HSBA_DV
 CREATE TABLE HSBA_DV
 (
@@ -96,6 +118,97 @@ CREATE TABLE HSBA_DV
    FOREIGN KEY (MA_HSBA) REFERENCES HSBA(MAHSBA),
    FOREIGN KEY (MAKTV) REFERENCES NHANVIEN(MANV)
 );
+
+-- Trigger MA HOA COT KET LUAN CUA BANG HSBA
+CREATE OR REPLACE TRIGGER ENCRYPT_HSBA_KETLUAN
+BEFORE INSERT OR UPDATE ON HSBA
+FOR EACH ROW
+WHEN (new.MAHSBA > 0)
+DECLARE
+    input_string VARCHAR2(200);
+    encrypted_raw RAW (2000); -- stores encrypted binary text
+    v_key raw(128) := utl_i18n.string_to_raw( 'ATBMCQ-05', 'AL32UTF8' );
+    encryption_type PLS_INTEGER := SYS.DBMS_CRYPTO.ENCRYPT_DES + SYS.DBMS_CRYPTO.CHAIN_CBC + SYS.DBMS_CRYPTO.PAD_PKCS5;
+BEGIN
+    input_string := TO_CHAR(:new.KETLUAN);
+    encrypted_raw := DBMS_CRYPTO.ENCRYPT
+          (
+             src => UTL_I18N.STRING_TO_RAW (input_string,'AL32UTF8'),
+             typ => encryption_type,
+            key => v_key
+         );
+    input_string := RAWTOHEX(encrypted_raw);
+    :new.KETLUAN := TO_NCHAR(input_string);
+END;
+/
+
+-- Trigger MA HOA COT KET QUA CUA BANG HSBA_DV
+CREATE OR REPLACE TRIGGER ENCRYPT_HSBADV_KETQUA
+BEFORE INSERT OR UPDATE ON HSBA_DV
+FOR EACH ROW
+WHEN (new.MA_HSBA > 0)
+DECLARE
+    input_string VARCHAR2(200);
+    encrypted_raw RAW (2000); -- stores encrypted binary text
+    v_key raw(128) := utl_i18n.string_to_raw( 'ATBMCQ-05', 'AL32UTF8' );
+    encryption_type PLS_INTEGER := SYS.DBMS_CRYPTO.ENCRYPT_DES + SYS.DBMS_CRYPTO.CHAIN_CBC + SYS.DBMS_CRYPTO.PAD_PKCS5;
+BEGIN
+    input_string := TO_CHAR(:new.KETQUA);
+    encrypted_raw := DBMS_CRYPTO.ENCRYPT
+          (
+             src => UTL_I18N.STRING_TO_RAW (input_string,'AL32UTF8'),
+             typ => encryption_type,
+            key => v_key
+         );
+    input_string := RAWTOHEX(encrypted_raw);
+    :new.KETQUA := TO_NCHAR(input_string);
+END;
+/
+
+-- Trigger MA HOA COT CMND CUA BANG BENHNHAN
+CREATE OR REPLACE TRIGGER ENCRYPT_BENHNHAN_CMND
+BEFORE INSERT OR UPDATE ON BENHNHAN
+FOR EACH ROW
+WHEN (new.MABN > 0)
+DECLARE
+    input_string VARCHAR2(200);
+    encrypted_raw RAW (2000); -- stores encrypted binary text
+    v_key raw(128) := utl_i18n.string_to_raw( 'ATBMCQ-05', 'AL32UTF8' );
+    encryption_type PLS_INTEGER := SYS.DBMS_CRYPTO.ENCRYPT_DES + SYS.DBMS_CRYPTO.CHAIN_CBC + SYS.DBMS_CRYPTO.PAD_PKCS5;
+BEGIN
+    input_string := TO_CHAR(:new.CMND);
+    encrypted_raw := DBMS_CRYPTO.ENCRYPT
+          (
+             src => UTL_I18N.STRING_TO_RAW (input_string,'AL32UTF8'),
+             typ => encryption_type,
+            key => v_key
+         );
+    input_string := RAWTOHEX(encrypted_raw);
+    :new.CMND := input_string;
+END;
+/
+
+-- Trigger MA HOA COT CMND CUA BANG NHANVIEN
+CREATE OR REPLACE TRIGGER ENCRYPT_NHANVIEN_CMND
+BEFORE INSERT OR UPDATE ON NHANVIEN
+FOR EACH ROW
+WHEN (new.MANV > 0)
+DECLARE
+    input_string VARCHAR2(200);
+    encrypted_raw RAW (2000); -- stores encrypted binary text
+    v_key raw(128) := utl_i18n.string_to_raw( 'ATBMCQ-05', 'AL32UTF8' );
+    encryption_type PLS_INTEGER := SYS.DBMS_CRYPTO.ENCRYPT_DES + SYS.DBMS_CRYPTO.CHAIN_CBC + SYS.DBMS_CRYPTO.PAD_PKCS5;
+BEGIN
+    input_string := TO_CHAR(:new.CMND);
+    encrypted_raw := DBMS_CRYPTO.ENCRYPT
+          (
+             src => UTL_I18N.STRING_TO_RAW (input_string,'AL32UTF8'),
+             typ => encryption_type,
+            key => v_key
+         );
+    input_string := RAWTOHEX(encrypted_raw);
+    :new.CMND := input_string;
+END;
 
 
 -- Trigger MA HOA COT KET LUAN CUA BANG HSBA
