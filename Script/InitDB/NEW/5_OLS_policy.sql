@@ -2,10 +2,11 @@
 SELECT STATUS FROM DBA_OLS_STATUS WHERE NAME = 'OLS_CONFIGURE_STATUS';
 
 EXEC LBACSYS.CONFIGURE_OLS;  -- This procedure registers Oracle Label Security.
+/
 EXEC LBACSYS.OLS_ENFORCEMENT.ENABLE_OLS; -- This procedure enables it.
-
+/
 ALTER USER LBACSYS ACCOUNT UNLOCK IDENTIFIED BY 0;
-
+/
 
 -- ===== CHAY DUOI QUYEN LBACSYS =======
 -- Xoa policy
@@ -13,7 +14,7 @@ ALTER USER LBACSYS ACCOUNT UNLOCK IDENTIFIED BY 0;
 
 -- Tao policy
 exec sa_sysdba.create_policy(policy_name => 'THONGBAO_OLS',column_name => 'row_label');
-
+/
 -- Gan quyen cho Quan tri vien
 grant THONGBAO_OLS_DBA to U_AD;
 
@@ -45,24 +46,33 @@ sa_components.create_level(
     short_name => 'YBS',
     level_num => 10);
 END;
-
+/
 
 -- Tao compartments
 exec sa_components.create_compartment('THONGBAO_OLS',1000,'TT','Trung Tam');
+/
 exec sa_components.create_compartment('THONGBAO_OLS',2000,'CTT','Can Trung Tam');
+/
 exec sa_components.create_compartment('THONGBAO_OLS',3000,'NT','Ngoai Thanh');
+/
 
 -- Tao groups
 exec sa_components.create_group('THONGBAO_OLS',1,'CSAU','Dieu tri chuyen sau',NULL);
+/
 exec sa_components.create_group('THONGBAO_OLS',2,'NTRU','Dieu tri noi tru','CSAU');
+/
 exec sa_components.create_group('THONGBAO_OLS',3,'NGTRU','Dieu tri ngoai tru','NTRU');
-
+/
 
 -- Tao label
 execute sa_label_admin.create_label('THONGBAO_OLS',2230,'GDS:TT,CTT,NT:CSAU');
+/
 execute sa_label_admin.create_label('THONGBAO_OLS',1250,'GDCS:TT,CTT,NT:CSAU');
+/
 execute sa_label_admin.create_label('THONGBAO_OLS',2210,'YBS:TT:NTRU');
+/
 execute sa_label_admin.create_label('THONGBAO_OLS',2320,'YBS:TT,CTT,NT:CSAU');
+/
 
 
 -- Xoa bang
@@ -92,7 +102,7 @@ schema_name => 'U_AD',
 table_name => 'THONGBAO',
 table_options => 'NO_CONTROL');
 end;
-
+/
 -- gan chinh sach cho cac du lieu
 update THONGBAO 
 set row_label = char_to_label('THONGBAO_OLS', 'GDCS:TT,CTT,NT:CSAU')
@@ -117,7 +127,7 @@ BEGIN
   schema_name  => 'U_AD',
   table_name  => 'THONGBAO');
 end;
-
+/
 -- Ap dung policy OLS
 begin
   sa_policy_admin.apply_table_policy(
@@ -126,11 +136,11 @@ begin
   table_name  => 'THONGBAO',
   table_options  => 'READ_CONTROL');
 end;
-
+/
 
 -- Tao cac loai nguoi dung
 alter session set "_ORACLE_SCRIPT"=true;
-
+/
 -- Xoa nguoi dung
 --drop user GIAM_DOC_SO cascade;
 --drop user THANH_TRA cascade;

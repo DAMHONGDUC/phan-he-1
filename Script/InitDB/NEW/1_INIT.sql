@@ -1,12 +1,21 @@
 
 --Chay voi user U_AD
 --XOA CAC BANG
+<<<<<<< Updated upstream
 DROP TABLE HSBA;
 DROP TABLE HSBA_DV;
 DROP TABLE NHANVIEN;
 DROP TABLE BENHNHAN;
 DROP TABLE KHOA;
 DROP TABLE CSYT;
+=======
+DROP TABLE HSBA_DV purge;
+DROP TABLE HSBA purge;
+DROP TABLE NHANVIEN purge;
+DROP TABLE BENHNHAN purge;
+DROP TABLE KHOA purge;
+DROP TABLE CSYT purge;
+>>>>>>> Stashed changes
 
 --****************A. TAO CSDL****************--
 --TAO BANG CSYT
@@ -24,7 +33,7 @@ CREATE TABLE BENHNHAN
     MABN NUMBER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT by 1) PRIMARY KEY,
     MACSYT NUMBER ,
     TENBN NVARCHAR2(50) ,
-    CMND VARCHAR(15) ,
+    CMND VARCHAR2(255) ,
     NGAYSINH DATE ,
     SONHA NVARCHAR2(50),
     TENDUONG NVARCHAR2(50) ,
@@ -46,7 +55,7 @@ CREATE TABLE NHANVIEN
     HOTEN NVARCHAR2(50) ,
     PHAI NVARCHAR2(3) ,
     NGAYSINH DATE ,
-    CMND VARCHAR(15) ,
+    CMND VARCHAR2(255) ,
     QUEQUAN NVARCHAR2(50) ,
     SODT VARCHAR(15) ,
     CSYT NUMBER ,
@@ -94,3 +103,112 @@ CREATE TABLE HSBA
     FOREIGN KEY (MACSYT) REFERENCES CSYT(MACSYT),
     FOREIGN KEY (MAKHOA) REFERENCES KHOA(MAKHOA)
 );
+<<<<<<< Updated upstream
+=======
+
+--TAO BANG HSBA_DV
+CREATE TABLE HSBA_DV
+(
+   MA_HSBA NUMBER,
+   MADV NUMBER,
+   NGAY DATE,
+   MAKTV NUMBER NOT NULL,
+   KETQUA NVARCHAR2(255),
+   
+   PRIMARY KEY(MA_HSBA,MADV,NGAY),
+   FOREIGN KEY (MA_HSBA) REFERENCES HSBA(MAHSBA),
+   FOREIGN KEY (MAKTV) REFERENCES NHANVIEN(MANV)
+);
+
+-- Trigger MA HOA COT KET LUAN CUA BANG HSBA
+CREATE OR REPLACE TRIGGER ENCRYPT_HSBA_KETLUAN
+BEFORE INSERT OR UPDATE ON HSBA
+FOR EACH ROW
+WHEN (new.MAHSBA > 0)
+DECLARE
+    input_string VARCHAR2(200);
+    encrypted_raw RAW (2000); -- stores encrypted binary text
+    v_key raw(128) := utl_i18n.string_to_raw( 'ATBMCQ-05', 'AL32UTF8' );
+    encryption_type PLS_INTEGER := SYS.DBMS_CRYPTO.ENCRYPT_DES + SYS.DBMS_CRYPTO.CHAIN_CBC + SYS.DBMS_CRYPTO.PAD_PKCS5;
+BEGIN
+    input_string := TO_CHAR(:new.KETLUAN);
+    encrypted_raw := DBMS_CRYPTO.ENCRYPT
+          (
+             src => UTL_I18N.STRING_TO_RAW (input_string,'AL32UTF8'),
+             typ => encryption_type,
+            key => v_key
+         );
+    input_string := RAWTOHEX(encrypted_raw);
+    :new.KETLUAN := TO_NCHAR(input_string);
+END;
+/
+
+-- Trigger MA HOA COT KET QUA CUA BANG HSBA_DV
+CREATE OR REPLACE TRIGGER ENCRYPT_HSBADV_KETQUA
+BEFORE INSERT OR UPDATE ON HSBA_DV
+FOR EACH ROW
+WHEN (new.MA_HSBA > 0)
+DECLARE
+    input_string VARCHAR2(200);
+    encrypted_raw RAW (2000); -- stores encrypted binary text
+    v_key raw(128) := utl_i18n.string_to_raw( 'ATBMCQ-05', 'AL32UTF8' );
+    encryption_type PLS_INTEGER := SYS.DBMS_CRYPTO.ENCRYPT_DES + SYS.DBMS_CRYPTO.CHAIN_CBC + SYS.DBMS_CRYPTO.PAD_PKCS5;
+BEGIN
+    input_string := TO_CHAR(:new.KETQUA);
+    encrypted_raw := DBMS_CRYPTO.ENCRYPT
+          (
+             src => UTL_I18N.STRING_TO_RAW (input_string,'AL32UTF8'),
+             typ => encryption_type,
+            key => v_key
+         );
+    input_string := RAWTOHEX(encrypted_raw);
+    :new.KETQUA := TO_NCHAR(input_string);
+END;
+/
+
+-- Trigger MA HOA COT CMND CUA BANG BENHNHAN
+CREATE OR REPLACE TRIGGER ENCRYPT_BENHNHAN_CMND
+BEFORE INSERT OR UPDATE ON BENHNHAN
+FOR EACH ROW
+WHEN (new.MABN > 0)
+DECLARE
+    input_string VARCHAR2(200);
+    encrypted_raw RAW (2000); -- stores encrypted binary text
+    v_key raw(128) := utl_i18n.string_to_raw( 'ATBMCQ-05', 'AL32UTF8' );
+    encryption_type PLS_INTEGER := SYS.DBMS_CRYPTO.ENCRYPT_DES + SYS.DBMS_CRYPTO.CHAIN_CBC + SYS.DBMS_CRYPTO.PAD_PKCS5;
+BEGIN
+    input_string := TO_CHAR(:new.CMND);
+    encrypted_raw := DBMS_CRYPTO.ENCRYPT
+          (
+             src => UTL_I18N.STRING_TO_RAW (input_string,'AL32UTF8'),
+             typ => encryption_type,
+            key => v_key
+         );
+    input_string := RAWTOHEX(encrypted_raw);
+    :new.CMND := input_string;
+END;
+/
+
+-- Trigger MA HOA COT CMND CUA BANG NHANVIEN
+CREATE OR REPLACE TRIGGER ENCRYPT_NHANVIEN_CMND
+BEFORE INSERT OR UPDATE ON NHANVIEN
+FOR EACH ROW
+WHEN (new.MANV > 0)
+DECLARE
+    input_string VARCHAR2(200);
+    encrypted_raw RAW (2000); -- stores encrypted binary text
+    v_key raw(128) := utl_i18n.string_to_raw( 'ATBMCQ-05', 'AL32UTF8' );
+    encryption_type PLS_INTEGER := SYS.DBMS_CRYPTO.ENCRYPT_DES + SYS.DBMS_CRYPTO.CHAIN_CBC + SYS.DBMS_CRYPTO.PAD_PKCS5;
+BEGIN
+    input_string := TO_CHAR(:new.CMND);
+    encrypted_raw := DBMS_CRYPTO.ENCRYPT
+          (
+             src => UTL_I18N.STRING_TO_RAW (input_string,'AL32UTF8'),
+             typ => encryption_type,
+            key => v_key
+         );
+    input_string := RAWTOHEX(encrypted_raw);
+    :new.CMND := input_string;
+END;
+
+>>>>>>> Stashed changes
