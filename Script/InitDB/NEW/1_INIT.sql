@@ -1,4 +1,3 @@
-
 --Chay voi user U_AD
 --XOA CAC BANG
 
@@ -8,10 +7,7 @@ DROP TABLE NHANVIEN purge;
 DROP TABLE BENHNHAN purge;
 DROP TABLE KHOA purge;
 DROP TABLE CSYT purge;
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 
 --****************A. TAO CSDL****************--
 --TAO BANG CSYT
@@ -39,7 +35,6 @@ CREATE TABLE BENHNHAN
     TIENSUBENHGD NVARCHAR2(255),
     DIUNGTHUOC NVARCHAR2(255),
     USERNAME VARCHAR(50),
-    PASSWORD VARCHAR(50),
     
     FOREIGN KEY (MACSYT) REFERENCES CSYT(MACSYT)
 );
@@ -69,19 +64,6 @@ CREATE TABLE KHOA
     TENKHOA NVARCHAR2(255)
 );
 
---TAO BANG HSBA_DV
-CREATE TABLE HSBA_DV
-(
-   MAHSBA NUMBER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT by 1),
-   MADV NUMBER,
-   NGAY DATE,
-   MAKTV NUMBER NOT NULL,
-   KETQUA NVARCHAR2(255),
-   
-   PRIMARY KEY(MAHSBA,MADV,NGAY),
-   FOREIGN KEY (MAKTV) REFERENCES NHANVIEN(MANV)
-);
-
 --TAO BANG HSBA
 CREATE TABLE HSBA
 (
@@ -100,11 +82,6 @@ CREATE TABLE HSBA
     FOREIGN KEY (MAKHOA) REFERENCES KHOA(MAKHOA)
 );
 
-
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 --TAO BANG HSBA_DV
 CREATE TABLE HSBA_DV
 (
@@ -209,7 +186,7 @@ BEGIN
     input_string := RAWTOHEX(encrypted_raw);
     :new.CMND := input_string;
 END;
-
+/
 
 -- Trigger MA HOA COT KET LUAN CUA BANG HSBA
 CREATE OR REPLACE TRIGGER ENCRYPT_HSBA_KETLUAN
@@ -301,4 +278,3 @@ BEGIN
     input_string := RAWTOHEX(encrypted_raw);
     :new.CMND := input_string;
 END;
-
