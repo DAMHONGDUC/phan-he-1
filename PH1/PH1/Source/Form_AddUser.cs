@@ -21,6 +21,25 @@ namespace PH1
             InitializeComponent();
         }
 
+        private void grant_role(String usname,int index )
+        {
+            String sql2 = "";
+            switch(index)
+            {
+                case 0:
+                    sql2 = "GRANT ROLE_NHANVIEN TO " + usname;
+                    Functions.RunSQL(sql2);
+                    sql2 = "GRANT ROLE_THANHTRA TO " + usname;
+                    Functions.RunSQL(sql2);
+                    break;
+                case 5:
+                    sql2 = "GRANT ROLE_NHANVIEN TO " + usname;
+                    Functions.RunSQL(sql2);
+                    break;
+            }
+           
+        }
+
         private void btn_AddUser_Click(object sender, EventArgs e)
         {
            if (txt_UserName.Text.Trim().Length == 0 ||
@@ -49,12 +68,14 @@ namespace PH1
             else sql = "CALL createUser('" + name + "','" + pass + "',0,"+ vaitro + ")";
 
             Functions.RunSQL(sql);
+            grant_role(name, cbBox_vaitro.SelectedIndex);
             MessageBox.Show("Them User thanh cong!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             txt_UserName.Text = "";
             txt_Password.Text = "";
             cbBox_vaitro.Text = "";
 
+            
             //sql = "CREATE USER " + name + " IDENTIFIED BY " + pass;
 
             //if (Functions.RunSQLwithResult(sql) == 1)
