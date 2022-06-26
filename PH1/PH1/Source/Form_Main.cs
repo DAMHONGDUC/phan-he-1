@@ -161,6 +161,12 @@ namespace PH1
             ActivateButton(sender);
         }
 
+        private void btn_xemaudit_Click(object sender, EventArgs e)
+        {
+            openChildForm(new PH1.Source.Form_xem_audit());
+            ActivateButton(sender);
+        }
+
         private void button_To_FormCheckPrivileges(object sender, EventArgs e)
         {
             openChildForm(new Form_CheckPrivilege());
