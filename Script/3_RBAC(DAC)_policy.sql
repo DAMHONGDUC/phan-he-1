@@ -24,6 +24,13 @@ DROP ROLE ROLE_YBACSI;
 CREATE ROLE ROLE_YBACSI;
 
 
+-- xoa role
+DROP ROLE ROLE_BENHNHAN;
+-- tao role nv
+CREATE ROLE ROLE_BENHNHAN;
+
+
+
 ----------------------------
 --TC5
 --Tao view
