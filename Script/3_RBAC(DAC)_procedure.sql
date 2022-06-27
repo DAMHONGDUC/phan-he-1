@@ -19,23 +19,59 @@ as
     lv_stmt   VARCHAR2 (1000);
 begin
     --TAO USER
+    lv_stmt := 'ALTER SESSION SET "_ORACLE_SCRIPT"=TRUE';
+    EXECUTE IMMEDIATE ( lv_stmt ); 
     lv_stmt := 'CREATE USER ' || user_name || ' IDENTIFIED BY ' || pwd;
     EXECUTE IMMEDIATE ( lv_stmt ); 
     lv_stmt := 'GRANT CREATE SESSION TO ' || user_name || '';
     EXECUTE IMMEDIATE ( lv_stmt ); 
     
-    --NHAN VIEN 
-    IF ty = 0
+    -- THANHTRA(NHANVIEN)
+    IF ty = 1
     THEN
-        lv_stmt:= 'INSERT INTO NHANVIEN(USERNAME, VAITRO) VALUES(''' || user_name || ''', ''' || vaitro || ''')';
+        lv_stmt:= 'INSERT INTO NHANVIEN(USERNAME, VAITRO) VALUES(''' || user_name || ''', ''' || vaitro || ''')';        
         EXECUTE IMMEDIATE ( lv_stmt ); 
-    --BENH NHAN
-    ELSIF ty = 1
+        lv_stmt:= 'GRANT ROLE_NHANVIEN TO ' || user_name || '';
+        EXECUTE IMMEDIATE ( lv_stmt );
+        lv_stmt:= 'GRANT ROLE_THANHTRA TO ' || user_name || '';
+        EXECUTE IMMEDIATE ( lv_stmt );
+    -- COSOYTE(NHANVIEN)
+    ELSIF ty = 2
+    THEN
+        lv_stmt:= 'INSERT INTO NHANVIEN(USERNAME, VAITRO) VALUES(''' || user_name || ''', ''' || vaitro || ''')';        
+        EXECUTE IMMEDIATE ( lv_stmt ); 
+        lv_stmt:= 'GRANT ROLE_NHANVIEN TO ' || user_name || '';
+        EXECUTE IMMEDIATE ( lv_stmt );
+        lv_stmt:= 'GRANT ROLE_CSYT TO ' || user_name || '';
+        EXECUTE IMMEDIATE ( lv_stmt );
+    -- YBACSI(NHANVIEN)    
+    ELSIF ty = 3
+    THEN
+        lv_stmt:= 'INSERT INTO NHANVIEN(USERNAME, VAITRO) VALUES(''' || user_name || ''', ''' || vaitro || ''')';        
+        EXECUTE IMMEDIATE ( lv_stmt ); 
+        lv_stmt:= 'GRANT ROLE_NHANVIEN TO ' || user_name || '';
+        EXECUTE IMMEDIATE ( lv_stmt );
+        lv_stmt:= 'GRANT ROLE_YBACSI TO ' || user_name || '';
+        EXECUTE IMMEDIATE ( lv_stmt );
+    -- NGHIENCUU(NHANVIEN)    
+    ELSIF ty = 4
+    THEN
+        lv_stmt:= 'INSERT INTO NHANVIEN(USERNAME, VAITRO) VALUES(''' || user_name || ''', ''' || vaitro || ''')';        
+        EXECUTE IMMEDIATE ( lv_stmt ); 
+        lv_stmt:= 'GRANT ROLE_NHANVIEN TO ' || user_name || '';
+        EXECUTE IMMEDIATE ( lv_stmt );
+        lv_stmt:= 'GRANT ROLE_NGHIENCUU TO ' || user_name || '';
+        EXECUTE IMMEDIATE ( lv_stmt );
+    -- BENH NHAN
+    ELSIF ty = 5
     THEN
         lv_stmt:= 'INSERT INTO BENHNHAN(USERNAME) VALUES(''' || user_name || ''')';
         EXECUTE IMMEDIATE ( lv_stmt ); 
+        lv_stmt:= 'GRANT ROLE_BENHNHAN TO ' || user_name || '';
+        EXECUTE IMMEDIATE ( lv_stmt );
     END IF;
 end;
+
 /
 --TC3
 -- Procedure Xoa HSBA by MAHSBA

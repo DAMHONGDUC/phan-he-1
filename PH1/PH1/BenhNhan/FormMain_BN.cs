@@ -12,6 +12,7 @@ namespace PH1.BenhNhan
 {
     public partial class FormMain_BN : Form
     {
+        Thread t;
         String username = "", dbname = "";
         public FormMain_BN(String un, String dn)
         {

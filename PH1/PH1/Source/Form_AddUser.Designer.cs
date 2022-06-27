@@ -64,8 +64,7 @@
             "Cơ sở y tế",
             "Y sĩ/bác sĩ",
             "Nghiên cứu",
-            "Bệnh nhân",
-            "Nhân Viên"});
+            "Bệnh nhân"});
             this.cbBox_vaitro.Location = new System.Drawing.Point(320, 365);
             this.cbBox_vaitro.Name = "cbBox_vaitro";
             this.cbBox_vaitro.Size = new System.Drawing.Size(260, 36);

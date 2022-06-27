@@ -21,28 +21,28 @@ namespace PH1
             InitializeComponent();
         }
 
-        private void grant_role(String usname,int index )
-        {
-            String sql2 = "";
-            switch(index)
-            {
-                case 0:
-                    sql2 = "GRANT ROLE_NHANVIEN TO " + usname;
-                    Functions.RunSQL(sql2);
-                    sql2 = "GRANT ROLE_THANHTRA TO " + usname;
-                    Functions.RunSQL(sql2);
-                    break;
-                case 5:
-                    sql2 = "GRANT ROLE_NHANVIEN TO " + usname;
-                    Functions.RunSQL(sql2);
-                    break;
-                case 2:
-                    sql2 = "GRANT ROLE_YBACSI TO " + usname;
-                    Functions.RunSQL(sql2);
-                    break;
-            }
+        //private void grant_role(String usname,int index )
+        //{
+        //    String sql2 = "";
+        //    switch(index)
+        //    {
+        //        case 0:
+        //            sql2 = "GRANT ROLE_NHANVIEN TO " + usname;
+        //            Functions.RunSQL(sql2);
+        //            sql2 = "GRANT ROLE_THANHTRA TO " + usname;
+        //            Functions.RunSQL(sql2);
+        //            break;
+        //        case 5:
+        //            sql2 = "GRANT ROLE_NHANVIEN TO " + usname;
+        //            Functions.RunSQL(sql2);
+        //            break;
+        //        case 2:
+        //            sql2 = "GRANT ROLE_YBACSI TO " + usname;
+        //            Functions.RunSQL(sql2);
+        //            break;
+        //    }
            
-        }
+        //}
 
         private void btn_AddUser_Click(object sender, EventArgs e)
         {
@@ -67,12 +67,13 @@ namespace PH1
             pass = txt_Password.Text.Trim().ToString();
             String vaitro = (cbBox_vaitro.SelectedIndex + 1).ToString();
 
-            if (cbBox_vaitro.SelectedIndex == 4) // benh nhan
-                sql = "CALL createUser('"+ name + "','"+ pass + "',1,1)";
-            else sql = "CALL createUser('" + name + "','" + pass + "',0,"+ vaitro + ")";
+            //if (cbBox_vaitro.SelectedIndex == 4) // benh nhan
+            //sql = "CALL createUser('"+ name + "','"+ pass + "',1,1)";
+            //else sql = "CALL createUser('" + name + "','" + pass + "',0,"+ vaitro + ")";
+            sql = "CALL createUser('" + name + "','" + pass + "',"+ (cbBox_vaitro.SelectedIndex +1).ToString()+ "," + vaitro + ")";
 
             Functions.RunSQL(sql);
-            grant_role(name, cbBox_vaitro.SelectedIndex);
+            //grant_role(name, cbBox_vaitro.SelectedIndex);
             MessageBox.Show("Them User thanh cong!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             txt_UserName.Text = "";
