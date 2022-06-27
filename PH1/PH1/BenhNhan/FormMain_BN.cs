@@ -89,6 +89,13 @@ namespace PH1.BenhNhan
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openChildForm(new PH1.BenhNhan.Form_Profile(username, dbname));
+            ActivateButton(sender);
+        }
+
         private void DisableButton()
         {
             foreach (Control previousBtn in panelMenu.Controls)

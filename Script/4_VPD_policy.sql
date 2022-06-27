@@ -115,7 +115,7 @@ begin
         return '1=1';
     elsif login_user like 'BENHNHAN%' then
         return  'USERNAME   = '''||login_user||'''';
-     elsif login_user like 'BACSI%' then
+     elsif login_user like 'YBACSI%' then
         return  '1=1';
       elsif login_user like 'CSYT%' then
         return  '1=1';

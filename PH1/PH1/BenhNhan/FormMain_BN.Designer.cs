@@ -44,7 +44,7 @@
             this.panelChildForm_KH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm_KH.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panelChildForm_KH.Location = new System.Drawing.Point(226, 0);
-            this.panelChildForm_KH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelChildForm_KH.Margin = new System.Windows.Forms.Padding(4);
             this.panelChildForm_KH.Name = "panelChildForm_KH";
             this.panelChildForm_KH.Size = new System.Drawing.Size(1126, 1050);
             this.panelChildForm_KH.TabIndex = 3;
@@ -56,7 +56,7 @@
             this.panelMenu.Controls.Add(this.panel_username);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(226, 1050);
             this.panelMenu.TabIndex = 2;
@@ -70,13 +70,13 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(0, 208);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(226, 74);
             this.button1.TabIndex = 24;
             this.button1.Text = "Xem thông tin";
             this.button1.UseVisualStyleBackColor = false;
-          
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel_username
             // 
@@ -86,7 +86,7 @@
             this.panel_username.Controls.Add(this.label_username);
             this.panel_username.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_username.Location = new System.Drawing.Point(0, 0);
-            this.panel_username.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_username.Margin = new System.Windows.Forms.Padding(4);
             this.panel_username.Name = "panel_username";
             this.panel_username.Size = new System.Drawing.Size(226, 208);
             this.panel_username.TabIndex = 2;
@@ -107,7 +107,7 @@
             this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(187)))), ((int)(((byte)(241)))));
             this.btn_logout.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_logout.Location = new System.Drawing.Point(39, 144);
-            this.btn_logout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_logout.Margin = new System.Windows.Forms.Padding(4);
             this.btn_logout.Name = "btn_logout";
             this.btn_logout.Size = new System.Drawing.Size(148, 46);
             this.btn_logout.TabIndex = 9;
@@ -133,11 +133,10 @@
             this.ClientSize = new System.Drawing.Size(1352, 1050);
             this.Controls.Add(this.panelChildForm_KH);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMain_BN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMain_BN";
-           
             this.panelMenu.ResumeLayout(false);
             this.panel_username.ResumeLayout(false);
             this.ResumeLayout(false);

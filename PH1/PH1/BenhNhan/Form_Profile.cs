@@ -13,8 +13,13 @@ namespace PH1.BenhNhan
     public partial class Form_Profile : Form
     {
         DataTable dt;
-        public Form_Profile()
+        String username = "";
+        String dbname="";
+        int mabn = 0;
+        public Form_Profile(String username, String dbname)
         {
+            this.dbname = dbname;
+            this.username = username;
             InitializeComponent();
         }
 
@@ -36,6 +41,15 @@ namespace PH1.BenhNhan
                 tb_TSB.Text = dt.Rows[0]["TIENSUBENH"].ToString();
                 tb_TSBGD.Text = dt.Rows[0]["TIENSUBENHGD"].ToString();
                 tb_DUT.Text = dt.Rows[0]["DIUNGTHUOC"].ToString();
+                try
+                {
+                    mabn = Int32.Parse(dt.Rows[0]["MABN"].ToString());
+                }
+                catch (Exception)
+                {
+                    mabn = 0;
+                }
+                
             }
         }
 
@@ -46,22 +60,7 @@ namespace PH1.BenhNhan
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string sql1 = "select MABN, TENBN, CMND, NGAYSINH, SONHA, TENDUONG, QUANHUYEN," +
-                " TINHTP, TIENSUBENH, TIENSUBENHGD, DIUNGTHUOC from U_AD.BENHNHAN";
-            this.dt = Functions.GetDataToTable(sql1);
-            if (dt.Rows.Count > 0)
-            {
-                tb_Hoten.Text = dt.Rows[0]["TENBN"].ToString();
-                tb_NgaySinh.Text = dt.Rows[0]["NGAYSINH"].ToString();
-                tb_CMND.Text = dt.Rows[0]["CMND"].ToString();
-                tb_SoNha.Text = dt.Rows[0]["SONHA"].ToString();
-                tb_TenDuong.Text = dt.Rows[0]["TENDUONG"].ToString();
-                tb_QH.Text = dt.Rows[0]["QUANHUYEN"].ToString();
-                tb_TTP.Text = dt.Rows[0]["TINHTP"].ToString();
-                tb_TSB.Text = dt.Rows[0]["TIENSUBENH"].ToString();
-                tb_TSBGD.Text = dt.Rows[0]["TIENSUBENHGD"].ToString();
-                tb_DUT.Text = dt.Rows[0]["DIUNGTHUOC"].ToString();
-            }
+           
             if( tb_Hoten.Text == "" || tb_NgaySinh.Text == "" || tb_CMND.Text == "" || tb_SoNha.Text == "" ||tb_TenDuong.Text == ""||
                 tb_QH.Text == "" || tb_TTP.Text == "" || tb_TSB.Text == "" ||  tb_TSBGD.Text == "" || tb_DUT.Text == "" ||
                 tb_Hoten.Text == null || tb_NgaySinh.Text == null || tb_CMND.Text == null || tb_SoNha.Text == null || tb_TenDuong.Text == null ||
@@ -73,20 +72,23 @@ namespace PH1.BenhNhan
             }
             else
             {
-                string sql = "UPDATE BENHNHAN SET " +
-               "TENBN = '" + tb_Hoten + "'," +
-               "CMND = '" + tb_CMND + "', " +
-               "SONHA = '" + tb_SoNha + "', " +
-               "TENDUONG = '" + tb_TenDuong + "', " +
-               "QUANHUYEN = '" + tb_QH + "', " +
-               "TINHTP = '" + tb_TTP + "', " +
-               "TIENSUBENH = '" + tb_TSB + "', " +
-               "TIENSUBENHGD = '" + tb_TSBGD + "', " +
-               "DIUNGTHUOC = '" + tb_DUT + "', " +
-               "NGAYSINH = 'to_date('" + tb_NgaySinh + "','dd/mm/yyyy') " +
-               "WHERE MABN = " + Int32.Parse(this.dt.Rows[0]["MABN"].ToString());
 
+                String sql = 
+                "UPDATE U_AD.BENHNHAN SET " +
+                "TENBN = N'" + tb_Hoten.Text + "', " +
+                "CMND = '" + tb_CMND.Text + "', " +
+                "SONHA = N'" + tb_SoNha.Text + "', " +
+                "TENDUONG = N'" + tb_TenDuong.Text + "', " +
+                "QUANHUYEN = N'" + tb_QH.Text + "', " +
+                "TINHTP = N'" + tb_TTP.Text + "', " +
+                "TIENSUBENH = N'" + tb_TSB.Text + "', " +
+                "TIENSUBENHGD = N'" + tb_TSBGD.Text + "', " +
+                "DIUNGTHUOC = N'" + tb_DUT.Text + "', " +
+                "NGAYSINH = to_date('" + tb_NgaySinh.Text + "','dd/mm/yyyy') " +
+                "WHERE MABN = " + mabn;
+           
                 Functions.RunSQL(sql);
+                Functions.RunSQL("COMMIT");
                 MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
            

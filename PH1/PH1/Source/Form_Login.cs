@@ -71,8 +71,7 @@ namespace PH1
 
             // NV 
             else if (username.Contains(nhanvien) || username.Contains(thanhtra) 
-                || username.Contains(csyt)
-                || username.Contains(ybacsi)
+                || username.Contains(csyt)             
                 || username.Contains(nghiencuu))
             {
                 this.Close();
@@ -80,7 +79,7 @@ namespace PH1
                 t.SetApartmentState(ApartmentState.STA);
                 t.Start();
             }
-            else if (username.Contains(bacsi))
+            else if (username.Contains(ybacsi))
             {
                 this.Close();
                 t = new Thread(open_FormMainBS);

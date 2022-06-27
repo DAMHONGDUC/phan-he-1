@@ -21,4 +21,8 @@
     <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="3.21.50" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CSYT\" />
+  </ItemGroup>
+
 </Project>
