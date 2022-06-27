@@ -24,7 +24,11 @@ begin
         return '1=1';
     elsif login_user like 'THANHTRA%' then
         return '1=1';
-    elsif login_user like 'NHANVIEN%' then
+    elsif login_user like 'CSYT%' then
+        return  'USERNAME   = '''||login_user||'''';
+    elsif login_user like 'NGHIENCUU%' then
+        return  'USERNAME   = '''||login_user||'''';
+     elsif login_user like 'YBACSI%' then
         return  'USERNAME   = '''||login_user||'''';
     else return '1=2';
     end if;
@@ -63,7 +67,11 @@ begin
      login_user := SYS_CONTEXT('userenv', 'SESSION_USER');
     if login_user = 'U_AD'  then
         return '1=1';
-    elsif login_user like 'NHANVIEN%' then
+   elsif login_user like 'CSYT%' then
+        return  'USERNAME   = '''||login_user||'''';
+    elsif login_user like 'NGHIENCUU%' then
+        return  'USERNAME   = '''||login_user||'''';
+     elsif login_user like 'YBACSI%' then
         return  'USERNAME   = '''||login_user||'''';
     else return '1=2';
     end if;
@@ -105,10 +113,12 @@ begin
         return '1=1';
     elsif login_user like 'THANHTRA%' then
         return '1=1';
-    elsif login_user like 'NHANVIEN%' then
-        return '1=1';
     elsif login_user like 'BENHNHAN%' then
         return  'USERNAME   = '''||login_user||'''';
+     elsif login_user like 'BACSI%' then
+        return  '1=1';
+      elsif login_user like 'CSYT%' then
+        return  '1=1';
     else return '1=2';
     end if;
 end;

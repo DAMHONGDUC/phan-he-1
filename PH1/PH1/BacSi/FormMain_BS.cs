@@ -8,16 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PH1.BenhNhan
+namespace PH1.BacSi
 {
-    public partial class FormMain_BN : Form
+    public partial class FormMain_BS : Form
     {
         String username = "", dbname = "";
-        public FormMain_BN(String un, String dn)
+        Thread t;
+        public FormMain_BS(String username,String dbname)
         {
             InitializeComponent();
-            this.username = un;
-            this.dbname = dn;
+            this.username = username;
+            this.dbname = dbname;
             label_username.Text = username;
         }
 
@@ -42,10 +43,10 @@ namespace PH1.BenhNhan
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            //openChildForm(new PH1.BacSi.Form_xemTT());
+           
+             //openChildForm(new PH1.BacSi.Form_xemTT());
             // ActivateButton(sender);
-
+           
         }
 
         private void btn_logout_Click(object sender, EventArgs e)
@@ -100,9 +101,47 @@ namespace PH1.BenhNhan
             }
         }
 
+        private void btn_hsba_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new PH1.BacSi.Form_HSBA(username, dbname));
+            ActivateButton(sender);
+        }
+
+        private void btn_hsba_Click(object sender, EventArgs e)
+        {
+            openChildForm(new PH1.BacSi.Form_HSBA(username, dbname));
+            ActivateButton(sender);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            openChildForm(new PH1.BacSi.Form_HSBA_DV(username, dbname));
+            ActivateButton(sender);
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new PH1.BacSi.Form_HSBA_DV(username, dbname));
+            ActivateButton(sender);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openChildForm(new PH1.BacSi.Form_TTBN(username, dbname));
+            ActivateButton(sender);
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new PH1.BacSi.Form_Profile(username, dbname));
+            ActivateButton(sender);
+        }
+
        
 
 
 
     }
 }
+

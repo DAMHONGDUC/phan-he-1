@@ -2,7 +2,25 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="BacSi\FormMain_BS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="BacSi\Form_HSBA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="BacSi\Form_HSBA_DV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="BacSi\Form_Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="BacSi\Form_TTBN.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="BenhNhan\FormMain_BN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="BenhNhan\Form_Profile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="NhanVien\FormMain_NV.cs">

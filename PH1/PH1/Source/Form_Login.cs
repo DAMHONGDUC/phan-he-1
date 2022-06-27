@@ -43,6 +43,11 @@ namespace PH1
             
             Application.Run(new PH1.BenhNhan.FormMain_BN(username,owner));
         }
+        public void open_FormMainBS(object obj)
+        {
+
+            Application.Run(new PH1.BacSi.FormMain_BS(username, owner));
+        }
 
         private void btn_login_Click(object sender, EventArgs e)
         {
@@ -62,10 +67,17 @@ namespace PH1
             }
 
             // NV 
-            else if (username.Contains(nhanvien) || username.Contains(thanhtra) || username.Contains(bacsi))
+            else if (username.Contains(nhanvien) || username.Contains(thanhtra))
             {
                 this.Close();
                 t = new Thread(open_FormMainNV);
+                t.SetApartmentState(ApartmentState.STA);
+                t.Start();
+            }
+            else if (username.Contains(bacsi))
+            {
+                this.Close();
+                t = new Thread(open_FormMainBS);
                 t.SetApartmentState(ApartmentState.STA);
                 t.Start();
             }
