@@ -32,8 +32,3 @@ SELECT * FROM U_AD.BENHNHAN;
 select username, EXTENDED_TIMESTAMP ,obj_name, action_name, sql_text 
 from dba_audit_trail
 WHERE OBJ_NAME = 'BENHNHAN';
-
-select * from dba_audit_trail;
-select * from dba_stmt_audit_opts;
-
-

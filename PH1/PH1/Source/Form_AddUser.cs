@@ -67,13 +67,10 @@ namespace PH1
             pass = txt_Password.Text.Trim().ToString();
             String vaitro = (cbBox_vaitro.SelectedIndex + 1).ToString();
 
-            //if (cbBox_vaitro.SelectedIndex == 4) // benh nhan
-            //sql = "CALL createUser('"+ name + "','"+ pass + "',1,1)";
-            //else sql = "CALL createUser('" + name + "','" + pass + "',0,"+ vaitro + ")";
+            
             sql = "CALL createUser('" + name + "','" + pass + "',"+ (cbBox_vaitro.SelectedIndex +1).ToString()+ "," + vaitro + ")";
+            Functions.RunSQL(sql);           
 
-            Functions.RunSQL(sql);
-            //grant_role(name, cbBox_vaitro.SelectedIndex);
             MessageBox.Show("Them User thanh cong!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             txt_UserName.Text = "";
