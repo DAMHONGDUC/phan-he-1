@@ -13,10 +13,10 @@ AUDIT ALL ON U_AD.KHOA BY ACCESS;
 AUDIT ALL ON U_AD.CSYT BY ACCESS;
 
 -- Theo doi hanh vi cua cac user tren tat ca cac view
-AUDIT GRANT, INSERT, UPDATE,DELETE ON U_AD.Select_HSBA BY ACCESS;
+--AUDIT GRANT, INSERT, UPDATE,DELETE ON U_AD.Select_HSBA BY ACCESS;
 
 -- Theo doi hanh vi cua cac user tren tat ca cac Stored Procedure
-AUDIT EXECUTE ON U_AD.createUser BY ACCESS;
+--AUDIT EXECUTE ON U_AD.createUser BY ACCESS;
 
 -- Theo doi cac hanh vi thanh cong
 AUDIT ALL WHENEVER SUCCESSFUL;
