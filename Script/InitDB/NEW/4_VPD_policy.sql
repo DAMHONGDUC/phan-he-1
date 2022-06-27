@@ -105,6 +105,8 @@ begin
         return '1=1';
     elsif login_user like 'THANHTRA%' then
         return '1=1';
+    elsif login_user like 'NHANVIEN%' then
+        return '1=1';
     elsif login_user like 'BENHNHAN%' then
         return  'USERNAME   = '''||login_user||'''';
     else return '1=2';
