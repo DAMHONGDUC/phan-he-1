@@ -13,9 +13,9 @@ namespace PH1
         public static OracleConnection Con;
 
         //private static string host_name = @"DESKTOP-PU7OUUT"; // Duc
-       // private static string host_name = @"DESKTOP-9C6VMF0"; // Minh Host
+       private static string host_name = @"DESKTOP-9C6VMF0"; // Minh Host
 
-       private static string host_name = @"DESKTOP-2J1CNMG";
+       //private static string host_name = @"DESKTOP-2J1CNMG";
         //private static string host_name = @"DESKTOP-30F3CUE";
 
         public static void InitConnection(String username, String password)

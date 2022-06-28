@@ -1,3 +1,4 @@
+alter session set "_ORACLE_SCRIPT"=true; 
 -- xoa role
 DROP ROLE ROLE_NHANVIEN;
 -- tao role nv

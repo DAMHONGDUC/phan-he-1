@@ -14,6 +14,7 @@ namespace PH1.NhanVien
     {
         String username = "", dbname = "";
         String thanhtra = "THANHTRA_";
+        String nghiencuu = "NGHIENCUU_";
         Thread t;
 
         
@@ -108,8 +109,16 @@ namespace PH1.NhanVien
 
         private void btn_hsba_Click(object sender, EventArgs e)
         {
-            openChildForm(new PH1.NhanVien.HSBA(username, dbname));
-            ActivateButton(sender);
+            if (username.Contains(nghiencuu))
+            {
+                openChildForm(new PH1.NhanVien.HSBA(username, dbname));
+                ActivateButton(sender);
+            }
+            else
+            {
+                MessageBox.Show("Chỉ Nghiên Cứu mới được sử dụng chức năng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }          
 
         }
 
